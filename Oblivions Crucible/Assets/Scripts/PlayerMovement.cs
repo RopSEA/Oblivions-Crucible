@@ -8,6 +8,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float BASE_SPEED = 5;
     private Rigidbody2D rb;
     float currentSpeed;
+    private Vector3 slideDir;
+    private float slideSpeed;
+
+    private State state;
+    private enum State
+    {
+        Normal,
+        Roll
+    }
 
 
     // Start is called before the first frame update
@@ -15,24 +24,62 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentSpeed = BASE_SPEED;
+        state = State.Normal;
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        switch (state)
+        {
+            case State.Normal:
+                move();
+                dodgeRoll();
+                break;
+
+            case State.Roll:
+                dodgeSlide();
+                break;
+        }
+       
+
+    }
+
+    private void dodgeRoll()
+    {
+        if (Input.GetKey("space"))
+        {
+            state = State.Roll;
+            slideSpeed = 35.5f;
+        }
+    }
+
+    private void dodgeSlide()
+    {
+        transform.position += slideDir * slideSpeed * Time.deltaTime;
+        slideSpeed -= slideSpeed * 10f * Time.deltaTime;
+        if (slideSpeed < 5f)
+        {
+            state = State.Normal;
+        }
+    }
+    
+    private void move()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        Vector3 dir = new Vector3(horizontal, vertical, 0).normalized;
+        slideDir = dir.normalized;
+        rb.velocity = dir * currentSpeed;
+    }
+    
+    
     public IEnumerator SpeedChange(float newSpeed, float timeInSecs)
     {
         currentSpeed = newSpeed;
         yield return new WaitForSeconds(timeInSecs);
         currentSpeed = BASE_SPEED;
     }
-   
 
-    // Update is called once per frame
-    void Update()
-    {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        Vector3 dir = new Vector3(horizontal, vertical, 0);
-        rb.velocity = dir * currentSpeed;
-
-    }
 }
 

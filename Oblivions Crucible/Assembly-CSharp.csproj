@@ -60,13 +60,25 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\SPUM\Script\Data\SPUM_MatchingList.cs" />
+    <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
+    <Compile Include="Assets\SPUM\Script\Data\SPUM_Prefabs.cs" />
     <Compile Include="Assets\Scripts\BasicEnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\CursorSc.cs" />
+    <Compile Include="Assets\SPUM\Script\Data\SPUM_AnimationData.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\SPUM\Script\Data\PreviewMatchingElement.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
+    <Compile Include="Assets\SPUM\Script\Data\SpumTextureData.cs" />
+    <Compile Include="Assets\SPUM\Script\Data\SpritePos.cs" />
+    <Compile Include="Assets\SPUM\Sample\Script\PlayerObj.cs" />
+    <Compile Include="Assets\SPUM\Script\Data\SpumPackage.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\SPUM\Script\Data\SpumAnimationClip.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />
+    <None Include="Assets\SPUM\ReadMe - 3.0.0.txt" />
     <None Include="Assets\SimplePixelUI\fonts\Font1\license.txt" />
     <None Include="Assets\SimplePixelUI\fonts\Font1\readme.txt" />
     <None Include="Assets\SimplePixelUI\fonts\Font2\readme.txt" />
