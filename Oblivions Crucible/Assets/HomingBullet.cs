@@ -6,6 +6,7 @@ public class HomingBullet : MonoBehaviour
 {
     public float speed = 10f;
     public float lifetime = 5f;
+    public int damage = 25;
     private Transform target;
     private Vector2 moveDirection;
 
@@ -20,13 +21,13 @@ public class HomingBullet : MonoBehaviour
 
             // rotate toward enemy
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle - 90); 
+            transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
             moveDirection = direction;
         }
         else
         {
-            // no enemy found, just move straight
+            // no enemy found, shoot up
             moveDirection = transform.up;
         }
 
@@ -64,8 +65,13 @@ public class HomingBullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<BasicEnemyMovement>().damage(50);
-            Destroy(gameObject);       
+            BasicEnemyMovement enemy = other.GetComponent<BasicEnemyMovement>();
+            if (enemy != null)
+            {
+                enemy.damage(damage); 
+            }
+
+            Destroy(gameObject); 
         }
     }
 }
