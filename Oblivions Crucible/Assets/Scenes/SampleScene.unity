@@ -959,6 +959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.7
+  hp: 100
   player: {fileID: 345364531}
 --- !u!1 &619394800
 GameObject:
