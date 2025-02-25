@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     float currentSpeed;
     private Vector3 slideDir;
     private float slideSpeed;
+    public float cooldown;
+    private float lastDodge;
 
     private State state;
     private enum State
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentSpeed = BASE_SPEED;
+        lastDodge = Time.time;
         state = State.Normal;
     }
 
@@ -47,8 +50,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void dodgeRoll()
     {
-        if (Input.GetKey("space"))
+        
+
+        if (Input.GetKeyDown("space"))
         {
+            if (Time.time - lastDodge < cooldown)
+            {
+                Debug.Log("hi");
+                return;
+            }
+
+            lastDodge = Time.time;
             state = State.Roll;
             slideSpeed = 35.5f;
         }
@@ -56,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void dodgeSlide()
     {
+
         transform.position += slideDir * slideSpeed * Time.deltaTime;
         slideSpeed -= slideSpeed * 10f * Time.deltaTime;
         if (slideSpeed < 5f)

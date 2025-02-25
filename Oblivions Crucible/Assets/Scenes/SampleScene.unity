@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BASE_SPEED: 5
+  cooldown: 0.5
 --- !u!61 &345364535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -544,6 +545,10 @@ PrefabInstance:
     - target: {fileID: 7127064250040410633, guid: 74081d2c7552d4c17953e46326368c4b, type: 3}
       propertyPath: m_Name
       value: SPUM_20240911215638897
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127064250040410633, guid: 74081d2c7552d4c17953e46326368c4b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
