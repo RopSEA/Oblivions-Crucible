@@ -64,7 +64,7 @@ public class HomingBullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject); 
+            other.gameObject.GetComponent<BasicEnemyMovement>().damage(50);
             Destroy(gameObject);       
         }
     }
