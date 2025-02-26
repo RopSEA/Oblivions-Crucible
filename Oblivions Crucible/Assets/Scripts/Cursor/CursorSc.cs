@@ -29,8 +29,12 @@ public class CursorSc : MonoBehaviour
         transform.position = Input.mousePosition + hotspot;
     }
 
-    private void SwapCursor()
+    public void SwapCursor(Sprite newSprite)
     {
-        image.sprite = sprite;
+        if (newSprite != null)
+        {
+            image.sprite = newSprite; 
+        }
     }
+
 }

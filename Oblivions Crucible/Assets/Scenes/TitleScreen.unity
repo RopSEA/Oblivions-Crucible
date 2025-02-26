@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 105145361}
   - component: {fileID: 105145365}
   - component: {fileID: 105145366}
+  - component: {fileID: 105145367}
   m_Layer: 0
   m_Name: Stats
   m_TagString: Untagged
@@ -242,6 +243,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToSwitchTo: StatsScene
+--- !u!114 &105145367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105145360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02751619695224741a3a452e51c644ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  category: 2
 --- !u!1 &435751667
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +506,7 @@ GameObject:
   - component: {fileID: 577074630}
   - component: {fileID: 577074634}
   - component: {fileID: 577074635}
+  - component: {fileID: 577074636}
   m_Layer: 0
   m_Name: Start Game
   m_TagString: Untagged
@@ -600,6 +615,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToSwitchTo: StartGame
+--- !u!114 &577074636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577074629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02751619695224741a3a452e51c644ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  category: 1
 --- !u!1 &1274329764
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +640,7 @@ GameObject:
   - component: {fileID: 1274329765}
   - component: {fileID: 1274329769}
   - component: {fileID: 1274329770}
+  - component: {fileID: 1274329771}
   m_Layer: 0
   m_Name: Settings
   m_TagString: Untagged
@@ -720,6 +749,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToSwitchTo: Settings
+--- !u!114 &1274329771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274329764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02751619695224741a3a452e51c644ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  category: 3
+--- !u!1 &1338886641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1338886643}
+  - component: {fileID: 1338886642}
+  m_Layer: 0
+  m_Name: CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1338886642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338886641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53682103db6e5e744982ab7e0a7140b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 2800000, guid: 4b585bc67402a4a48ab51d1adae50da6, type: 3}
+  hoverAttackCursor: {fileID: 2800000, guid: e60d67a355081814a8c12e566486576b, type: 3}
+  hoverQuestionCursor: {fileID: 2800000, guid: 0e0bcfd892eb04f499911a7a92e35a66, type: 3}
+  hoverSettingsCursor: {fileID: 2800000, guid: 295cd6aa1a5495740a5d75b01b2fc84e, type: 3}
+  cursorHotspot: {x: 0, y: 0}
+--- !u!4 &1338886643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338886641}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.218057, y: -2.6302, z: 0.041243747}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1346592907}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1346592906
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,6 +845,7 @@ Transform:
   - {fileID: 1274329766}
   - {fileID: 2005473321}
   - {fileID: 1388877348}
+  - {fileID: 1338886643}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1388877346
