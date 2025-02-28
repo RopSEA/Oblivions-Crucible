@@ -60,19 +60,21 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Cursor\CursorSc.cs" />
     <Compile Include="Assets\Scripts\TitleScreenManager.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_MatchingList.cs" />
+    <Compile Include="Assets\Scripts\MainMenuScene.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\MenuItemsManager.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_Prefabs.cs" />
     <Compile Include="Assets\Scripts\BasicEnemyMovement.cs" />
-    <Compile Include="Assets\Scripts\CursorSc.cs" />
+    <Compile Include="Assets\Scripts\Cursor\CursorHover.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_AnimationData.cs" />
+    <Compile Include="Assets\Scripts\Cursor\UICategory.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\SPUM\Script\Data\PreviewMatchingElement.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\CursorUnlock.cs" />
     <Compile Include="Assets\Scripts\HomingBullet.cs" />
     <Compile Include="Assets\Scripts\Boundary.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
@@ -80,7 +82,6 @@
     <Compile Include="Assets\SPUM\Script\Data\SpumTextureData.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpritePos.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerObj.cs" />
-    <Compile Include="Assets\Scripts\MainMenuScence.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumPackage.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumAnimationClip.cs" />
