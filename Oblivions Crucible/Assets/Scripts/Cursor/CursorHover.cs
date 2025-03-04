@@ -1,28 +1,36 @@
 using UnityEngine;
 
-public class CursorHoverManager : MonoBehaviour
+public class CursorHover : MonoBehaviour
 {
-    public Texture2D defaultCursor;
-    public Texture2D hoverAttackCursor;
-    public Texture2D hoverQuestionCursor;
-    public Texture2D hoverSettingsCursor;
+    public CursorSc customCursor; // Reference to the custom cursor script
 
-    public Vector2 cursorHotspot = Vector2.zero;
-    private Texture2D currentCursor;
+    public Sprite defaultCursor;
+    public Sprite hoverAttackCursor;
+    public Sprite hoverQuestionCursor;
+    public Sprite hoverSettingsCursor;
+
+    private Sprite currentCursor; // Track current cursor to prevent redundant updates
 
     private void Start()
     {
+        if (customCursor == null)
+        {
+            Debug.LogError("CursorHoverManager: No CursorSc script assigned!");
+            return;
+        }
+
         SetCursor(defaultCursor);
     }
 
     void Update()
     {
+        if (customCursor == null) return; // Ensure customCursor is assigned
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit)) //  Uses Physics.Raycast() for 3D BoxColliders
+        if (Physics.Raycast(ray, out hit)) // Uses Physics.Raycast() for 3D BoxColliders
         {
-
             GameObject hoveredObject = hit.collider.gameObject;
             UICategory categoryComponent = hoveredObject.GetComponent<UICategory>();
 
@@ -55,13 +63,12 @@ public class CursorHoverManager : MonoBehaviour
         }
     }
 
-    private void SetCursor(Texture2D cursorTexture)
+    private void SetCursor(Sprite newCursor)
     {
-        if (cursorTexture != null && currentCursor != cursorTexture) // Prevents unnecessary updates
+        if (newCursor != null && currentCursor != newCursor) // Prevent unnecessary updates
         {
-            Cursor.SetCursor(cursorTexture, cursorHotspot, CursorMode.Auto);
-            currentCursor = cursorTexture;
-            Debug.Log($"Cursor changed to: {cursorTexture.name}");
+            customCursor.SwapCursor(newCursor); // Call custom cursor script
+            currentCursor = newCursor;
         }
     }
 }
