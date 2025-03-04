@@ -8,6 +8,7 @@ public class BasicEnemyMovement : MonoBehaviour
     public int hp;
     public GameObject player;
 
+    public GameObject hitEffectPrefab;
 
     public void damage(int dam)
     {
@@ -21,9 +22,20 @@ public class BasicEnemyMovement : MonoBehaviour
             hp = 0;
         }
 
+        ShowHitEffect();
+
         if (hp == 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    void ShowHitEffect()
+    {
+        if (hitEffectPrefab != null)
+        {
+            GameObject effect = Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
         }
     }
 

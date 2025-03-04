@@ -985,6 +985,7 @@ MonoBehaviour:
   speed: 2.7
   hp: 100
   player: {fileID: 345364531}
+  hitEffectPrefab: {fileID: 1356325961092716449, guid: cb7d4e54e6d21b649bfd23ee27b38ca6, type: 3}
 --- !u!4 &613999169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 194597565419934787, guid: c5b8619300cb48c4885a8c5b63a7ced3, type: 3}
