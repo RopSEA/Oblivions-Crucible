@@ -14,6 +14,11 @@ public class MatchingElement
     public int MaskIndex;
 	public SpriteRenderer renderer;
     public Color32 Color;
+
+    internal object getComponente<T>()
+    {
+        throw new NotImplementedException();
+    }
 }
 public class SPUM_MatchingList : MonoBehaviour
 {
