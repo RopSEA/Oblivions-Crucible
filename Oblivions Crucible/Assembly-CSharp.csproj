@@ -86,6 +86,7 @@
     <Compile Include="Assets\SPUM\Script\Data\SpumPackage.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumAnimationClip.cs" />
+    <Compile Include="Assets\Scripts\StaminaBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
 
-    [SerializeField] private float BASE_SPEED = 5;
+    [SerializeField] 
+    private float BASE_SPEED = 5;
+    public StaminaBar stamina;
     private Rigidbody2D rb;
     float currentSpeed;
     private Vector3 slideDir;
@@ -50,13 +53,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void dodgeRoll()
     {
-        
-
         if (Input.GetKeyDown("space"))
         {
-            if (Time.time - lastDodge < cooldown)
+
+            int can = stamina.UseStamina(20);
+            if (Time.time - lastDodge < cooldown || can == -1)
             {
-                Debug.Log("hi");
                 return;
             }
 
@@ -82,7 +84,15 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 dir = new Vector3(horizontal, vertical, 0).normalized;
-        slideDir = dir.normalized;
+        if (horizontal == 0 && vertical == 0)
+        {
+            slideDir = new Vector3(1, 0, 0).normalized;
+        }
+        else
+        {
+            slideDir = dir.normalized;
+        }
+        
         rb.velocity = dir * currentSpeed;
     }
     
