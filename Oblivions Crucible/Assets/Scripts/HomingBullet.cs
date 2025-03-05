@@ -29,6 +29,7 @@ public class HomingBullet : MonoBehaviour
         {
             // no enemy found, shoot up
             moveDirection = transform.up;
+            //moveDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
         // destroy bullet after a while
