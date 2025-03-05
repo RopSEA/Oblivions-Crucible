@@ -5,13 +5,17 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public GameObject bulletPrefab;  
-    public Transform firePoint;      
+    public Transform firePoint;
+    public float fireRate = 0.5f; 
+
+    private float nextFireTime = 0f;
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))  
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)  
         {
             Shoot();
+            nextFireTime = Time.time + fireRate;
         }
     }
 
