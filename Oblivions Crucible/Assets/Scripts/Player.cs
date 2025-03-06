@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public BoxCollider2D coll;
     public HealthBar hb;
 
     [SerializeField]
     private int hp = 100;
+
+    public bool invulnerable = false;
 
     void Start()
     {
@@ -22,7 +23,10 @@ public class Player : MonoBehaviour
 
     void damage(int dam)
     {
-        
+        if (invulnerable)
+        {
+            return;
+        }
         
         if (hp - dam > 0)
         {

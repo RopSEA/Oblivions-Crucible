@@ -51,6 +51,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public Vector3 getSlideDir()
+    {
+        return slideDir;
+    }
+
     private void dodgeRoll()
     {
         if (Input.GetKeyDown("space"))
