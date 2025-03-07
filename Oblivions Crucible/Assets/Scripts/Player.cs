@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public HealthBar hb;
+    public coinManager coin;
 
     [SerializeField]
     private int hp = 100;
@@ -47,5 +48,12 @@ public class Player : MonoBehaviour
         {
             damage(25);
         }
+        if (collision.collider.tag == "Coin")
+        {
+                coin.collectCoin();
+                Destroy( collision.gameObject);
+        }
+        
     }
+
 }

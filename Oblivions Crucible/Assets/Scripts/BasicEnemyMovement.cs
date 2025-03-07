@@ -9,6 +9,7 @@ public class BasicEnemyMovement : MonoBehaviour
     public int hp;
     public GameObject player;
     public GameObject hitEffectPrefab;
+    public GameObject coinPrefab;
     public SPUM_MatchingList sprite;
 
     public void damage(int dam)
@@ -29,6 +30,7 @@ public class BasicEnemyMovement : MonoBehaviour
         if (hp == 0)
         {
             Destroy(gameObject);
+            GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
         }
     }
 
