@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
         {
             damage(25);
         }
+
         if (collision.collider.tag == "Coin")
         {
                 coin.collectCoin();

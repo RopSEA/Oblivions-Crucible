@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class Classes : MonoBehaviour
 {
+    public int attack;
+    public int movementSpeed;
+    public float fireRate;
+
     public abstract void priSkill();
     public abstract void secSkill();
 

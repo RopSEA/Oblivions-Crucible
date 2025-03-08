@@ -7,7 +7,7 @@ public class BasicEnemyMovement : MonoBehaviour
 {
     public float speed;
     public int hp;
-    public GameObject player;
+    public Transform player;
     public GameObject hitEffectPrefab;
     public GameObject coinPrefab;
     public SPUM_MatchingList sprite;
@@ -74,6 +74,11 @@ public class BasicEnemyMovement : MonoBehaviour
             GameObject effect = Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
         }
+    }
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Start()

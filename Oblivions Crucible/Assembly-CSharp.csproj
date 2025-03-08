@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\HomingBullet.cs" />
     <Compile Include="Assets\Scripts\EngineerClass.cs" />
+    <Compile Include="Assets\Scripts\TankClass.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumTextureData.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpritePos.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerObj.cs" />
