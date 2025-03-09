@@ -10,10 +10,14 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private bool initializeDataIfNull = false;
 
     [Header("File Storage Config")]
-    [SerializeField] private string fileName = "OCgameData.json";
+    [SerializeField] private string fileName;
     [SerializeField] private bool useEncryption;
 
     private GameData gameData;
+    public GameData GameData // Public getter
+    {
+        get { return gameData; }
+    }
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
 
@@ -59,6 +63,8 @@ public class DataPersistenceManager : MonoBehaviour
     public void NewGame() 
     {
         this.gameData = new GameData();
+        SaveGame();
+        Debug.Log("New Game Started, Save file rest");
     }
 
     public void LoadGame()
