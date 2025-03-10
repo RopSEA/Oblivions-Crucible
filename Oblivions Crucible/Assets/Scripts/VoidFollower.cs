@@ -3,7 +3,7 @@ using UnityEngine;
 public class VoidFollower : MonoBehaviour
 {
     public Transform player; // Assign the player in the Inspector
-    public float followSpeed = 5f; // Adjust for smooth movement
+    public float followSpeed = 2f; // Adjust for smooth movement
     public float baseOffset = 10f; // Base distance from player
     public float transitionSpeed = 3f; // Speed of offset transition
 

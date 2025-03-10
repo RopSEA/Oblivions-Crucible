@@ -33,51 +33,45 @@ public class SpeedsterClass : Classes
 
 
 
-        IEnumerator priCor()
+    IEnumerator priCor()
     {
-        HealthSystem health = gameObject.GetComponent<HealthSystem>();
-        PlayerMovement movement = gameObject.GetComponent<PlayerMovement>();
-
+        Player p = gameObject.GetComponent<Player>();
+        PlayerMovement m = gameObject.GetComponent<PlayerMovement>();
         float cool = priCooldown;
         float dist = 150f;
         Img.fillAmount = 1;
 
-        health.SetInvulnerable(true); 
+        p.invulnerable = true;
         gameObject.GetComponent<TrailRenderer>().emitting = true;
-        p1 = true;
-
         while (dist > 0)
         {
-            gameObject.transform.position += movement.getSlideDir() * 200 * Time.deltaTime;
+            gameObject.transform.position += m.getSlideDir() * 200 * Time.deltaTime;
             yield return new WaitForSeconds(0.01f);
             dist -= 10f;
         }
-
-        health.SetInvulnerable(false); 
-        gameObject.GetComponent<TrailRenderer>().emitting = false;
+        p.invulnerable = false;
         p1 = false;
-        while (cool > 0)
+        gameObject.GetComponent<TrailRenderer>().emitting = false;
+
+        while (cool >  0)
         {
             Img.fillAmount -= 0.5f / priCooldown;
             yield return new WaitForSeconds(0.5f);
             cool -= 0.5f;
         }
-
         Debug.Log("READY PRI");
         pri = false;
     }
 
-
     IEnumerator secCor()
     {
-        HealthSystem health = gameObject.GetComponent<HealthSystem>();
+        Player p = gameObject.GetComponent<Player>();
         float cool = secCooldown;
         float rot = 270;
         Img2.fillAmount = 1;
 
         gameObject.GetComponent<TrailRenderer>().emitting = true;
-        health.SetInvulnerable(true);
-        s = true;
+        p.invulnerable = true;
         while (rot > 0)
         {
             gameObject.transform.RotateAround(orbit.position ,Vector3.forward , 10);
@@ -85,7 +79,7 @@ public class SpeedsterClass : Classes
             rot -= 10f;
         }
         this.transform.Rotate(Vector3.forward, -270);
-        health.SetInvulnerable(false);
+        p.invulnerable = false;
         s = false;
         gameObject.GetComponent<TrailRenderer>().emitting = false;
 

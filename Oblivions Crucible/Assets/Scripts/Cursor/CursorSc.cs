@@ -8,7 +8,7 @@ public class CursorSc : MonoBehaviour
     private Vector3 hotspot = Vector3.zero;
     public Sprite sprite;
     public bool debug = false;
-    public Image image;
+    private Image image;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +21,6 @@ public class CursorSc : MonoBehaviour
         }
         
         image = GetComponent<Image>();
-        if (image == null)
-    {
-        Debug.LogError("CursorSc: Image component is missing! Make sure this script is attached to a UI Image.");
-    }
     }
 
     // Update is called once per frame

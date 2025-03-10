@@ -15,14 +15,10 @@ public class CursorHover : MonoBehaviour
     {
         if (customCursor == null)
         {
-            customCursor = FindObjectOfType<CursorSc>(); 
-
-            if (customCursor == null)
-            {
-                Debug.LogError("CursorHover: No CursorSc script found in the scene!");
-                return;
-            }
+            Debug.LogError("CursorHoverManager: No CursorSc script assigned!");
+            return;
         }
+
         SetCursor(defaultCursor);
     }
 

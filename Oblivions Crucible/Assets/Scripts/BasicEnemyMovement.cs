@@ -31,7 +31,6 @@ public class BasicEnemyMovement : MonoBehaviour
         {
             Destroy(gameObject);
             GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
-            DataPersistenceManager.instance.GameData.enemiesDefeated++;
         }
     }
 
