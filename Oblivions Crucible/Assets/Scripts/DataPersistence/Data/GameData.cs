@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameData
 {
     public List<string> relicsAcquired;
+    public List<string> classesUnlocked;
     public int roundsBeat;
     public int bossesBeat;
     public int enemiesDefeated;

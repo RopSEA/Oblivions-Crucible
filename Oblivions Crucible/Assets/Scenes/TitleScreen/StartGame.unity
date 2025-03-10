@@ -679,6 +679,7 @@ MonoBehaviour:
   targetY: -4.32
   duration: 1
   titleManager: {fileID: 0}
+  uiCanvasGroups: []
 --- !u!114 &1206786701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,7 +1086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d406be04aa0661e44a64f233dee5a932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToSwitchTo: SampleScene
+  sceneToSwitchTo: Arena
 --- !u!212 &2035916053
 SpriteRenderer:
   m_ObjectHideFlags: 0

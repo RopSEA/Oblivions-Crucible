@@ -13,7 +13,7 @@ public class coinManager : MonoBehaviour
     public void collectCoin()
     {
         coinCnt++;
-        text.text = "$ " + coinCnt;
+        text.text = ""+coinCnt;
 
     }
     // Start is called before the first frame update
