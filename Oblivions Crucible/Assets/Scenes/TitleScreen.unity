@@ -597,6 +597,7 @@ MonoBehaviour:
   targetY: 4.32
   duration: 2
   titleManager: {fileID: 1678461764}
+  uiCanvasGroups: []
 --- !u!1 &577074629
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f75349a286817b6479976a10636d3b2c, type: 3}
   debug: 0
+  image: {fileID: 0}
 --- !u!114 &959471829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,6 +823,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959471826}
   m_CullTransparentMesh: 1
+--- !u!1 &1191346100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191346102}
+  - component: {fileID: 1191346101}
+  m_Layer: 0
+  m_Name: DataPersistenceMananger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1191346101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191346100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 484fda4950de8e440b8ecffe67a73330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initializeDataIfNull: 0
+  fileName: data.json
+  useEncryption: 0
+--- !u!4 &1191346102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191346100}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 575.22833, y: 517.99744, z: -3.5184305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1274329764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,3 +1599,4 @@ SceneRoots:
   - {fileID: 1678461765}
   - {fileID: 1346592907}
   - {fileID: 400998151}
+  - {fileID: 1191346102}
