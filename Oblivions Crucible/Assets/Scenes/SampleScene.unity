@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 217058456}
   - component: {fileID: 217058455}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FillImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 415152909}
   - component: {fileID: 415152908}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1687,7 +1687,7 @@ GameObject:
   - component: {fileID: 979880451}
   - component: {fileID: 979880450}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FillImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2616,6 +2616,11 @@ MonoBehaviour:
   followSpeed: 10
   baseOffset: 3
   transitionSpeed: 1
+--- !u!4 &1505593813 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5174008474777140480, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+  m_PrefabInstance: {fileID: 1066298673714266466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1611742101
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,7 +4215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.7
   hp: 100
-  player: {fileID: 8063756498683935926}
+  player: {fileID: 7625292206122871142}
   hitEffectPrefab: {fileID: 1356325961092716449, guid: cb7d4e54e6d21b649bfd23ee27b38ca6, type: 3}
   coinPrefab: {fileID: 5703412304476496435, guid: e69270b9ace1eac47bf25c47dbb745fc, type: 3}
   sprite: {fileID: 835109313}
@@ -4387,7 +4392,7 @@ GameObject:
   - component: {fileID: 2080091580}
   - component: {fileID: 2080091579}
   m_Layer: 5
-  m_Name: Image
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4715,7 +4720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5587817374825164116, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6256655540919496318, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
       propertyPath: hb
@@ -4766,9 +4771,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972882229}
     - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: Img
+      value: 
+      objectReference: {fileID: 217058455}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: Img2
+      value: 
+      objectReference: {fileID: 979880450}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
       propertyPath: attack
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: turretLoc
+      value: 
+      objectReference: {fileID: 1505593813}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: turretloc
+      value: 
+      objectReference: {fileID: 1505593813}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: priCooldown
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: secCooldown
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5410369507910317251, guid: 1f6cddae3c2cbb1449b0b3e220de1fb3, type: 3}
     - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
       propertyPath: movementSpeed
       value: 2
@@ -4959,7 +4992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8368251093281841570, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

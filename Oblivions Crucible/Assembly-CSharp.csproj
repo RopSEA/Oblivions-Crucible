@@ -67,6 +67,7 @@
     <Compile Include="Assets\SPUM\Script\Data\SPUM_Prefabs.cs" />
     <Compile Include="Assets\Scripts\Classes.cs" />
     <Compile Include="Assets\Scripts\BasicEnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\ForwardBullet.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_AnimationData.cs" />
     <Compile Include="Assets\Scripts\SpeedsterClass.cs" />
     <Compile Include="Assets\Scripts\Cursor\UICategory.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumAnimationClip.cs" />
     <Compile Include="Assets\Scripts\StaminaBar.cs" />
+    <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\TitleScreenManager.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_MatchingList.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
