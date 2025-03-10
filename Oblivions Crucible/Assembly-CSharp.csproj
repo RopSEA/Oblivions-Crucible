@@ -75,7 +75,6 @@
     <Compile Include="Assets\SPUM\Script\Data\PreviewMatchingElement.cs" />
     <Compile Include="Assets\Scripts\HomingBullet.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuScene.cs" />
-    <Compile Include="Assets\Scripts\EngineerClass.cs" />
     <Compile Include="Assets\Scripts\MainMenu\QuitApp.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumTextureData.cs" />
     <Compile Include="Assets\Scripts\MainMenu\TitleScreenManager.cs" />
@@ -91,6 +90,7 @@
     <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\BasicEnemyMovement.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\Data\GameData.cs" />
+    <Compile Include="Assets\Scripts\Classes\EngineerClass.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorHover.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />

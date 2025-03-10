@@ -23,6 +23,14 @@ public class MainMenuOption : MonoBehaviour
         if (!string.IsNullOrEmpty(sceneToSwitchTo))
         {
             SwitchScene(sceneToSwitchTo);
+            //New save data
+            if (sceneToSwitchTo == "IntroCut"){
+                Debug.Log("Starting a new game...");
+
+                FindObjectOfType<DataPersistenceManager>().NewGame();
+                FindObjectOfType<DataPersistenceManager>().SaveGame();
+            }
+
         }
     }
 

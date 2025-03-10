@@ -224,6 +224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f829e0bd0009bc04bafb041e491928eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: 0
+  movementSpeed: 0
+  fireRate: 0
+  turretPrefab: {fileID: 5038439848783105892, guid: d0243e2512f3da04192f1bc5c783f9e5, type: 3}
+  turretloc: {fileID: 0}
 --- !u!114 &225485468215736042
 MonoBehaviour:
   m_ObjectHideFlags: 0
