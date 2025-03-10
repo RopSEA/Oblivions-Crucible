@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; // Import TextMeshPro namespace
 using System.Collections;
 
 public class StatsDisplay : MonoBehaviour
@@ -10,15 +11,13 @@ public class StatsDisplay : MonoBehaviour
     public StatType selectedStat; // Dropdown in Inspector
 
     [Header("UI Elements")]
-    public Image[] digitImages; 
-    public Sprite[] numberSprites; 
+    public TMP_Text statText; // TextMeshPro Text Field
     public CanvasGroup statsCanvasGroup; 
 
     private int statValue = 0;
 
     void Start()
     {
-        
         if (statsCanvasGroup != null)
         {
             statsCanvasGroup.alpha = 0f;
@@ -63,32 +62,11 @@ public class StatsDisplay : MonoBehaviour
 
     void UpdateNumberDisplay(int value)
     {
-        string valueStr = value.ToString();
-        float baseSpacing = 35f; // Default spacing
-        float narrowSpacing = 32f; // Reduce spacing for narrow numbers like "1"
-        float currentX = 0f;
-
-        for (int i = 0; i < digitImages.Length; i++)
+        if (statText != null)
         {
-            if (i < valueStr.Length)
-            {
-                int digit = valueStr[i] - '0';
-                digitImages[i].sprite = numberSprites[digit];
-                digitImages[i].enabled = true;
-
-                // Adjust spacing dynamically (use narrowSpacing for "1", otherwise baseSpacing)
-                float digitWidth = (digit == 1) ? narrowSpacing : baseSpacing;
-                digitImages[i].rectTransform.localPosition = new Vector2(currentX, 0);
-
-                currentX += digitWidth; // Move to the next position
-            }
-            else
-            {
-                digitImages[i].enabled = false;
-            }
+            statText.text = value.ToString(); // Directly set the text
         }
     }
-
 
     IEnumerator FadeInStats(float delay, float duration)
     {

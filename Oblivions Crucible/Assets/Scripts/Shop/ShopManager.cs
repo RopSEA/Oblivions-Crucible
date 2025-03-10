@@ -11,7 +11,7 @@ public class ShopManager : MonoBehaviour
 
     [Header("Player Stats & Currency")]
     public PlayerStats playerStats;
-    public int playerCurrency = 100;
+
 
     private List<ShopItem> availableItems = new List<ShopItem>();
     private ShopItem[] displayedItems = new ShopItem[3];
@@ -75,7 +75,6 @@ public class ShopManager : MonoBehaviour
 
             Debug.Log($"✅ Purchased {selectedItem.itemName}. Remaining Coins: {coinManager.instance.GetCoinCount()}");
 
-            // Notify ShopDisplay to update UI
             ShopDisplay.instance.UpdateShopUI(displayedItems);
         }
         else
