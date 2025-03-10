@@ -13,6 +13,7 @@ public class BasicEnemyMovement : MonoBehaviour
     public GameObject hitEffectPrefab;
     public GameObject coinPrefab;
     public SPUM_MatchingList sprite;
+    public bool isTest;
     private GameObject enemy;
 
     public void damage(int dam)
@@ -34,7 +35,7 @@ public class BasicEnemyMovement : MonoBehaviour
         {
             Destroy(gameObject);
             GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
-            DataPersistenceManager.instance.GameData.enemiesDefeated++;
+            //DataPersistenceManager.instance.GameData.enemiesDefeated++;
         }
     }
 
@@ -82,7 +83,13 @@ public class BasicEnemyMovement : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        gameObject.GetComponent<BasicEnemyMovement>().enabled = true;
+
+        if (isTest == true)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        
     }
 
     private void Start()
@@ -94,11 +101,17 @@ public class BasicEnemyMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+
+        Debug.Log(player);
+        
         if (player == null)
         {
-            FindPlayer(); 
+            Debug.Log("hi no player found");
+            FindPlayer();
+            return;
         }
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        
     }
 
     void FindPlayer()
