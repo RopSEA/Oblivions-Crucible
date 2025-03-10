@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class BasicEnemyMovement : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class BasicEnemyMovement : MonoBehaviour
     public GameObject hitEffectPrefab;
     public GameObject coinPrefab;
     public SPUM_MatchingList sprite;
+    private GameObject enemy;
 
     public void damage(int dam)
     {
@@ -82,13 +85,33 @@ public class BasicEnemyMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    void Start()
+    private void Start()
     {
-
+        enemy = this.gameObject;
+        FindPlayer();
+        enemy.SetActive(true);
     }
 
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        if (player == null)
+        {
+            FindPlayer(); 
+        }
+    }
+
+    void FindPlayer()
+    {
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+            Debug.Log("Enemy found player: " + player.name);
+        }
+        else
+        {
+            Debug.LogWarning("No player found!");
+        }
     }
 }
