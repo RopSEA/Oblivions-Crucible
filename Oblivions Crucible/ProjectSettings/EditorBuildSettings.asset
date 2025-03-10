@@ -26,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlay/IntroCut.unity
     guid: a2d99876661587f429e68767ae5709c7
-  - enabled: 1
-    path: Assets/Scenes/TitleScreen/RunPrep.unity
-    guid: 2a6a915d903cbd84ea3e3ffb755cb73f
   m_configObjects: {}
