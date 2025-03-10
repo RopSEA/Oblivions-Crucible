@@ -9,6 +9,7 @@ public class HealthSystem : MonoBehaviour
     public HealthBar healthBar; 
     public delegate void OnDeathDelegate(); // Event to trigger on death
     public event OnDeathDelegate OnDeath; // Subscribe other scripts to this
+    public RoundManager r;
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class HealthSystem : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Died!");
+        r.Lose();
 
         if (DataPersistenceManager.instance != null && DataPersistenceManager.instance.GameData != null)
         {
@@ -65,6 +67,7 @@ public class HealthSystem : MonoBehaviour
             Debug.LogError("DataPersistenceManager or gameData is null! Cannot increment death count.");
         }
         OnDeath?.Invoke();
+        
     }
 
     public void SetInvulnerable(bool value)

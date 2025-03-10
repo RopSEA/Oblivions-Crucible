@@ -15,6 +15,7 @@ public class ShopDisplay : MonoBehaviour
     public Button[] buyButtons;
     public Button exitButton;
     public bool debugShowShop = false;
+    public bool Shop = false;
 
     void Awake()
     {
@@ -53,6 +54,7 @@ public class ShopDisplay : MonoBehaviour
         shopCanvasGroup.alpha = 1;
         shopCanvasGroup.interactable = true;
         shopCanvasGroup.blocksRaycasts = true;
+        Shop = true;
         Time.timeScale = 0f;
     }
 
@@ -62,6 +64,8 @@ public class ShopDisplay : MonoBehaviour
         shopCanvasGroup.alpha = 0;
         shopCanvasGroup.interactable = false;
         shopCanvasGroup.blocksRaycasts = false;
+        Shop = false;
+        
         Time.timeScale = 1f;
     }
 }

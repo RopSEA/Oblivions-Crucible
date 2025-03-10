@@ -68,9 +68,11 @@
     <Compile Include="Assets\Scripts\Classes\TankClass.cs" />
     <Compile Include="Assets\Scripts\Classes\Classes.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_Prefabs.cs" />
+    <Compile Include="Assets\Scripts\Shop\ShopItem.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\FileDataHandler.cs" />
     <Compile Include="Assets\Scripts\ForwardBullet.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_AnimationData.cs" />
+    <Compile Include="Assets\Scripts\Shop\ShopPriceDisplay.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\IDataPersistence.cs" />
     <Compile Include="Assets\Scripts\Cursor\UICategory.cs" />
     <Compile Include="Assets\SPUM\Script\Data\PreviewMatchingElement.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="Assets\SPUM\Script\Data\SPUM_MatchingList.cs" />
     <Compile Include="Assets\Scripts\Classes\SpeedsterClass.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\Shop\ShopDisplay.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Round.cs" />
     <Compile Include="Assets\Scripts\Enemies\BasicEnemyMovement.cs" />

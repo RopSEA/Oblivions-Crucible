@@ -13,8 +13,11 @@ public class RoundManager : MonoBehaviour
     public GameObject enemy;
     public TMP_Text roundText;
     public TMP_Text waitText;
+    public TMP_Text endText;
     private int currRound;
     private int currDef;
+    private bool isShop;
+    public ShopDisplay shop;
 
     public enum roundKind
     {
@@ -43,13 +46,16 @@ public class RoundManager : MonoBehaviour
             if (currDef >= req[currRound])
             {
                 StartCoroutine(intermission(5));
+                return;
                 //updateRound();
             }
+
             return;
         }
         
         if (currDef >= req[currRound])
         {
+            
             return;
         }
 
@@ -65,18 +71,37 @@ public class RoundManager : MonoBehaviour
 
         if (round[curr] == roundKind.Normal)
         {
-            //Debug.Log("Basic Round");
             spawnEnemies();
         }
         if (round[curr] == roundKind.Shop)
         {
             //Debug.Log("ShopNow");
             roundText.text = "Buy Round " + (currRound + 1);
+
+            if (isShop == false)
+            {
+                isShop = true;
+                StartCoroutine(shopRound());
+            }
+            
+
         }
         if (round[curr] == roundKind.Boss)
         {
            // Debug.Log("BOSS");
         }
+    }
+
+    IEnumerator shopRound()
+    {
+        shop.ShowShop();
+
+        while (shop.Shop == true)
+        {
+            yield return null;
+        }
+
+        updateRound();
     }
 
     IEnumerator intermission(int Wait)
@@ -94,9 +119,29 @@ public class RoundManager : MonoBehaviour
         yield return null;
     }
 
+    void Victory()
+    {
+        endText.text = "VICTORY!!";
+        endText.color = Color.green;
+        Time.timeScale = 0;
+    }
+
+    public void Lose()
+    {
+        endText.text = "GAME OVER";
+        endText.color = Color.red;
+        Time.timeScale = 0;
+    }
+
 
     void updateRound()
     {
+
+        if (currRound + 1 >= round.Count)
+        {
+            Victory();
+            return;
+        }
         Debug.Log("FINISHED ROUND");
 
         currRound++;
@@ -110,6 +155,8 @@ public class RoundManager : MonoBehaviour
         roundText.text = "Round " + (currRound + 1);
         waitText.text = "";
         currRound = 0;
+
+        determineRound(currRound);
     }
 
     // Update is called once per frame
