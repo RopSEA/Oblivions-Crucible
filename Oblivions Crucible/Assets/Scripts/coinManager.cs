@@ -1,24 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+
 
 public class coinManager : MonoBehaviour
 {
+    public static coinManager instance; 
     public TMP_Text text;
     private int coinCnt = 0;
 
-
-    public void collectCoin()
+    void Awake()
     {
-        coinCnt++;
-        text.text = ""+coinCnt;
-
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
     }
-    // Start is called before the first frame update
+
     void Start()
     {
-        int coinCnt = 0;
+        UpdateCoinUI();
+    }
+
+    public void CollectCoin()
+    {
+        coinCnt++;
+        UpdateCoinUI();
+    }
+
+    public bool SpendCoins(int amount)
+    {
+        if (coinCnt >= amount)
+        {
+            coinCnt -= amount;
+            UpdateCoinUI();
+            return true;
+        }
+        else
+        {
+            Debug.Log("Not enough coins!");
+            return false;
+        }
+    }
+
+    void UpdateCoinUI()
+    {
+        if (text != null)
+            text.text = coinCnt.ToString();
+    }
+
+    public int GetCoinCount()
+    {
+        return coinCnt;
     }
 }

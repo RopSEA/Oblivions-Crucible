@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
         if (collision.collider.CompareTag("Coin"))
         {
-            coin.collectCoin();
+            coin.CollectCoin();
             Destroy(collision.gameObject);
         }
     }
