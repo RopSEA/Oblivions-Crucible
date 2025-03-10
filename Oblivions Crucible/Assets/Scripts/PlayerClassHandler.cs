@@ -6,11 +6,27 @@ public class PlayerClassHandler : MonoBehaviour
 {
     public GameObject speedsterPrefab;
     public GameObject engineerPrefab;
-    private GameObject playerInstance;
+    public GameObject playerInstance;
+    public GameObject playerInstance2;
     public CameraFollow cameraFollow;
 
+
+
+    private void Awake()
+    {
+        string selectedClass = ClassSelectionManager.Instance.selectedClass;
+        if (selectedClass != "" && selectedClass == "Speedster") 
+        {
+            playerInstance = playerInstance2;
+        }
+        playerInstance.SetActive(true);
+        cameraFollow.enabled = true;
+        cameraFollow.SetTarget(playerInstance.transform);
+    }
     private void Start()
     {
+        /*
+
         if (ClassSelectionManager.Instance == null)
         {
             Debug.LogError("No class selected! Returning to selection scene.");
@@ -42,5 +58,6 @@ public class PlayerClassHandler : MonoBehaviour
             cameraFollow.SetTarget(playerInstance.transform);
             Debug.Log("Camera is now following the player!");
         }
+        */
     }
 }
