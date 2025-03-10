@@ -80,9 +80,8 @@
     <Compile Include="Assets\Scripts\MainMenu\TitleScreenManager.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpritePos.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerObj.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumAnimationClip.cs" />
-    <Compile Include="Assets\Scripts\StaminaBar.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_MatchingList.cs" />
     <Compile Include="Assets\Scripts\Classes\SpeedsterClass.cs" />
@@ -91,17 +90,22 @@
     <Compile Include="Assets\Scripts\Enemies\BasicEnemyMovement.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\Data\GameData.cs" />
     <Compile Include="Assets\Scripts\Classes\EngineerClass.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorHover.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthSystem.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Player\StaminaBar.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\DataPersistenceManager.cs" />
+    <Compile Include="Assets\Scripts\Shop\ShopManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuItemsManager.cs" />
     <Compile Include="Assets\Scripts\Boundary.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\camerapan.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumPackage.cs" />
     <Compile Include="Assets\Scripts\MainMenu\StatsDisplay.cs" />
+    <Compile Include="Assets\Scripts\Player\MenuUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
