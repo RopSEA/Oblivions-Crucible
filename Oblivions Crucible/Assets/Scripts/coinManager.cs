@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using static Coin;
 
 
 public class coinManager : MonoBehaviour
@@ -22,10 +23,45 @@ public class coinManager : MonoBehaviour
 
     public void CollectCoin(GameObject coin)
     {
+        coinType temp = coin.GetComponent<Coin>().coinT;
+
+        if (temp == coinType.Normal)
+        {
+            CollectYellowCoin(coin);
+        }
+        if (temp == coinType.Red)
+        {
+            CollectRedCoin(coin);
+        }
+        if (temp == coinType.Blue)
+        {
+            CollectBlueCoin(coin);
+        }
+
+    }
+
+    public void CollectYellowCoin(GameObject coin)
+    {
         showCollectEffect(coin);
         coinCnt++;
         UpdateCoinUI();
         
+    }
+
+    public void CollectRedCoin(GameObject coin)
+    {
+        showCollectEffect(coin);
+        coinCnt += 5;
+        UpdateCoinUI();
+
+    }
+
+    public void CollectBlueCoin(GameObject coin)
+    {
+        showCollectEffect(coin);
+        coinCnt += 10;
+        UpdateCoinUI();
+
     }
 
     public void showCollectEffect(GameObject coin)
