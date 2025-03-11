@@ -4,7 +4,8 @@ using TMPro;
 
 public class coinManager : MonoBehaviour
 {
-    public static coinManager instance; 
+    public static coinManager instance;
+    public GameObject coinEffect;
     public TMP_Text text;
     private int coinCnt = 0;
 
@@ -19,10 +20,21 @@ public class coinManager : MonoBehaviour
         UpdateCoinUI();
     }
 
-    public void CollectCoin()
+    public void CollectCoin(GameObject coin)
     {
+        showCollectEffect(coin);
         coinCnt++;
         UpdateCoinUI();
+        
+    }
+
+    public void showCollectEffect(GameObject coin)
+    {
+        if (coinEffect != null)
+        {
+            GameObject effect = Instantiate(coinEffect, coin.transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
+        }
     }
 
     public bool SpendCoins(int amount)

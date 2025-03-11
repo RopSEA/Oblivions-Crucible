@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\coinManager.cs" />
     <Compile Include="Assets\Scripts\VoidFollower.cs" />
+    <Compile Include="Assets\Scripts\GenerateEnemies.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorSc.cs" />
     <Compile Include="Assets\Scripts\RoundManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\NewGame.cs" />
