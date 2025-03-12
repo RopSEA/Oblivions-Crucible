@@ -18,6 +18,7 @@ public class RoundManager : MonoBehaviour
     private int currDef;
     private bool isShop;
     public ShopDisplay shop;
+    private int temp;
 
     public enum roundKind
     {
@@ -47,7 +48,6 @@ public class RoundManager : MonoBehaviour
             {
                 StartCoroutine(intermission(5));
                 return;
-                //updateRound();
             }
 
             return;
@@ -55,13 +55,15 @@ public class RoundManager : MonoBehaviour
         
         if (currDef >= req[currRound])
         {
-            
+            //Debug.Log("huh");
             return;
         }
 
         for (int i = 0; i < spawns.Count; i++)
         {
+            
             temp = Instantiate(enemy, spawns[i].position, spawns[i].rotation);
+            temp.GetComponent<BasicEnemyMovement>().enabled = true;
             enemys.Add(temp);
         }
     }
@@ -150,18 +152,22 @@ public class RoundManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+       
+       // DontDestroyOnLoad(this.gameObject);
+        
         roundText.text = "Round " + (currRound + 1);
         waitText.text = "";
         currRound = 0;
+        currDef = 0;
 
-        determineRound(currRound);
     }
 
     // Update is called once per frame
     void Update()
     {
+
         determineRound(currRound);
     }
 }
