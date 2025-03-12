@@ -655,6 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   className: Engineer
+  sceneToLoad: Arena
 --- !u!61 &736127796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1048,6 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   className: Speedster
+  sceneToLoad: Arena
 --- !u!61 &1251484943
 BoxCollider2D:
   m_ObjectHideFlags: 0

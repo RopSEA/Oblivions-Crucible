@@ -10,7 +10,7 @@ public class ShopManager : MonoBehaviour
 
 
     [Header("Player Stats & Currency")]
-    public PlayerStats playerStats;
+
 
 
     private List<ShopItem> availableItems = new List<ShopItem>();
@@ -45,7 +45,8 @@ public class ShopManager : MonoBehaviour
     {
         List<ShopItem> tempList = new List<ShopItem>(availableItems);
         for (int i = 0; i < 3; i++)
-        {
+        {   
+            if (tempList.Count == 0) break;
             int randomIndex = Random.Range(0, tempList.Count);
             displayedItems[i] = tempList[randomIndex];
             tempList.RemoveAt(randomIndex);
@@ -56,30 +57,46 @@ public class ShopManager : MonoBehaviour
     {
         if (index < 0 || index >= displayedItems.Length)
         {
-            Debug.LogError($"❌ ERROR: Invalid item index {index} in BuyItem().");
+            Debug.LogError($" ERROR: Invalid item index {index} in BuyItem().");
             return;
         }
 
         ShopItem selectedItem = displayedItems[index];
-        Debug.Log($"🛒 Attempting to buy {selectedItem.itemName} for {selectedItem.cost} coins");
+        Debug.Log($" Attempting to buy {selectedItem.itemName} for {selectedItem.cost} coins");
 
         if (coinManager.instance.SpendCoins(selectedItem.cost))
         {
-            playerStats.Strength += selectedItem.strengthBoost;
-            playerStats.Vitality += selectedItem.vitalityBoost;
-            playerStats.Stamina += selectedItem.staminaBoost;
-            playerStats.Intelligence += selectedItem.intelligenceBoost;
-            playerStats.Defense += selectedItem.defenseBoost;
+            //  Fetch PlayerStats from MenuUIManager
+            if (MenuUIManager.instance != null && MenuUIManager.instance.playerStats != null)
+            {
+                PlayerStats playerStats = MenuUIManager.instance.playerStats;
 
-            playerStats.OwnedUpgrades.Add(selectedItem.itemName);
+                // Update Player Stats
+                playerStats.Strength += selectedItem.strengthBoost;
+                playerStats.Vitality += selectedItem.vitalityBoost;
+                playerStats.Stamina += selectedItem.staminaBoost;
+                playerStats.Intelligence += selectedItem.intelligenceBoost;
+                playerStats.Defense += selectedItem.defenseBoost;
 
-            Debug.Log($"✅ Purchased {selectedItem.itemName}. Remaining Coins: {coinManager.instance.GetCoinCount()}");
+                playerStats.OwnedUpgrades.Add(selectedItem.itemName);
 
-            ShopDisplay.instance.UpdateShopUI(displayedItems);
+                Debug.Log($" Purchased {selectedItem.itemName}. Remaining Coins: {coinManager.instance.GetCoinCount()}");
+
+                //  Update the Shop UI
+                ShopDisplay.instance.UpdateShopUI(displayedItems);
+
+                // Ensure Menu UI updates with new stats
+                MenuUIManager.instance.UpdateMenuStats();
+                Debug.Log(" Menu UI updated after purchase.");
+            }
+            else
+            {
+                Debug.LogError(" ERROR: MenuUIManager instance or PlayerStats not found!");
+            }
         }
         else
         {
-            Debug.Log("❌ Not enough coins!");
+            Debug.Log(" Not enough coins!");
         }
     }
 }

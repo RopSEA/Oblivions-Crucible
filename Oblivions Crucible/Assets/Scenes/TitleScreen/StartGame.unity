@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d406be04aa0661e44a64f233dee5a932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToSwitchTo: RunPrep
+  sceneToSwitchTo: Selection
 --- !u!212 &1873340127
 SpriteRenderer:
   m_ObjectHideFlags: 0
