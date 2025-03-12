@@ -908,7 +908,7 @@ PrefabInstance:
     - target: {fileID: 6155612298037395856, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
       propertyPath: coin
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 493008228}
     - target: {fileID: 8221405902211200114, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0084
@@ -6039,7 +6039,7 @@ MonoBehaviour:
   - {fileID: 3236882438201861303}
   - {fileID: 6254426752758847404}
   exitButton: {fileID: 2913513574789550091}
-  debugShowShop: 1
+  debugShowShop: 0
   Shop: 0
 --- !u!1 &8437478468167678118
 GameObject:
