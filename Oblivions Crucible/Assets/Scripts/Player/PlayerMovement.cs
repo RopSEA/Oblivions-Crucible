@@ -88,9 +88,11 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+
         Vector3 dir = new Vector3(horizontal, vertical, 0).normalized;
         if (horizontal == 0 && vertical == 0)
         {
+            rb.velocity = Vector2.zero;
             slideDir = new Vector3(1, 0, 0).normalized;
         }
         else
