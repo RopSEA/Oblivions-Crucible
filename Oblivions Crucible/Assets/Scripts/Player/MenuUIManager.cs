@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class MenuUIManager : MonoBehaviour
 {
+    public static MenuUIManager instance;
     public CanvasGroup menuCanvasGroup;
     public KeyCode toggleKey = KeyCode.Escape;
 
@@ -18,8 +19,20 @@ public class MenuUIManager : MonoBehaviour
     private bool isMenuOpen = false;
 
     [Header("Player Stats Reference")]
-    public PlayerStats playerStats; // Assign the PlayerStats script in the Inspector
+    public PlayerStats playerStats; 
 
+    void Awake()
+    {
+        if (instance == null) 
+        {
+            instance = this;
+        }
+        else 
+        {
+            Debug.LogError(" Multiple MenuUIManager instances detected! Destroying duplicate.");
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         SetMenuVisibility(false, false);
@@ -74,7 +87,7 @@ public class MenuUIManager : MonoBehaviour
         menuCanvasGroup.blocksRaycasts = fadeIn;
     }
 
-    void UpdateMenuStats()
+    public void UpdateMenuStats()
     {
         if (playerStats != null) // Ensure playerStats is assigned
         {

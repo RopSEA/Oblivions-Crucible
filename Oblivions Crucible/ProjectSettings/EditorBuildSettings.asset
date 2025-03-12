@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlay/IntroCut.unity
     guid: a2d99876661587f429e68767ae5709c7
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen/Selection.unity
+    guid: 0cfd7e416ab185b468523b59a00f6d08
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/QuangTest.unity
+    guid: 6f05a41c492821d428e2fbe064593c02
   m_configObjects: {}

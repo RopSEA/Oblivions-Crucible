@@ -773,6 +773,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 855113227777441561, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
+      propertyPath: Img
+      value: 
+      objectReference: {fileID: 217058455}
+    - target: {fileID: 855113227777441561, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
+      propertyPath: Img2
+      value: 
+      objectReference: {fileID: 979880450}
+    - target: {fileID: 4393453523076955288, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
+      propertyPath: stamina
+      value: 
+      objectReference: {fileID: 870622039}
+    - target: {fileID: 5782437951516275719, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 467705616}
+    - target: {fileID: 5782437951516275719, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
+      propertyPath: coinCnt
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8221405902211200114, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0084
@@ -824,13 +844,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8368251093281841570, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 521995833}
   m_SourcePrefab: {fileID: 100100000, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
 --- !u!1 &521995828 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8368251093281841570, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
   m_PrefabInstance: {fileID: 521995827}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &521995833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521995828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097c898939ad0044c96cd5227501678b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 1795489495}
+  r: {fileID: 493008227}
 --- !u!1 &554428969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1933,6 +1971,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979880448}
   m_CullTransparentMesh: 1
+--- !u!4 &1026200252 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5174008474777140480, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+  m_PrefabInstance: {fileID: 1382257928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1040151334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,7 +2069,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedsterPrefab: {fileID: 521995828}
   engineerPrefab: {fileID: 1382257929}
-  cameraFollow: {fileID: 0}
+  playerInstance: {fileID: 1382257929}
+  playerInstance2: {fileID: 521995828}
+  cameraFollow: {fileID: 519420033}
 --- !u!4 &1136559529
 Transform:
   m_ObjectHideFlags: 0
@@ -2312,6 +2357,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 225485468215736042, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 467705616}
+    - target: {fileID: 225485468215736042, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: coinCnt
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5587817374825164116, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
       propertyPath: m_Name
       value: Enginneer
@@ -2360,16 +2413,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8108706321216333000, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: stamina
+      value: 
+      objectReference: {fileID: 870622039}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: Img
+      value: 
+      objectReference: {fileID: 217058455}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: Img2
+      value: 
+      objectReference: {fileID: 979880450}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: turretLoc
+      value: 
+      objectReference: {fileID: 1026200252}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: priCooldown
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: secCooldown
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5410369507910317251, guid: 1f6cddae3c2cbb1449b0b3e220de1fb3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5587817374825164116, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 1382257932}
   m_SourcePrefab: {fileID: 100100000, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
 --- !u!1 &1382257929 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5587817374825164116, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
   m_PrefabInstance: {fileID: 1382257928}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1382257932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382257929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097c898939ad0044c96cd5227501678b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 1795489495}
+  r: {fileID: 493008227}
 --- !u!1 &1406899357
 GameObject:
   m_ObjectHideFlags: 0
@@ -3533,13 +3632,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopRound: 5
-  playerStats:
-    Strength: 10
-    Vitality: 10
-    Stamina: 10
-    Intelligence: 10
-    Defense: 10
-    OwnedUpgrades: []
 --- !u!222 &593798108765311571
 CanvasRenderer:
   m_ObjectHideFlags: 0
