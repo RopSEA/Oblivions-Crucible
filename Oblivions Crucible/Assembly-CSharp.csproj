@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Classes\Classes.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_Prefabs.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\RPGTalkLanguage.cs" />
+    <Compile Include="Assets\Scripts\EnemyHomingBullet.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopItem.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkFollowCharacter.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\FileDataHandler.cs" />
@@ -110,7 +111,6 @@
     <Compile Include="Assets\Scripts\HealthSystem\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopDisplay.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\Round.cs" />
     <Compile Include="Assets\Scripts\Enemies\BasicEnemyMovement.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalk.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\Data\GameData.cs" />
@@ -119,6 +119,7 @@
     <Compile Include="Assets\Scripts\Cursor\CursorHover.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkCinematic\RPGTalkCinematicClip.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkCanPassWarning.cs" />
+    <Compile Include="Assets\Scripts\rangedEnemy.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Player\StaminaBar.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />

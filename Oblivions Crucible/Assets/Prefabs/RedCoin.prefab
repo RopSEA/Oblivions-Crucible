@@ -249,4 +249,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   pref: {fileID: 0}
-  coin: {fileID: 0}
+  coin: {fileID: 4038406915976980595}

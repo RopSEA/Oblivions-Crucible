@@ -15,14 +15,16 @@ GameObject:
   - component: {fileID: 988694195994928}
   - component: {fileID: 2037604398969014872}
   - component: {fileID: 2725931731785588860}
+  - component: {fileID: 6360617435420821946}
   - component: {fileID: 328449620893641808}
+  - component: {fileID: 7865037697545075353}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5051167122011433635
 Transform:
   m_ObjectHideFlags: 0
@@ -192,10 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffefae994e50c748aa7cbadd2e6487c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hb: {fileID: 0}
   coin: {fileID: 328449620893641808}
-  hp: 100
-  invulnerable: 0
 --- !u!114 &2725931731785588860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +210,21 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1339797637058320468, guid: dff2e4f4aec480841aa65e6a49a9ebe6, type: 3}
   firePoint: {fileID: 5165242356584928563}
   fireRate: 0.5
+--- !u!114 &6360617435420821946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558691040507776450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c427c4cd3840c4d869d67fb2f99731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 50
+  movementSpeed: 1
+  fireRate: 0
 --- !u!114 &328449620893641808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +237,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ddcc7089cdc4e94a8be85e4da8d52ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinEffect: {fileID: 0}
   text: {fileID: 0}
+  coinCnt: 50
+--- !u!114 &7865037697545075353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558691040507776450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097c898939ad0044c96cd5227501678b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  r: {fileID: 0}
 --- !u!1 &1175641578923648422
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4653941335150068188, guid: 81a169a76bbaf4c54b41b6823890732f, type: 3}
       propertyPath: m_Name
-      value: SPUM_20240911215639662
+      value: TankSprite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

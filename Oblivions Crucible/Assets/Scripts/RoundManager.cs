@@ -85,9 +85,6 @@ public class RoundManager : MonoBehaviour
 
         for (int i = len - 1 ; i >= 0; i--)
         {
-            // 90 >= 20
-            // 90 >= 80
-
             curr = 100 - enemyTypeFreq[i];
             if (freq + 1 >= curr)
             {
