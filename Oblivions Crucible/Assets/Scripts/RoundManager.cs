@@ -11,6 +11,8 @@ public class RoundManager : MonoBehaviour
     public List<Transform> spawns = new List<Transform>();
     public List<GameObject> enemys = new List<GameObject>();
     public GameObject enemy;
+    public List<GameObject> enemyType = new List<GameObject>();
+    public List<int> enemyTypeFreq = new List<int>();
     public TMP_Text roundText;
     public TMP_Text waitText;
     public TMP_Text endText;
@@ -30,10 +32,13 @@ public class RoundManager : MonoBehaviour
     public void spawnEnemies()
     {
         GameObject temp = null;
+        int rand = Random.Range(0,8);
+        int freq;
+        int enem;
         // Fix LATER:  better optimize
         if (enemys.Count > 0)
         {
-            for (int i = 0; i < spawns.Count; i++)
+            for (int i = 0; i < 5; i++)
             {
                 if (enemys[i] != null)
                 {
@@ -41,7 +46,7 @@ public class RoundManager : MonoBehaviour
                 }
             }
 
-            currDef += spawns.Count;
+            currDef += 5;
             enemys.Clear();
 
             if (currDef >= req[currRound])
@@ -59,13 +64,38 @@ public class RoundManager : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < spawns.Count; i++)
+        // Spawn Enemies
+        for (int i = 0; i < 5; i++)
         {
-            
-            temp = Instantiate(enemy, spawns[i].position, spawns[i].rotation);
+            freq = Random.Range(0, 99);
+            enem = chooseEnemy(freq);
+            rand = Random.Range(0, 8);
+
+            Debug.Log(enem + " nfiuwn " + rand);
+            temp = Instantiate(enemyType[enem], spawns[rand].position, spawns[rand].rotation);
             temp.GetComponent<BasicEnemyMovement>().enabled = true;
             enemys.Add(temp);
         }
+    }
+
+    int chooseEnemy(int freq)
+    {
+        int len = enemyTypeFreq.Count;
+        int curr;
+
+        for (int i = len - 1 ; i >= 0; i--)
+        {
+            // 90 >= 20
+            // 90 >= 80
+
+            curr = 100 - enemyTypeFreq[i];
+            if (freq + 1 >= curr)
+            {
+                return i;
+            }
+        }
+
+        return 0;
     }
     void determineRound(int curr)
     {
