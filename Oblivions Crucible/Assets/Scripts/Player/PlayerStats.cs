@@ -15,6 +15,5 @@ public class PlayerStats
     public List<string> OwnedUpgrades = new List<string>(); 
 
     public PlayerStats() { }
-
    
 }

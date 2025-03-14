@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\HealthSystem\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopDisplay.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Round.cs" />
     <Compile Include="Assets\Scripts\Enemies\BasicEnemyMovement.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalk.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\Data\GameData.cs" />

@@ -732,8 +732,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7964766699c30514aac7137e6a29d6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  round: 000000000000000000000000000000000100000000000000
-  req: 050000000a0000000a0000000f0000000100000014000000
+  rs:
+  - r: 0
+    req: 5
+    enemyType:
+    - {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
+    enemyTypeFreq: 64000000
+  - r: 0
+    req: 10
+    enemyType:
+    - {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
+    - {fileID: 2588370230164921825, guid: 8642e1a5876e3654cba74d366c6687cc, type: 3}
+    enemyTypeFreq: 3c00000028000000
+  - r: 0
+    req: 15
+    enemyType:
+    - {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
+    - {fileID: 2588370230164921825, guid: 8642e1a5876e3654cba74d366c6687cc, type: 3}
+    enemyTypeFreq: 3c00000028000000
+  - r: 0
+    req: 10
+    enemyType:
+    - {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
+    - {fileID: 2588370230164921825, guid: 8642e1a5876e3654cba74d366c6687cc, type: 3}
+    - {fileID: 8557367969907944734, guid: 710df4c071129dc4bacb21c79ee6829a, type: 3}
+    enemyTypeFreq: 500000003200000014000000
+  - r: 1
+    req: 1
+    enemyType: []
+    enemyTypeFreq: 
+  - r: 0
+    req: 20
+    enemyType:
+    - {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
+    - {fileID: 2588370230164921825, guid: 8642e1a5876e3654cba74d366c6687cc, type: 3}
+    - {fileID: 8557367969907944734, guid: 710df4c071129dc4bacb21c79ee6829a, type: 3}
+    enemyTypeFreq: 500000003200000014000000
   spawns:
   - {fileID: 1040151335}
   - {fileID: 465676547}
@@ -745,12 +779,6 @@ MonoBehaviour:
   - {fileID: 699703644}
   - {fileID: 1262478344}
   enemys: []
-  enemy: {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
-  enemyType:
-  - {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
-  - {fileID: 2588370230164921825, guid: 8642e1a5876e3654cba74d366c6687cc, type: 3}
-  - {fileID: 8557367969907944734, guid: 710df4c071129dc4bacb21c79ee6829a, type: 3}
-  enemyTypeFreq: 500000003200000014000000
   roundText: {fileID: 652698020}
   waitText: {fileID: 1502085539}
   endText: {fileID: 2056456088}

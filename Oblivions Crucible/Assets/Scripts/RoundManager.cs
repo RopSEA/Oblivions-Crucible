@@ -5,14 +5,9 @@ using TMPro;
 
 public class RoundManager : MonoBehaviour
 {
-
-    public List<roundKind> round = new List<roundKind>();
-    public List<int> req = new List<int>();
+    public Round[] rs;
     public List<Transform> spawns = new List<Transform>();
     public List<GameObject> enemys = new List<GameObject>();
-    public GameObject enemy;
-    public List<GameObject> enemyType = new List<GameObject>();
-    public List<int> enemyTypeFreq = new List<int>();
     public TMP_Text roundText;
     public TMP_Text waitText;
     public TMP_Text endText;
@@ -21,13 +16,6 @@ public class RoundManager : MonoBehaviour
     private bool isShop;
     public ShopDisplay shop;
     private int temp;
-
-    public enum roundKind
-    {
-        Normal,
-        Shop,
-        Boss
-    }
 
     public void spawnEnemies()
     {
@@ -49,7 +37,7 @@ public class RoundManager : MonoBehaviour
             currDef += 5;
             enemys.Clear();
 
-            if (currDef >= req[currRound])
+            if (currDef >= rs[currRound].req)
             {
                 StartCoroutine(intermission(5));
                 return;
@@ -58,7 +46,7 @@ public class RoundManager : MonoBehaviour
             return;
         }
         
-        if (currDef >= req[currRound])
+        if (currDef >= rs[currRound].req)
         {
             //Debug.Log("huh");
             return;
@@ -72,7 +60,7 @@ public class RoundManager : MonoBehaviour
             rand = Random.Range(0, 8);
 
             Debug.Log(enem + " nfiuwn " + rand);
-            temp = Instantiate(enemyType[enem], spawns[rand].position, spawns[rand].rotation);
+            temp = Instantiate(rs[currRound].enemyType[enem], spawns[rand].position, spawns[rand].rotation);
             temp.GetComponent<BasicEnemyMovement>().enabled = true;
             enemys.Add(temp);
         }
@@ -80,12 +68,12 @@ public class RoundManager : MonoBehaviour
 
     int chooseEnemy(int freq)
     {
-        int len = enemyTypeFreq.Count;
+        int len = rs[currRound].enemyTypeFreq.Count;
         int curr;
 
         for (int i = len - 1 ; i >= 0; i--)
         {
-            curr = 100 - enemyTypeFreq[i];
+            curr = 100 - rs[currRound].enemyTypeFreq[i];
             if (freq + 1 >= curr)
             {
                 return i;
@@ -98,11 +86,11 @@ public class RoundManager : MonoBehaviour
     {
         
 
-        if (round[curr] == roundKind.Normal)
+        if (rs[currRound].r == Round.roundKind.Normal)
         {
             spawnEnemies();
         }
-        if (round[curr] == roundKind.Shop)
+        if (rs[currRound].r == Round.roundKind.Shop)
         {
             //Debug.Log("ShopNow");
             roundText.text = "Buy Round " + (currRound + 1);
@@ -115,7 +103,7 @@ public class RoundManager : MonoBehaviour
             
 
         }
-        if (round[curr] == roundKind.Boss)
+        if (rs[currRound].r == Round.roundKind.Boss)
         {
            // Debug.Log("BOSS");
         }
@@ -166,7 +154,7 @@ public class RoundManager : MonoBehaviour
     void updateRound()
     {
 
-        if (currRound + 1 >= round.Count)
+        if (currRound + 1 >= rs.Length)
         {
             Victory();
             return;

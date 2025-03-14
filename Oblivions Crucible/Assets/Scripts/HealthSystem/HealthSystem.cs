@@ -20,6 +20,21 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
+    public void addHealth(int hp)
+    {
+        if (hp < 0)
+        {
+            return;
+        }
+        maxHealth += hp;
+        currentHealth = maxHealth;
+
+        if (healthBar != null)
+        {
+            healthBar.SetHealth(currentHealth);
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         if (isInvulnerable) return; // Ignore damage if invulnerable
