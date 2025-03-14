@@ -136,6 +136,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkSmartPointer.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumPackage.cs" />
+    <Compile Include="Assets\Scripts\magnetEffect.cs" />
     <Compile Include="Assets\Scripts\MainMenu\StatsDisplay.cs" />
     <Compile Include="Assets\Scripts\Player\MenuUIManager.cs" />
   </ItemGroup>
