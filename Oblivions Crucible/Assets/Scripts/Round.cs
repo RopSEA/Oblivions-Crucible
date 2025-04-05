@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Round : MonoBehaviour
+[System.Serializable]
+public class Round
 {
-    // Start is called before the first frame update
-    void Start()
+    public roundKind r;
+    public int req;
+    public List<GameObject> enemyType = new List<GameObject>();
+    public List<int> enemyTypeFreq = new List<int>();
+    public enum roundKind
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Normal,
+        Shop,
+        Boss
     }
 }

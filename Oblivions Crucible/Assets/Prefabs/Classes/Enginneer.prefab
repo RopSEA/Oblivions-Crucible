@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 8108706321216333000}
   - component: {fileID: 6256655540919496318}
   - component: {fileID: 8790786021075855516}
+  - component: {fileID: 674538287041362024}
   - component: {fileID: 8379139800985382952}
-  - component: {fileID: 225485468215736042}
   m_Layer: 0
   m_Name: Enginneer
   m_TagString: Player
@@ -193,10 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffefae994e50c748aa7cbadd2e6487c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hb: {fileID: 0}
-  coin: {fileID: 225485468215736042}
-  hp: 100
-  invulnerable: 0
+  coin: {fileID: 0}
 --- !u!114 &8790786021075855516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +209,21 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1339797637058320468, guid: dff2e4f4aec480841aa65e6a49a9ebe6, type: 3}
   firePoint: {fileID: 5174008474777140480}
   fireRate: 0.5
+--- !u!114 &674538287041362024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5587817374825164116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097c898939ad0044c96cd5227501678b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  r: {fileID: 0}
 --- !u!114 &8379139800985382952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,21 +239,13 @@ MonoBehaviour:
   attack: 0
   movementSpeed: 0
   fireRate: 0
+  priCooldown: 10
+  secCooldown: 2.5
+  Img: {fileID: 0}
+  Img2: {fileID: 0}
   turretPrefab: {fileID: 5038439848783105892, guid: d0243e2512f3da04192f1bc5c783f9e5, type: 3}
-  turretloc: {fileID: 0}
---- !u!114 &225485468215736042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5587817374825164116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ddcc7089cdc4e94a8be85e4da8d52ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  turretLoc: {fileID: 5174008474777140480}
+  bulletPrefab: {fileID: 5410369507910317251, guid: 1f6cddae3c2cbb1449b0b3e220de1fb3, type: 3}
 --- !u!1 &6047851369719599917
 GameObject:
   m_ObjectHideFlags: 0

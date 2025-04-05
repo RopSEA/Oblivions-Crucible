@@ -70,6 +70,7 @@ public class ShopManager : MonoBehaviour
             if (MenuUIManager.instance != null && MenuUIManager.instance.playerStats != null)
             {
                 PlayerStats playerStats = MenuUIManager.instance.playerStats;
+                HealthSystem playerHp = GameObject.FindWithTag("Player").GetComponent<HealthSystem>();
 
                 // Update Player Stats
                 playerStats.Strength += selectedItem.strengthBoost;
@@ -77,6 +78,9 @@ public class ShopManager : MonoBehaviour
                 playerStats.Stamina += selectedItem.staminaBoost;
                 playerStats.Intelligence += selectedItem.intelligenceBoost;
                 playerStats.Defense += selectedItem.defenseBoost;
+
+
+                playerHp.addHealth(selectedItem.vitalityBoost);
 
                 playerStats.OwnedUpgrades.Add(selectedItem.itemName);
 

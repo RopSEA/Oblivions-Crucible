@@ -15,7 +15,6 @@ public class SpeedsterClass : Classes
     public Image Img2;
 
 
-
     private float lastPri;
     private float lastSec;
     private bool pri = false;
@@ -33,7 +32,7 @@ public class SpeedsterClass : Classes
 
 
 
-        IEnumerator priCor()
+    IEnumerator priCor()
     {
         HealthSystem health = gameObject.GetComponent<HealthSystem>();
         PlayerMovement movement = gameObject.GetComponent<PlayerMovement>();
