@@ -1,0 +1,31 @@
+[title=overseer_intro]
+Overseer: Welcome to the Crucible, Warrior. A place where you may return to glory… or disappear into the void.
+Overseer: Before you step into battle, I will grant you the gift of knowledge. Listen well, for ignorance is death.
+Overseer: Even the strongest warriors fall without movement. Walk… or be swept into the abyss.
+Overseer: Use [speed=10]W, A, S, D[/speed] to move. Feel the ground beneath you.
+[title=basic_attack]
+Overseer: Strike with purpose, hesitate and you are lost.
+Overseer: Press [speed=10]Left Click[/speed] to attack.
+Overseer: Test your strength. Break the training dummies before you.
+[title=defensive_mechanics]
+Overseer: The Crucible devours the slow and the weak. Evade, or fall.
+Overseer: Dodge through the oncoming shadows! Use [speed=10]Space[/speed] wisely.
+[title=abilities_intro]
+Overseer: You are more than sword and shield. Power stirs within you.
+Overseer: Use your [speed=10]Primary Skill (E)[/speed] and [speed=10]Secondary Skill (Q)[/speed] to turn the tide.
+Overseer: These are unique to your class. Master them... or be mastered.
+Overseer: Unleash your talents now. Show me what you can do.
+[title=stats_menu]
+Overseer: Knowledge is a weapon. Learn your strengths before they become weaknesses.
+Overseer: Open your Stats Menu now. Press [speed=10]Esc[/speed] to observe yourself.
+Overseer: [expression=smirk]A wise warrior adapts. Study your form, shape your fate.
+[title=shop_intro]
+Overseer: The Crucible rewards those who endure. Spend your spoils wisely.
+Overseer: A merchant has appeared. Trade for power, if you dare.
+[title=final_duel]
+Overseer: Now, prove yourself. Face a shadow of what is to come.
+Overseer: Strike, evade, survive. The Crucible has no mercy.
+[title=final_farewell]
+Overseer: You have taken your first steps. But the Crucible is endless.
+Overseer: Enter… and carve your name into legend.
+[title=end]

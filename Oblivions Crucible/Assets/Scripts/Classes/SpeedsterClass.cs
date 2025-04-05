@@ -29,6 +29,7 @@ public class SpeedsterClass : Classes
         prii,
         secc
     }
+    TutorialManager tutorial;
 
 
 
@@ -101,6 +102,8 @@ public class SpeedsterClass : Classes
 
     public override void priSkill()
     {
+        if (tutorial == null || !tutorial.allowSkills)
+            return;
         Player p = gameObject.GetComponent<Player>();
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -117,6 +120,8 @@ public class SpeedsterClass : Classes
 
     public override void secSkill()
     {
+        if (tutorial == null || !tutorial.allowSkills)
+            return;
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (sec == true)
@@ -143,6 +148,7 @@ public class SpeedsterClass : Classes
 
     void Start()
     {
+        tutorial = FindObjectOfType<TutorialManager>();
         state = State.Normal;
         gameObject.GetComponent<TrailRenderer>().emitting = false;
     }

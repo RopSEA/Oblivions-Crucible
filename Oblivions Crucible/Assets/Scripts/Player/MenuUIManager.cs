@@ -20,6 +20,7 @@ public class MenuUIManager : MonoBehaviour
 
     [Header("Player Stats Reference")]
     public PlayerStats playerStats; 
+    TutorialManager tutorial;
 
     void Awake()
     {
@@ -35,11 +36,14 @@ public class MenuUIManager : MonoBehaviour
     }
     void Start()
     {
+        tutorial = FindObjectOfType<TutorialManager>();
         SetMenuVisibility(false, false);
     }
 
     void Update()
     {
+        if (tutorial == null || !tutorial.allowStats)
+            return;
         if (Input.GetKeyDown(toggleKey))
         {
             isMenuOpen = !isMenuOpen;

@@ -23,10 +23,13 @@ public class PlayerMovement : MonoBehaviour
         Roll
     }
 
+    TutorialManager tutorial;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        tutorial = FindObjectOfType<TutorialManager>();
         rb = GetComponent<Rigidbody2D>();
         currentSpeed = BASE_SPEED;
         lastDodge = Time.time;
@@ -58,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void dodgeRoll()
     {
+        if (tutorial == null || !tutorial.allowDodge)
+            return;
         if (Input.GetKeyDown("space"))
         {
 
