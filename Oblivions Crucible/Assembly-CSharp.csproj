@@ -119,6 +119,7 @@
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorHover.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkCinematic\RPGTalkCinematicClip.cs" />
+    <Compile Include="Assets\Scripts\BossEnemy.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkCanPassWarning.cs" />
     <Compile Include="Assets\Scripts\rangedEnemy.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthSystem.cs" />

@@ -1,31 +1,24 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-using static UnityEngine.EventSystems.EventTrigger;
 
-public class BasicEnemyMovement : MonoBehaviour
+public class BossEnemy : BasicEnemyMovement
 {
-    public float speed;
-    public int hp;
-    public Transform player;
-    public GameObject hitEffectPrefab;
-    public GameObject coinPrefab;
-    public SPUM_MatchingList sprite;
-    public bool isTest;
-    private GameObject enemy;
+    public GameObject hpBar;
 
-    public virtual void damage(int dam)
+    public override void damage(int dam)
     {
+        //
 
         if (hp - dam > 0)
         {
             hp = hp - dam;
+            hpBar.GetComponent<HealthBar>().SetHealth(hp);
         }
         else
         {
             hp = 0;
+            hpBar.GetComponent<HealthBar>().SetHealth(hp);
         }
 
         StartCoroutine(redDamage());
@@ -33,11 +26,13 @@ public class BasicEnemyMovement : MonoBehaviour
 
         if (hp == 0)
         {
+            hpBar.SetActive(false);
             Destroy(gameObject);
             GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
-            DataPersistenceManager.instance.GameData.enemiesDefeated++;
+            //DataPersistenceManager.instance.GameData.enemiesDefeated++;
         }
     }
+
 
     IEnumerator redDamage()
     {
@@ -46,11 +41,11 @@ public class BasicEnemyMovement : MonoBehaviour
         SpriteRenderer curr;
         int j = 0;
 
-        
+
 
         foreach (MatchingElement i in sprites)
         {
-            
+
             curr = i.renderer;
             c.Add(new Color());
             c[j] = curr.color;
@@ -81,39 +76,6 @@ public class BasicEnemyMovement : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        gameObject.GetComponent<BasicEnemyMovement>().enabled = true;
-
-        if (isTest == true)
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        
-    }
-
-    private void Start()
-    {
-        enemy = this.gameObject;
-        FindPlayer();
-        enemy.SetActive(true);
-    }
-
-    void Update()
-    {
-
-        Debug.Log(player);
-        
-        if (player == null)
-        {
-            Debug.Log("hi no player found");
-            FindPlayer();
-            return;
-        }
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        
-    }
-
     void FindPlayer()
     {
         GameObject playerObj = GameObject.FindWithTag("Player");
@@ -126,5 +88,32 @@ public class BasicEnemyMovement : MonoBehaviour
         {
             Debug.LogWarning("No player found!");
         }
+    }
+
+
+    void Awake()
+    {
+        if (hpBar == null)
+        {
+            hpBar = GameObject.FindWithTag("BossBar");
+            hpBar.SetActive(true);
+            hpBar.GetComponent<HealthBar>().SetMax(hp);
+        }
+
+        FindPlayer();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (player == null)
+        {
+            Debug.Log("hi no player found");
+            FindPlayer();
+            return;
+        }
+
+
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 }

@@ -11,9 +11,10 @@ public class CameraPan2D : MonoBehaviour
     private float elapsedTime = 0f;
     private bool hasShownTitle = false;
 
-    void Start()
+    void Awake()
     {
         startPosition = transform.position; // Save initial position
+        Time.timeScale = 1;
 
         // Hide all UI Canvas Groups at the start
         if (uiCanvasGroups != null)
@@ -32,6 +33,7 @@ public class CameraPan2D : MonoBehaviour
 
     void Update()
     {
+        
         if (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;

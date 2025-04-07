@@ -13,7 +13,7 @@ public class rangedEnemy : BasicEnemyMovement
     private float dist;
     private bool isShoot = false;
 
-    public void damage(int dam)
+    public override void damage(int dam)
     {
 
         if (hp - dam > 0)
