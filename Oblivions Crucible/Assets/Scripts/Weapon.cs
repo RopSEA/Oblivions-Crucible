@@ -10,8 +10,14 @@ public class Weapon : MonoBehaviour
 
     private float nextFireTime = 0f;
 
+    //Reference to RPG talk to stop firiing while dialog
+    public RPGTalk rpgTalk;
+
     void Update()
     {
+        if (rpgTalk != null && rpgTalk.isPlaying)
+            return;
+            
         if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)  
         {
             Shoot();

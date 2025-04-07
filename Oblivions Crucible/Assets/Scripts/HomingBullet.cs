@@ -66,10 +66,18 @@ public class HomingBullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            // Check if it's a regular enemy
             BasicEnemyMovement enemy = other.GetComponent<BasicEnemyMovement>();
             if (enemy != null)
             {
                 enemy.damage(damage); 
+            }
+
+            // Check if it's a dummy target
+            DummyTarget dummy = other.GetComponent<DummyTarget>();
+            if (dummy != null)
+            {
+                dummy.damage(damage);
             }
 
             Destroy(gameObject); 
