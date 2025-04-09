@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -39,6 +40,9 @@ public class HealthSystem : MonoBehaviour
     {
         if (isInvulnerable) return; // Ignore damage if invulnerable
 
+        StartCoroutine(tempInvul());
+
+
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
 
@@ -53,6 +57,13 @@ public class HealthSystem : MonoBehaviour
         {
             Die();
         }
+    }
+
+    IEnumerator tempInvul()
+    {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(1f);
+        isInvulnerable = false;
     }
 
     public void Heal(int amount)

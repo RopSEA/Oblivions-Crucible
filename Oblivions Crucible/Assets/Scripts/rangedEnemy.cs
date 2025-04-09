@@ -27,6 +27,10 @@ public class rangedEnemy : BasicEnemyMovement
 
         StartCoroutine(redDamage());
         ShowHitEffect();
+        if (floatingText)
+        {
+            ShowNumber(dam);
+        }
 
         if (hp == 0)
         {

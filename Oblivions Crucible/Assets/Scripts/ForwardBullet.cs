@@ -7,6 +7,7 @@ public class ForwardBullet : MonoBehaviour
 {
     public Vector3 dir = new Vector3(0, 1, 0);
     public int Speed;
+    public GameObject player;
 
     public void updateDir(int deg)
     {
@@ -54,6 +55,7 @@ public class ForwardBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         Destroy(gameObject, 5f);
     }
 
@@ -65,15 +67,25 @@ public class ForwardBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        int dam;
         if (other.CompareTag("Enemy"))
         {
             BasicEnemyMovement enemy = other.GetComponent<BasicEnemyMovement>();
             if (enemy != null)
             {
-                enemy.damage(50);
+                dam =calcDamage(enemy.gameObject);
+                enemy.damage(dam);
             }
 
             Destroy(gameObject);
         }
+    }
+
+    public int calcDamage(GameObject enemy)
+    {
+        // Base Dam 50
+        float r = Random.RandomRange(0.5f, 1.5f);
+        int dam = 40 + (int)Mathf.Ceil(player.GetComponent<Classes>().attack * r);
+        return dam;
     }
 }

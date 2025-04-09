@@ -24,6 +24,11 @@ public class BossEnemy : BasicEnemyMovement
         StartCoroutine(redDamage());
         ShowHitEffect();
 
+        if (floatingText)
+        {
+            ShowNumber(dam);
+        }
+
         if (hp == 0)
         {
             hpBar.SetActive(false);
@@ -91,10 +96,11 @@ public class BossEnemy : BasicEnemyMovement
     }
 
 
-    void Awake()
+    void Start()
     {
         if (hpBar == null)
         {
+
             hpBar = GameObject.FindWithTag("BossBar");
             hpBar.SetActive(true);
             hpBar.GetComponent<HealthBar>().SetMax(hp);

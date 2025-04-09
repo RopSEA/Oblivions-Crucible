@@ -42,8 +42,9 @@ public class MenuUIManager : MonoBehaviour
 
     void Update()
     {
-        if (tutorial == null || !tutorial.allowStats)
+        if (tutorial != null && !tutorial.allowStats)
             return;
+
         if (Input.GetKeyDown(toggleKey))
         {
             isMenuOpen = !isMenuOpen;

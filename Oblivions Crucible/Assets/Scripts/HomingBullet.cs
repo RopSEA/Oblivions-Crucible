@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HomingBullet : MonoBehaviour
@@ -8,10 +9,12 @@ public class HomingBullet : MonoBehaviour
     public float lifetime = 5f;
     public int damage = 25;
     private Transform target;
+    private GameObject player;
     private Vector2 moveDirection;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         target = FindNearestEnemy();
 
         if (target != null)
@@ -70,6 +73,7 @@ public class HomingBullet : MonoBehaviour
             BasicEnemyMovement enemy = other.GetComponent<BasicEnemyMovement>();
             if (enemy != null)
             {
+                damage = calcDamage(enemy.gameObject);
                 enemy.damage(damage); 
             }
 
@@ -77,10 +81,19 @@ public class HomingBullet : MonoBehaviour
             DummyTarget dummy = other.GetComponent<DummyTarget>();
             if (dummy != null)
             {
+                //damage = calcDamage();
                 dummy.damage(damage);
             }
 
             Destroy(gameObject); 
         }
+    }
+
+    public int calcDamage(GameObject enemy)
+    {
+        // Base Dam 25
+        float r = Random.RandomRange(0.5f, 1.5f);
+        int dam = 15 + (int)Mathf.Ceil( player.GetComponent<Classes>().attack * r);
+        return dam;
     }
 }

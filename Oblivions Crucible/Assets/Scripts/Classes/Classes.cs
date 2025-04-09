@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Classes : MonoBehaviour
 {
     public int attack;
+    public int defense;
     public int movementSpeed;
     public float fireRate;
 

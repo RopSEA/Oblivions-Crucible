@@ -173,7 +173,7 @@ public class RoundManager : MonoBehaviour
         endText.text = "VICTORY!!";
         endText.color = Color.green;
         Time.timeScale = 0;
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("TitleScreen");
 
     }
 

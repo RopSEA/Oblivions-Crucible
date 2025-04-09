@@ -61,8 +61,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void dodgeRoll()
     {
-        if (tutorial == null || !tutorial.allowDodge)
+        if (tutorial != null && !tutorial.allowDodge)
+        {
             return;
+        }
+            
+
         if (Input.GetKeyDown("space"))
         {
 
