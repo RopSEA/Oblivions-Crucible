@@ -27,6 +27,7 @@ public class TankClass : Classes
         {
             if (pri == false)
             {
+                pri = true;
                 Debug.Log("PRI SKILL tank");
                 // instantiate sword
                 temp = Instantiate(slashPrefab, transform.position, transform.rotation, gameObject.transform);
@@ -46,6 +47,7 @@ public class TankClass : Classes
         {
             if (sec == false)
             {
+                sec = true;
                 Debug.Log("SEC SKILL tank");
                 // instantiate sheild
                 temp = Instantiate(sheildPrefab, transform.position, transform.rotation);
