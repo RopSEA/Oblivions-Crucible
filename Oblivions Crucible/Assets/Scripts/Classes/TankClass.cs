@@ -1,33 +1,97 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TankClass : Classes
 {
+    public float priCooldown;
+    public float secCooldown;
+    public Image Img;
+    public Image Img2;
 
+    private bool pri = false;
+    private bool sec = false;
+    public GameObject slashPrefab;
+    public GameObject sheildPrefab;
+
+
+
+    // Slash
     public override void priSkill()
     {
+        GameObject temp = null;
+        PlayerMovement movement = gameObject.GetComponent<PlayerMovement>();
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("PRIMARY tank");
+            if (pri == false)
+            {
+                Debug.Log("PRI SKILL tank");
+                // instantiate sword
+                temp = Instantiate(slashPrefab, transform.position, transform.rotation, gameObject.transform);
+                temp.transform.rotation = Quaternion.LookRotation(Vector3.forward, movement.dirs);
+                Destroy(temp, 0.5f);
+                StartCoroutine(priCor());
+            }
         }
     }
 
+    // Sheild bash
     public override void secSkill()
     {
+        GameObject temp = null;
+        PlayerMovement movement = gameObject.GetComponent<PlayerMovement>();
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log("SECONDARY tank");
+            if (sec == false)
+            {
+                Debug.Log("SEC SKILL tank");
+                // instantiate sheild
+                temp = Instantiate(sheildPrefab, transform.position, transform.rotation);
+                temp.transform.rotation = Quaternion.LookRotation(Vector3.forward, movement.dirs);
+                Destroy(temp, 0.35f);
+                StartCoroutine(secCor());
+            }
         }
     }
 
-    // Start is called before the first frame update
+    IEnumerator priCor()
+    {
+        float cool = priCooldown;
+        Img.fillAmount = 1;
+
+        while (cool > 0)
+        {
+            Img.fillAmount -= 0.5f / priCooldown;
+            yield return new WaitForSeconds(0.5f);
+            cool -= 0.5f;
+        }
+        Debug.Log("READY PRI");
+        pri = false;
+    }
+
+    IEnumerator secCor()
+    {
+        float cool = secCooldown;
+        Img2.fillAmount = 1;
+
+        while (cool > 0)
+        {
+            Img2.fillAmount -= 0.5f / secCooldown;
+            yield return new WaitForSeconds(0.5f);
+            cool -= 0.5f;
+        }
+
+        Debug.Log("READY SEC");
+        sec = false;
+    }
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         priSkill();

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3638717006843036290}
   - component: {fileID: 535071524948284642}
   - component: {fileID: 5026322208032904706}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForwardEnemyBullet
-  m_TagString: Untagged
+  m_TagString: EnemyProj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

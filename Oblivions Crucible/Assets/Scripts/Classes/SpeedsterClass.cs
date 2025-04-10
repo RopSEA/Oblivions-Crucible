@@ -102,8 +102,9 @@ public class SpeedsterClass : Classes
 
     public override void priSkill()
     {
-        if (tutorial == null || !tutorial.allowSkills)
+        if (tutorial != null && !tutorial.allowSkills)
             return;
+
         Player p = gameObject.GetComponent<Player>();
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -120,8 +121,9 @@ public class SpeedsterClass : Classes
 
     public override void secSkill()
     {
-        if (tutorial == null || !tutorial.allowSkills)
+        if (tutorial != null && !tutorial.allowSkills)
             return;
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (sec == true)

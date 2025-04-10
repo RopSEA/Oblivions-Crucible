@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     float currentSpeed;
     private Vector3 slideDir;
+    public Vector3 dirs = new Vector3(0,1,0);
     private float slideSpeed;
     public float cooldown;
     private float lastDodge;
@@ -107,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             slideDir = dir.normalized;
+            dirs = dir.normalized;
         }
         
         rb.velocity = dir * currentSpeed;

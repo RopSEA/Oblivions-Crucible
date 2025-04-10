@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7956867884891155383}
   - component: {fileID: 5436489321590198806}
   - component: {fileID: 8916609299160747833}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaveEnemy
-  m_TagString: Untagged
+  m_TagString: EnemyProj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
