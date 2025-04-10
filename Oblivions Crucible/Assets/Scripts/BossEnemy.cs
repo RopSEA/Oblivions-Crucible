@@ -5,6 +5,10 @@ using UnityEngine;
 public class BossEnemy : BasicEnemyMovement
 {
     public GameObject hpBar;
+    public GameObject bulletPre;
+    public GameObject bulletPre2;
+    private bool isAttack1 = false;
+    private bool isAttack2 = false;
 
     public override void damage(int dam)
     {
@@ -96,6 +100,79 @@ public class BossEnemy : BasicEnemyMovement
     }
 
 
+    // first attack
+    void attack1()
+    {
+        if (isAttack2 == true || isAttack1 == true)
+        {
+            return;
+        }
+        isAttack1 = true;
+        StartCoroutine(firstMove());
+    }
+
+    IEnumerator firstMove()
+    {
+        int rot = 0;
+        int comp = 0;
+        GameObject temp;
+
+        while (comp < 20)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                temp = Instantiate(bulletPre, transform.position, transform.rotation);
+                temp.GetComponent<EnemyHomingBullet>().updateDir(rot);
+                rot += 45;
+            }
+            rot = 0;
+            comp++;
+            yield return new WaitForSeconds(0.3f);
+        }
+
+
+        yield return new WaitForSeconds(4f);
+        isAttack1 = false;
+    }
+
+
+    // second attack
+    void attack2() 
+    {
+        GameObject temp;
+        if (isAttack2 == true || isAttack1 == true)
+        {
+            return;
+        }
+        isAttack2 = true;
+        temp = Instantiate(bulletPre2, transform.position, transform.rotation);
+
+        StartCoroutine(secCool());
+    }
+
+    IEnumerator secCool()
+    {
+        yield return new WaitForSeconds(3f);
+        isAttack2 = false;
+    }
+
+
+    void chooseAttack()
+    {
+        int d = Random.Range(0,2);
+        Debug.Log(d);
+
+        if (d == 0)
+        {
+            attack1();
+        }
+        else if (d == 1)
+        {
+            attack2();
+        }
+    }
+
+
     void Start()
     {
         if (hpBar == null)
@@ -121,5 +198,11 @@ public class BossEnemy : BasicEnemyMovement
 
 
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+
+        if (isAttack2 == true || isAttack1 == true)
+        {
+            return;
+        }
+        chooseAttack();
     }
 }

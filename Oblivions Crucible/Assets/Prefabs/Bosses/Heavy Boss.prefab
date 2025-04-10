@@ -128,6 +128,8 @@ MonoBehaviour:
   sprite: {fileID: 2149447998418307578}
   isTest: 0
   hpBar: {fileID: 0}
+  bulletPre: {fileID: 6165446723958126561, guid: 5f260672c20078048b21301347c06685, type: 3}
+  bulletPre2: {fileID: 5784010825578552567, guid: 72a2a70940f46ae469a2b31e2cd849ae, type: 3}
 --- !u!1001 &2696251896139232002
 PrefabInstance:
   m_ObjectHideFlags: 0
