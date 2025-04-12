@@ -93,7 +93,7 @@ public class HomingBullet : MonoBehaviour
     {
         // Base Dam 25
         float r = Random.RandomRange(0.5f, 1.5f);
-        int dam = 15 + (int)Mathf.Ceil( player.GetComponent<Classes>().attack * r);
+        int dam = (damage - 10) + (int)Mathf.Ceil( player.GetComponent<Classes>().attack * r);
         return dam;
     }
 }

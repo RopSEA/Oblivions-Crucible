@@ -13,6 +13,11 @@ public class MageClass : Classes
 
     private bool pri = false;
     private bool sec = false;
+    private bool currSheild;
+    public float rotRadius;
+    public Transform RotatePoint;
+    public GameObject MageBlast;
+    public GameObject RotSheild;
 
 
     // Stronger Mage Blast
@@ -22,6 +27,8 @@ public class MageClass : Classes
         {
             if (pri == false)
             {
+                pri = true;
+                Instantiate(MageBlast, transform.position, transform.rotation);
                 Debug.Log("PRI SKILL");
                 StartCoroutine(priCor());
             }
@@ -33,12 +40,45 @@ public class MageClass : Classes
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (sec  == false)
+            if (sec == false)
             {
+                sec = true;
+                currSheild = true;
+
+                StopCoroutine("RotateSh");
+
+                foreach (Transform child in RotatePoint)
+                {
+                    Destroy(child.gameObject);
+                }
+
+
                 Debug.Log("SEC SKILL");
+                Instantiate(RotSheild, new Vector3(-rotRadius, 0, 0) + transform.position, RotatePoint.rotation, RotatePoint);
+                Instantiate(RotSheild, new Vector3(rotRadius, 0, 0) + transform.position, RotatePoint.rotation, RotatePoint);
+                Instantiate(RotSheild, new Vector3(0,-rotRadius, 0) + transform.position, RotatePoint.rotation, RotatePoint);
+                Instantiate(RotSheild, new Vector3(0, rotRadius, 0) + transform.position, RotatePoint.rotation, RotatePoint);
+                StartCoroutine(RotateSh());
                 StartCoroutine(secCor());
             }
-          
+
+        }
+
+    }
+
+    IEnumerator RotateSh()
+    {
+        float time = 0;
+        while (time <= 100)
+        {
+            RotatePoint.RotateAround(RotatePoint.position, Vector3.forward, 1);
+            time += 0.1f;
+            yield return new WaitForSeconds(0.001f);
+        }
+
+        foreach (Transform child in RotatePoint)
+        {
+            Destroy(child.gameObject);
         }
 
     }

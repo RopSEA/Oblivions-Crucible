@@ -111,7 +111,8 @@ public class PlayerMovement : MonoBehaviour
             dirs = dir.normalized;
         }
         
-        rb.velocity = dir * currentSpeed;
+        //rb.velocity = dir * currentSpeed * Time.deltaTime;
+        transform.position +=  dir * currentSpeed *Time.deltaTime;
     }
     
     

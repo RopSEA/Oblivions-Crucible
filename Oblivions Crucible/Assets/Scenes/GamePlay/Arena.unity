@@ -184,6 +184,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 450929005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &77412741 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4021097356193962897, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+  m_PrefabInstance: {fileID: 5429620864082690317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &79004473
 GameObject:
   m_ObjectHideFlags: 0
@@ -5692,6 +5697,22 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: MageBlast
+      value: 
+      objectReference: {fileID: 537364293262138121, guid: 6007175733d3c144384f934e7e421003, type: 3}
+    - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: RotSheild
+      value: 
+      objectReference: {fileID: 6244203060228286534, guid: 93ac37005a017af4390962bcedce6958, type: 3}
+    - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: rotRadius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: RotatePoint
+      value: 
+      objectReference: {fileID: 77412741}
+    - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
       propertyPath: priCooldown
       value: 5
       objectReference: {fileID: 0}
@@ -5703,6 +5724,10 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2277462264947981034, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 3346694194833630674, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
       propertyPath: coin
       value: 
@@ -5711,6 +5736,22 @@ PrefabInstance:
       propertyPath: stamina
       value: 
       objectReference: {fileID: 870622039}
+    - target: {fileID: 4021097356193962897, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988767296380751774, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: m_Size.y
+      value: 0.97394973
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988767296380751774, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.031689644
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988767296380751774, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.12964442
+      objectReference: {fileID: 0}
     - target: {fileID: 6357159290713888607, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
       propertyPath: m_Name
       value: Mage
