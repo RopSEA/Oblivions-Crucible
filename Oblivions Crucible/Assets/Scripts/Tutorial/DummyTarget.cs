@@ -8,6 +8,7 @@ public class DummyTarget : MonoBehaviour
     private Animator animator;
     private bool isHit = false;
     private TutorialManager tutorialManager;
+    public GameObject floatingText;
 
     [Header("Tutorial Settings")]
     public static int requiredKillsToAdvance = 4;
@@ -36,6 +37,11 @@ public class DummyTarget : MonoBehaviour
             animator.SetTrigger("Hit");
         }
 
+        if (floatingText)
+        {
+            ShowNumber(amount);
+        }
+
         if (health <= 0)
         {
             Die();
@@ -44,6 +50,12 @@ public class DummyTarget : MonoBehaviour
         {
             Invoke(nameof(ResetHit), 0.2f);
         }
+    }
+
+    public void ShowNumber(int dam)
+    {
+        var go = Instantiate(floatingText, transform.position, Quaternion.identity, transform);
+        go.GetComponent<TextMesh>().text = dam.ToString();
     }
 
     void ResetHit()

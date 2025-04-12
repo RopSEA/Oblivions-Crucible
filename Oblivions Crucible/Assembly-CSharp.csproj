@@ -82,6 +82,7 @@
     <Compile Include="Assets\RPGTALK\Demo\Scripts\DemoScript.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkSkipCutscene.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\TextWithIconSimpleText.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\EnemyDeathNotifier.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\IDataPersistence.cs" />
     <Compile Include="Assets\Scripts\Cursor\UICategory.cs" />
     <Compile Include="Assets\SPUM\Script\Data\PreviewMatchingElement.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Assets\Scripts\ClassSelectManager.cs" />
     <Compile Include="Assets\Scripts\Boundary.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\TutorialEnemySpawner.cs" />
     <Compile Include="Assets\Scripts\camerapan.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkLocalization.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />

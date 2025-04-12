@@ -6654,6 +6654,9 @@ MonoBehaviour:
   exitButton: {fileID: 2913513574789550091}
   debugShowShop: 0
   Shop: 0
+  OnShopClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8437478468167678118
 GameObject:
   m_ObjectHideFlags: 0

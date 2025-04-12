@@ -17,6 +17,10 @@ public class PlayerClassHandler : MonoBehaviour
     private void Awake()
     {
         string selectedClass = ClassSelectionManager.Instance.selectedClass;
+        if (selectedClass != "" && selectedClass != "Engineer")
+        {
+            playerInstance.SetActive(false);
+        }
         if (selectedClass != "" && selectedClass == "Speedster") 
         {
             playerInstance = playerInstance2;
