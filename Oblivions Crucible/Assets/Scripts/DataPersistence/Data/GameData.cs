@@ -12,6 +12,8 @@ public class GameData
     public int enemiesDefeated;
     public int deathCount;
 
+    public bool tutorialDone;
+
     // Default constructor initializes default values when a new game starts
     public GameData() 
     {
@@ -20,5 +22,6 @@ public class GameData
         this.bossesBeat = 0;
         this.enemiesDefeated = 0;
         this.deathCount = 0;
+        this.tutorialDone = false;
     }
 }

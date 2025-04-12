@@ -4,13 +4,15 @@ public class TutorialManager : MonoBehaviour
 {
     public RPGTalk rpgTalk;
     public MovementTracker movementTracker;  // Reference to your MovementTracker
-
+    
     private int tutorialStep = 0;
 
     private bool hasMoved = false;
     private bool hasAttacked = false;
     private bool hasDodged = false;
-    private bool hasUsedSkills = false;
+    private bool usedPrimarySkill = false;
+    private bool usedSecondarySkill = false;
+
     private bool hasOpenedStats = false;
     private bool shopOpened = false;
     private bool finalFightTriggered = false;
@@ -23,9 +25,25 @@ public class TutorialManager : MonoBehaviour
     public ShopDisplay shopDisplay;
     private bool waitingForShopClose = false;
 
+    public TutorialEnemySpawner enemySpawner; 
+
+        public bool HasMoved()
+    {
+        return hasMoved;
+    }
+
+    public void OnTutorialWaveComplete()
+    {
+        Debug.Log("Tutorial enemies defeated — end the tutorial.");
+        EndTutorial();
+    }
 
     void Start()
     {
+        if (shopDisplay != null)
+        {
+            shopDisplay.OnShopClosed.AddListener(OnShopClosed);
+        }
         movementTracker.OnAllDirectionsMoved.AddListener(OnMovementComplete);
         rpgTalk.OnEndTalk += OnDialogFinished;
 
@@ -40,6 +58,15 @@ public class TutorialManager : MonoBehaviour
             GoToBasicAttack();
         }
     }
+    void OnShopClosed()
+{
+    if (tutorialStep == 6 && !shopOpened)
+    {
+        shopOpened = true;
+        GoToFinalFight();
+    }
+}
+
     void Update()
     {
         if (rpgTalk.isPlaying) return;
@@ -56,12 +83,24 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case 4:
-                if (!hasUsedSkills && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Q)))
+                if (!usedPrimarySkill && Input.GetKeyDown(KeyCode.Q))
                 {
-                    hasUsedSkills = true;
+                    usedPrimarySkill = true;
+                    Debug.Log("Primary skill (Q) used");
+                }
+
+                if (!usedSecondarySkill && Input.GetKeyDown(KeyCode.E))
+                {
+                    usedSecondarySkill = true;
+                    Debug.Log("Secondary skill (E) used");
+                }
+
+                if (usedPrimarySkill && usedSecondarySkill)
+                {
                     GoToStats();
                 }
                 break;
+
             case 5:
                 if (!statsMenuOpened && Input.GetKeyDown(KeyCode.Escape))
                 {
@@ -74,7 +113,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case 6:
-                // Optional: Set shopOpened when the player interacts with the shop
+                // Shop function handles
                 break;
             case 7:
                 if (!finalFightTriggered)
@@ -149,7 +188,17 @@ public class TutorialManager : MonoBehaviour
     {
         tutorialStep = 7;
         finalFightTriggered = true;
+        
         rpgTalk.NewTalk("final_duel", "final_farewell");
+
+        if (enemySpawner != null)
+        {
+            enemySpawner.SpawnWave(); // Spawns the enemies
+        }
+        else
+        {
+            Debug.LogWarning("No enemy spawner assigned to TutorialManager.");
+        }
     }
 
     public void EndTutorial()

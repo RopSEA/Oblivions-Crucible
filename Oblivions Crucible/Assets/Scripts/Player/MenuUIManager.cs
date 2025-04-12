@@ -42,8 +42,8 @@ public class MenuUIManager : MonoBehaviour
 
     void Update()
     {
-        if (tutorial == null || !tutorial.allowStats)
-            return;
+    if (tutorial == null || tutorial.allowStats)
+    {
         if (Input.GetKeyDown(toggleKey))
         {
             isMenuOpen = !isMenuOpen;
@@ -54,6 +54,7 @@ public class MenuUIManager : MonoBehaviour
                 UpdateMenuStats();
             }
         }
+    }
     }
 
     void SetMenuVisibility(bool visible, bool fade)

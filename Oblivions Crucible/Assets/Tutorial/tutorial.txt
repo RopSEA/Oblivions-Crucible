@@ -4,12 +4,13 @@ Overseer: Before you step into battle, I will grant you the gift of knowledge. L
 Overseer: Even the strongest warriors fall without movement. Walk… or be swept into the abyss.
 Overseer: Use [speed=10]W, A, S, D[/speed] to move. Feel the ground beneath you.
 [title=basic_attack]
-Overseer: Strike with purpose, hesitate and you are lost.
-Overseer: Press [speed=10]Left Click[/speed] to attack.
-Overseer: Test your strength. Break the training dummies before you.
+Overseer: Strike with purpose, hesitate and you are lost.  
+Overseer: Press [speed=10]Left Click[/speed] to attack.  
+Overseer: Test your strength. Break the training dummies before you.  
+Overseer: Even broken wood yields treasure. Take what you can — every coin may tip fate in your favor.
 [title=defensive_mechanics]
-Overseer: The Crucible devours the slow and the weak. Evade, or fall.
-Overseer: Dodge through the oncoming shadows! Use [speed=10]Space[/speed] wisely.
+Overseer: The Crucible devours the slow and the weak. Evade, or fall.  
+Overseer: Practice your dodge — [speed=10]Space[/speed] may be the only thing between you and death.
 [title=abilities_intro]
 Overseer: You are more than sword and shield. Power stirs within you.
 Overseer: Use your [speed=10]Primary Skill (E)[/speed] and [speed=10]Secondary Skill (Q)[/speed] to turn the tide.
