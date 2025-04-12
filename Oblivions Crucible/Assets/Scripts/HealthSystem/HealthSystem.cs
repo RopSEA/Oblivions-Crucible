@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -39,10 +41,17 @@ public class HealthSystem : MonoBehaviour
     {
         if (isInvulnerable) return; // Ignore damage if invulnerable
 
-        currentHealth -= damage;
+        StartCoroutine(tempInvul());
+
+        // Damage = basedamage * ((((Attk / Defense ) -1)/Factor) + 1)
+
+        float def = gameObject.GetComponent<Classes>().defense;
+        int dam = (int)Mathf.Ceil(damage * (10 / def));
+
+        currentHealth -= dam;
         if (currentHealth < 0) currentHealth = 0;
 
-        Debug.Log($"Player took {damage} damage! Health: {currentHealth}");
+        Debug.Log($"Player took {dam} damage! Health: {currentHealth}");
 
         if (healthBar != null)
         {
@@ -53,6 +62,13 @@ public class HealthSystem : MonoBehaviour
         {
             Die();
         }
+    }
+
+    IEnumerator tempInvul()
+    {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(1f);
+        isInvulnerable = false;
     }
 
     public void Heal(int amount)

@@ -175,6 +175,7 @@ MonoBehaviour:
   speed: 2.7
   hp: 100
   player: {fileID: 0}
+  floatingText: {fileID: 4556969757122287335, guid: a5985fc3f0dc97044883b27a33b0a573, type: 3}
   hitEffectPrefab: {fileID: 1356325961092716449, guid: cb7d4e54e6d21b649bfd23ee27b38ca6, type: 3}
   coinPrefab: {fileID: 5703412304476496435, guid: e69270b9ace1eac47bf25c47dbb745fc, type: 3}
   sprite: {fileID: 917437071991543728}

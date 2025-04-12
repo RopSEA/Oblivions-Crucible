@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 2037604398969014872}
   - component: {fileID: 2725931731785588860}
   - component: {fileID: 6360617435420821946}
-  - component: {fileID: 328449620893641808}
   - component: {fileID: 7865037697545075353}
   m_Layer: 0
   m_Name: Tank
@@ -24,7 +23,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5051167122011433635
 Transform:
   m_ObjectHideFlags: 0
@@ -181,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BASE_SPEED: 5
   stamina: {fileID: 0}
+  dirs: {x: 0, y: 1, z: 0}
   cooldown: 0.5
 --- !u!114 &2037604398969014872
 MonoBehaviour:
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffefae994e50c748aa7cbadd2e6487c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 328449620893641808}
+  coin: {fileID: 0}
 --- !u!114 &2725931731785588860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +210,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1339797637058320468, guid: dff2e4f4aec480841aa65e6a49a9ebe6, type: 3}
   firePoint: {fileID: 5165242356584928563}
   fireRate: 0.5
+  rpgTalk: {fileID: 0}
 --- !u!114 &6360617435420821946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,24 +223,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c427c4cd3840c4d869d67fb2f99731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 50
+  attack: 10
+  defense: 10
   movementSpeed: 1
   fireRate: 0
---- !u!114 &328449620893641808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558691040507776450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ddcc7089cdc4e94a8be85e4da8d52ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinEffect: {fileID: 0}
-  text: {fileID: 0}
-  coinCnt: 50
+  priCooldown: 5
+  secCooldown: 2.5
+  Img: {fileID: 0}
+  Img2: {fileID: 0}
+  slashPrefab: {fileID: 7546478059256321470, guid: 921c4467eac4fdc46be89e5c51576a54, type: 3}
+  sheildPrefab: {fileID: 2636421357507512070, guid: 96ce47d901f42b1498c41d56ed5b92cf, type: 3}
 --- !u!114 &7865037697545075353
 MonoBehaviour:
   m_ObjectHideFlags: 0

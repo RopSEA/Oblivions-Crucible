@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class RoundManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class RoundManager : MonoBehaviour
     private int currDef;
     private bool isShop;
     public ShopDisplay shop;
+    public GameObject hpBar;
     private int temp;
 
     public void spawnEnemies()
@@ -23,6 +25,7 @@ public class RoundManager : MonoBehaviour
         int rand = Random.Range(0,8);
         int freq;
         int enem;
+
         // Fix LATER:  better optimize
         if (enemys.Count > 0)
         {
@@ -45,7 +48,7 @@ public class RoundManager : MonoBehaviour
 
             return;
         }
-        
+
         if (currDef >= rs[currRound].req)
         {
             //Debug.Log("huh");
@@ -59,7 +62,6 @@ public class RoundManager : MonoBehaviour
             enem = chooseEnemy(freq);
             rand = Random.Range(0, 8);
 
-            Debug.Log(enem + " nfiuwn " + rand);
             temp = Instantiate(rs[currRound].enemyType[enem], spawns[rand].position, spawns[rand].rotation);
             temp.GetComponent<BasicEnemyMovement>().enabled = true;
             enemys.Add(temp);
@@ -84,7 +86,6 @@ public class RoundManager : MonoBehaviour
     }
     void determineRound(int curr)
     {
-        
 
         if (rs[currRound].r == Round.roundKind.Normal)
         {
@@ -100,13 +101,44 @@ public class RoundManager : MonoBehaviour
                 isShop = true;
                 StartCoroutine(shopRound());
             }
-            
-
         }
         if (rs[currRound].r == Round.roundKind.Boss)
         {
-           // Debug.Log("BOSS");
+            SpawnBoss();
         }
+    }
+
+    public void SpawnBoss()
+    {
+        GameObject temp = null;
+
+
+        if (enemys.Count > 0)
+        {
+            if (enemys[0] != null)
+            {
+                return;
+            }
+
+            currDef = 1;
+            enemys.Clear();
+            hpBar.SetActive(false);
+            StartCoroutine(intermission(5));
+        }
+
+        if (currDef >= rs[currRound].req)
+        {
+            //Debug.Log("huh");
+            return;
+        }
+
+        temp = Instantiate(rs[currRound].enemyType[0], spawns[2].position, spawns[2].rotation);
+        temp.GetComponent<BasicEnemyMovement>().enabled = true;
+        enemys.Add(temp);
+        
+        hpBar.SetActive(true);
+        temp.SetActive(true);
+
     }
 
     IEnumerator shopRound()
@@ -141,6 +173,8 @@ public class RoundManager : MonoBehaviour
         endText.text = "VICTORY!!";
         endText.color = Color.green;
         Time.timeScale = 0;
+        SceneManager.LoadScene("TitleScreen");
+
     }
 
     public void Lose()
@@ -148,6 +182,7 @@ public class RoundManager : MonoBehaviour
         endText.text = "GAME OVER";
         endText.color = Color.red;
         Time.timeScale = 0;
+        SceneManager.LoadScene("TitleScreen");
     }
 
 

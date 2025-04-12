@@ -10,13 +10,14 @@ public class BasicEnemyMovement : MonoBehaviour
     public float speed;
     public int hp;
     public Transform player;
+    public GameObject floatingText;
     public GameObject hitEffectPrefab;
     public GameObject coinPrefab;
     public SPUM_MatchingList sprite;
     public bool isTest;
     private GameObject enemy;
 
-    public void damage(int dam)
+    public virtual void damage(int dam)
     {
 
         if (hp - dam > 0)
@@ -30,6 +31,12 @@ public class BasicEnemyMovement : MonoBehaviour
 
         StartCoroutine(redDamage());
         ShowHitEffect();
+        // Show Number
+        if (floatingText)
+        {
+            ShowNumber(dam);
+        }
+        
 
         if (hp == 0)
         {
@@ -37,6 +44,12 @@ public class BasicEnemyMovement : MonoBehaviour
             GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
             DataPersistenceManager.instance.GameData.enemiesDefeated++;
         }
+    }
+
+    public virtual void ShowNumber(int dam)
+    {
+        var go = Instantiate(floatingText, transform.position, Quaternion.identity, transform);
+        go.GetComponent<TextMesh>().text = dam.ToString();
     }
 
     IEnumerator redDamage()
@@ -102,7 +115,7 @@ public class BasicEnemyMovement : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(player);
+        //Debug.Log(player);
         
         if (player == null)
         {

@@ -9,7 +9,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -64,6 +65,7 @@
     <Compile Include="Assets\Scripts\VoidFollower.cs" />
     <Compile Include="Assets\Scripts\GenerateEnemies.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorSc.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\DummyTarget.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkArea.cs" />
     <Compile Include="Assets\Scripts\RoundManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\NewGame.cs" />
@@ -84,13 +86,16 @@
     <Compile Include="Assets\Scripts\DataPersistence\IDataPersistence.cs" />
     <Compile Include="Assets\Scripts\Cursor\UICategory.cs" />
     <Compile Include="Assets\SPUM\Script\Data\PreviewMatchingElement.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\MovementTracker.cs" />
     <Compile Include="Assets\Scripts\HomingBullet.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkLocalizationString.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\RPGTalkHelper.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuScene.cs" />
     <Compile Include="Assets\Scripts\MainMenu\QuitApp.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkCinematic\RPGTalkCinematicBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Classes\MageClass.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumTextureData.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\TutorialManager.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkCinematic\RPGTalkCinematicTrack.cs" />
     <Compile Include="Assets\Scripts\MainMenu\TitleScreenManager.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpritePos.cs" />
@@ -100,6 +105,7 @@
     <Compile Include="Assets\Scripts\ClassButton.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkDubSounds.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumAnimationClip.cs" />
+    <Compile Include="Assets\Scripts\FloatingText.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkSimpleAnimation.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
@@ -119,7 +125,9 @@
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorHover.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkCinematic\RPGTalkCinematicClip.cs" />
+    <Compile Include="Assets\Scripts\BossEnemy.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkCanPassWarning.cs" />
+    <Compile Include="Assets\Scripts\Sheild.cs" />
     <Compile Include="Assets\Scripts\rangedEnemy.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Player\StaminaBar.cs" />
@@ -127,6 +135,7 @@
     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\DataPersistenceManager.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\TMP_Translator.cs" />
+    <Compile Include="Assets\Scripts\Sword.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopManager.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkTimeline.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuItemsManager.cs" />
@@ -151,6 +160,7 @@
     <None Include="Assets\RPGTALK\Demo\Talks\DemoTimeline.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Tutorial\tutorial.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\RPGTALK\ReadMe.txt" />
     <None Include="Assets\SPUM\ReadMe - 3.0.0.txt" />

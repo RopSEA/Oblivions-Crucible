@@ -93,8 +93,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 28.36
+  m_AngularDrag: 12.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -122,6 +122,7 @@ MonoBehaviour:
   speed: 1.2
   hp: 400
   player: {fileID: 0}
+  floatingText: {fileID: 4556969757122287335, guid: a5985fc3f0dc97044883b27a33b0a573, type: 3}
   hitEffectPrefab: {fileID: 1356325961092716449, guid: cb7d4e54e6d21b649bfd23ee27b38ca6, type: 3}
   coinPrefab: {fileID: 4778276146499471798, guid: 223d5adcfbdf3be4b9aea196783f3950, type: 3}
   sprite: {fileID: 7283130542582428012}

@@ -7,11 +7,18 @@ using UnityEngine.EventSystems;
 public class EnemyHomingBullet : HomingBullet
 {
     private Transform target;
-    private Vector2 moveDirection;
+    private Vector3 moveDirection;
+    public bool noHome;
 
 
     void Start()
     {
+        if (noHome)
+        {
+            Destroy(gameObject, lifetime);
+            return;
+        }
+
         target = FindNearestEnemy();
 
         if (target != null)
@@ -74,5 +81,48 @@ public class EnemyHomingBullet : HomingBullet
 
             Destroy(gameObject);
         }
+    }
+
+    public void updateDir(int deg)
+    {
+        moveDirection = newDir(deg);
+    }
+
+    private Vector3 newDir(int deg)
+    {
+        Vector3 dirs = new Vector3(0, 1, 0);
+        if (deg == 0)
+        {
+            dirs = new Vector3(0, 1, 0);
+        }
+        else if (deg == 45)
+        {
+            dirs = new Vector3(1, 1, 0);
+        }
+        else if (deg == 90)
+        {
+            dirs = new Vector3(1, 0, 0);
+        }
+        else if (deg == 135)
+        {
+            dirs = new Vector3(1, -1, 0);
+        }
+        else if (deg == 180)
+        {
+            dirs = new Vector3(0, -1, 0);
+        }
+        else if (deg == 225)
+        {
+            dirs = new Vector3(-1, -1, 0);
+        }
+        else if (deg == 270)
+        {
+            dirs = new Vector3(-1, 0, 0);
+        }
+        else if (deg == 315)
+        {
+            dirs = new Vector3(-1, 1, 0);
+        }
+        return dirs.normalized;
     }
 }

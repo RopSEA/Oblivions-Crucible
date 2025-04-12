@@ -7596,7 +7596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8221405902211200114
 Transform:
   m_ObjectHideFlags: 0
@@ -7797,6 +7797,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1339797637058320468, guid: dff2e4f4aec480841aa65e6a49a9ebe6, type: 3}
   firePoint: {fileID: 473471819937735163}
   fireRate: 0.5
+  rpgTalk: {fileID: 0}
 --- !u!114 &855113227777441561
 MonoBehaviour:
   m_ObjectHideFlags: 0

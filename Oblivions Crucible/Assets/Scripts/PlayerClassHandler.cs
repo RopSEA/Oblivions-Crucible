@@ -8,6 +8,8 @@ public class PlayerClassHandler : MonoBehaviour
     public GameObject engineerPrefab;
     public GameObject playerInstance;
     public GameObject playerInstance2;
+    public GameObject playerInstance3;
+    public GameObject playerInstance4;
     public CameraFollow cameraFollow;
 
 
@@ -18,6 +20,14 @@ public class PlayerClassHandler : MonoBehaviour
         if (selectedClass != "" && selectedClass == "Speedster") 
         {
             playerInstance = playerInstance2;
+        }
+        if (selectedClass != "" && selectedClass == "Tank")
+        {
+            playerInstance = playerInstance3;
+        }
+        if (selectedClass != "" && selectedClass == "Mage")
+        {
+            playerInstance = playerInstance4;
         }
         playerInstance.SetActive(true);
         cameraFollow.enabled = true;
