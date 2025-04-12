@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 public class ShopDisplay : MonoBehaviour
@@ -16,7 +17,8 @@ public class ShopDisplay : MonoBehaviour
     public Button exitButton;
     public bool debugShowShop = false;
     public bool Shop = false;
-
+    //For tutorial Access
+    public UnityEvent OnShopClosed = new UnityEvent();
     void Awake()
     {
         if (instance == null) instance = this;
@@ -81,5 +83,7 @@ public class ShopDisplay : MonoBehaviour
         Shop = false;
         
         Time.timeScale = 1f;
+        //Notify TutorialManager that shop was closed
+        OnShopClosed.Invoke();
     }
 }
