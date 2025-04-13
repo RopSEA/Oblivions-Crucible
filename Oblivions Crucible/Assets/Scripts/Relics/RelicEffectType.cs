@@ -5,16 +5,10 @@ public enum RelicEffectType
     StaminaBoost,
     IntelligenceBoost,
     DefenseBoost,
-
     HealthBonus,
     DamageMultiplier,
     CooldownReduction,
-    MovementSpeedMultiplier,
-
     Lifesteal,
-    DoubleCoins,
-    GainCoinsOnKill,
-
     ReviveOnce
     // Add more as needed
 }

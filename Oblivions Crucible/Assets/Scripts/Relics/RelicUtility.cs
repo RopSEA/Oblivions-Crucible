@@ -18,7 +18,7 @@ public static class RelicUtility
 
     public static bool HasEffect(RelicEffectType type)
     {
-        foreach (var relic in RunData.instance.selectedRelics)
+        foreach (var relic in RelicRunData.instance.selectedRelics)
         {
             foreach (var effect in relic.effects)
             {

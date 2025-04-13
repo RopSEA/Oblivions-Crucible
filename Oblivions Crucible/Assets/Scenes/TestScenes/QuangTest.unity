@@ -600,8 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7964766699c30514aac7137e6a29d6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  round: 000000000000000000000000000000000100000000000000
-  req: 050000000500000005000000050000000100000005000000
+  rs: []
   spawns:
   - {fileID: 1040151335}
   - {fileID: 465676547}
@@ -609,11 +608,11 @@ MonoBehaviour:
   - {fileID: 1067893242}
   - {fileID: 64272782}
   enemys: []
-  enemy: {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
   roundText: {fileID: 652698020}
   waitText: {fileID: 1502085539}
   endText: {fileID: 2056456088}
   shop: {fileID: 8285665682724373473}
+  hpBar: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,6 +2070,8 @@ MonoBehaviour:
   engineerPrefab: {fileID: 1382257929}
   playerInstance: {fileID: 1382257929}
   playerInstance2: {fileID: 521995828}
+  playerInstance3: {fileID: 0}
+  playerInstance4: {fileID: 0}
   cameraFollow: {fileID: 519420033}
 --- !u!4 &1136559529
 Transform:
@@ -4626,7 +4627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!225 &4264238420192762413
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5361,8 +5362,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 50
+  defense: 0
   movementSpeed: 1
   fireRate: 0
+  priCooldown: 0
+  secCooldown: 0
+  Img: {fileID: 0}
+  Img2: {fileID: 0}
+  slashPrefab: {fileID: 0}
+  sheildPrefab: {fileID: 0}
 --- !u!114 &7777844465319985591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5750,6 +5758,9 @@ MonoBehaviour:
   exitButton: {fileID: 2913513574789550091}
   debugShowShop: 1
   Shop: 0
+  OnShopClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8437478468167678118
 GameObject:
   m_ObjectHideFlags: 0

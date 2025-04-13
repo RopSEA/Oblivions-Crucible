@@ -1,11 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RelicRunData : MonoBehaviour
-
+public class RelicRunData
 {
-    public static RelicRunData instance = new RelicRunDataRunData();
+    public static RelicRunData instance = new RelicRunData();
 
     public List<RelicSO> selectedRelics = new List<RelicSO>();
 
@@ -14,7 +12,7 @@ public class RelicRunData : MonoBehaviour
         selectedRelics.Clear();
         foreach (var name in relicNames)
         {
-            Relic relic = RelicCatalog.instance.GetRelicByName(name);
+            RelicSO relic = RelicCatalog.instance.GetRelicByName(name);
             if (relic != null)
                 selectedRelics.Add(relic);
         }

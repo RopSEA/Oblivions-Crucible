@@ -1186,6 +1186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f75349a286817b6479976a10636d3b2c, type: 3}
   debug: 0
+  image: {fileID: 0}
 --- !u!114 &1852925487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1313,6 +1314,7 @@ MonoBehaviour:
   targetY: 4.32
   duration: 0.5
   titleManager: {fileID: 0}
+  uiCanvasGroups: []
 --- !u!114 &2126017596
 MonoBehaviour:
   m_ObjectHideFlags: 0
