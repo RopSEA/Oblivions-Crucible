@@ -35,10 +35,10 @@ public class ShopManager : MonoBehaviour
             Resources.Load<Sprite>("DemonShield"), 0, 0, 0, 0, 5, 50));
 
         availableItems.Add(new ShopItem("Mythril Sword", "A powerful blade \n +5 Str", 
-            Resources.Load<Sprite>("MythSword"), 5, 0, 0, 0, 0, 50));
+            Resources.Load<Sprite>("MythrilSword"), 5, 0, 0, 0, 0, 50));
 
         availableItems.Add(new ShopItem("Vitality Potion", "Increases health \n+5 Vit", 
-            Resources.Load<Sprite>("HpPot"), 0, 5, 0, 0, 0, 30));
+            Resources.Load<Sprite>("VitalityPotion"), 0, 5, 0, 0, 0, 30));
     }
 
     void SelectRandomItems()
@@ -85,9 +85,15 @@ public class ShopManager : MonoBehaviour
                 playerStats.OwnedUpgrades.Add(selectedItem.itemName);
 
                 Debug.Log($" Purchased {selectedItem.itemName}. Remaining Coins: {coinManager.instance.GetCoinCount()}");
+                // Update Item Description
+                selectedItem.isSold = true;
+                selectedItem.itemImage = selectedItem.soldImageOverride ?? selectedItem.itemImage;
+                Debug.Log("Assigned Sprite: " + selectedItem.itemImage.name);
 
                 //  Update the Shop UI
                 ShopDisplay.instance.UpdateShopUI(displayedItems);
+
+             
 
                 // Ensure Menu UI updates with new stats
                 MenuUIManager.instance.UpdateMenuStats();

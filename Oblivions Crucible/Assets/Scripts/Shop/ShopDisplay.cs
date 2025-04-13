@@ -37,31 +37,53 @@ public class ShopDisplay : MonoBehaviour
 
     public void UpdateShopUI(ShopItem[] displayedItems)
     {
-        Debug.Log($" Updating Shop UI | Items Count: {displayedItems.Length}");
+        Debug.Log($"Updating Shop UI | Items Count: {displayedItems.Length}");
 
-        for (int i = 0; i < displayedItems.Length; i++) // This should be 0-2
+        for (int i = 0; i < displayedItems.Length; i++)
         {
             if (i >= itemImages.Length || i >= buyButtons.Length)
             {
-                Debug.LogError($" ERROR: UI element index {i} is out of bounds!");
-                continue; // Prevents further execution for this index
+                Debug.LogError($"ERROR: UI element index {i} is out of bounds!");
+                continue;
             }
 
-            itemImages[i].sprite = displayedItems[i].itemImage;
-            itemNames[i].text = displayedItems[i].itemName;
-            itemDescriptions[i].text = displayedItems[i].description;
-            itemPrices[i].text = displayedItems[i].cost.ToString();
+            ShopItem item = displayedItems[i];
 
-            buyButtons[i].onClick.RemoveAllListeners(); // Ensure no duplicate listeners
+            // Set shared UI text
+            itemNames[i].text = item.itemName;
+            itemDescriptions[i].text = item.description;
 
-            int buttonIndex = i; // Capture the correct index
-            buyButtons[i].onClick.AddListener(() =>
+                    if (item.isSold)
             {
-                Debug.Log($" Button {buttonIndex} clicked, calling BuyItem({buttonIndex})");
-                ShopManager.instance.BuyItem(buttonIndex);
-            });
+                itemDescriptions[i].text = item.description;
+
+                //Force refresh by clearing first
+                itemImages[i].sprite = item.soldImageOverride;
+
+                Debug.Log($"Sprite visually reassigned: {item.soldImageOverride.name}");
+
+                itemPrices[i].text = "";
+                buyButtons[i].interactable = false;
+            }
+
+
+            else
+            {
+                itemImages[i].sprite = item.itemImage;
+                itemPrices[i].text = item.cost.ToString();
+                buyButtons[i].interactable = true;
+
+                buyButtons[i].onClick.RemoveAllListeners();
+                int buttonIndex = i; 
+                buyButtons[i].onClick.AddListener(() =>
+                {
+                    Debug.Log($"Button {buttonIndex} clicked, calling BuyItem({buttonIndex})");
+                    ShopManager.instance.BuyItem(buttonIndex);
+                });
+            }
         }
     }
+
 
 
     public void ShowShop()
