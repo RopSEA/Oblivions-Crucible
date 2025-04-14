@@ -151,6 +151,7 @@ public class RoundManager : MonoBehaviour
         }
 
         updateRound();
+        isShop = false;
     }
 
     IEnumerator intermission(int Wait)
