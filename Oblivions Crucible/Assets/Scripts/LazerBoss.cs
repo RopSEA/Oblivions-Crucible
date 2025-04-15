@@ -37,6 +37,7 @@ public class LazerBoss : BasicEnemyMovement
 
         StartCoroutine(redDamage());
         ShowHitEffect();
+        AudioManager.instance.PlaySfx("hitE");
 
         if (floatingText)
         {
@@ -135,6 +136,7 @@ public class LazerBoss : BasicEnemyMovement
             temp = Instantiate(LazerH, h, transform.rotation);
             temp2 = Instantiate(LazerV, v, transform.rotation);
             yield return new WaitForSeconds(wait);
+             AudioManager.instance.PlaySfx("lazerBig");
             cam.GetComponent<ScreenShake>().start = true;
 
             Destroy(temp, 1f);
@@ -144,6 +146,7 @@ public class LazerBoss : BasicEnemyMovement
         {
             temp = Instantiate(LazerV, v, transform.rotation);
             yield return new WaitForSeconds(wait);
+            AudioManager.instance.PlaySfx("lazerBig");
             cam.GetComponent<ScreenShake>().start = true;
             Destroy(temp, 1f);
         }
@@ -151,6 +154,7 @@ public class LazerBoss : BasicEnemyMovement
         {
             temp = Instantiate(LazerH , h, transform.rotation);
             yield return new WaitForSeconds(wait);
+            AudioManager.instance.PlaySfx("lazerBig");
             cam.GetComponent<ScreenShake>().start = true;
             Destroy(temp, 1f);
         }
@@ -171,7 +175,7 @@ public class LazerBoss : BasicEnemyMovement
         }
         isAttack2 = true;
         temp = Instantiate(miniLazer, transform.position, transform.rotation);
-
+        AudioManager.instance.PlaySfx("lazerSmall");
         StartCoroutine(secCool());
     }
 

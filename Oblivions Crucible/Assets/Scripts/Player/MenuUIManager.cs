@@ -6,6 +6,7 @@ public class MenuUIManager : MonoBehaviour
 {
     public static MenuUIManager instance;
     public CanvasGroup menuCanvasGroup;
+    public CanvasGroup SettingsCanvas;
     public KeyCode toggleKey = KeyCode.Escape;
 
     [Header("Number Display")]
@@ -57,6 +58,12 @@ public class MenuUIManager : MonoBehaviour
     }
     }
 
+    public void unPause()
+    {
+        isMenuOpen = !isMenuOpen;
+        SetMenuVisibility(false, false);
+    }
+
     void SetMenuVisibility(bool visible, bool fade)
     {
         Time.timeScale = visible ? 0f : 1f;
@@ -70,6 +77,10 @@ public class MenuUIManager : MonoBehaviour
             menuCanvasGroup.alpha = visible ? 1f : 0f;
             menuCanvasGroup.interactable = visible;
             menuCanvasGroup.blocksRaycasts = visible;
+
+            SettingsCanvas.alpha = visible ? 1f : 0f;
+            SettingsCanvas.interactable = visible;
+            SettingsCanvas.blocksRaycasts = visible;
         }
     }
 
@@ -83,6 +94,7 @@ public class MenuUIManager : MonoBehaviour
         while (elapsedTime < duration)
         {
             menuCanvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            SettingsCanvas.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
             elapsedTime += Time.unscaledDeltaTime;
             yield return null;
         }
@@ -90,6 +102,10 @@ public class MenuUIManager : MonoBehaviour
         menuCanvasGroup.alpha = endAlpha;
         menuCanvasGroup.interactable = fadeIn;
         menuCanvasGroup.blocksRaycasts = fadeIn;
+
+        SettingsCanvas.alpha = endAlpha;
+        SettingsCanvas.interactable = fadeIn;
+        SettingsCanvas.blocksRaycasts = fadeIn;
     }
 
     public void UpdateMenuStats()

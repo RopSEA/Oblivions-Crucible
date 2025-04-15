@@ -186,6 +186,11 @@ public class RoundManager : MonoBehaviour
         SceneManager.LoadScene("TitleScreen");
     }
 
+    public void QuitRun()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
+
 
     void updateRound()
     {

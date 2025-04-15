@@ -24,7 +24,7 @@ public class coinManager : MonoBehaviour
     public void CollectCoin(GameObject coin)
     {
         coinType temp = coin.GetComponent<Coin>().coinT;
-
+        AudioManager.instance.PlaySfx("Coin");
         if (temp == coinType.Normal)
         {
             CollectYellowCoin(coin);

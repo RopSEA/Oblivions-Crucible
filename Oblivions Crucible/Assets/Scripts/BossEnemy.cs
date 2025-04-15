@@ -27,6 +27,7 @@ public class BossEnemy : BasicEnemyMovement
 
         StartCoroutine(redDamage());
         ShowHitEffect();
+        AudioManager.instance.PlaySfx("hitE");
 
         if (floatingText)
         {

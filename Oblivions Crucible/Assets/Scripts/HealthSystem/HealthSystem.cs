@@ -56,6 +56,7 @@ public class HealthSystem : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.SetHealth(currentHealth); // Update UI
+            AudioManager.instance.PlaySfx("hit");
         }
 
         if (currentHealth == 0)

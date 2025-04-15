@@ -100,6 +100,7 @@
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkCinematic\RPGTalkCinematicBehaviour.cs" />
     <Compile Include="Assets\Scripts\Classes\MageClass.cs" />
     <Compile Include="Assets\Scripts\Lazer.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumTextureData.cs" />
     <Compile Include="Assets\Scripts\Tutorial\TutorialManager.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkCinematic\RPGTalkCinematicTrack.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkSaveInstance.cs" />
     <Compile Include="Assets\Scripts\RotateSheild.cs" />
+    <Compile Include="Assets\Scripts\SoundSettings.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_MatchingList.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\TextWithIcon.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Relics\RelicSelectable.cs" />
@@ -158,6 +160,7 @@
     <Compile Include="Assets\Scripts\Tutorial\TutorialEnemySpawner.cs" />
     <Compile Include="Assets\Scripts\camerapan.cs" />
     <Compile Include="Assets\Scripts\Relics\RelicCatalog.cs" />
+    <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkLocalization.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkSmartPointer.cs" />

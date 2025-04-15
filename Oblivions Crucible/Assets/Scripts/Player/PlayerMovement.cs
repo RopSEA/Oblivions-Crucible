@@ -72,11 +72,13 @@ public class PlayerMovement : MonoBehaviour
         {
 
             int can = stamina.UseStamina(20);
+
             if (Time.time - lastDodge < cooldown || can == -1)
             {
                 return;
             }
 
+            AudioManager.instance.PlaySfx("roll");
             lastDodge = Time.time;
             state = State.Roll;
             slideSpeed = 35.5f;

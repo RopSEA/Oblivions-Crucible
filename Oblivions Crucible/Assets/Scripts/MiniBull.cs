@@ -92,6 +92,7 @@ public class MiniBull : MonoBehaviour
         {
             Debug.Log("GUH");
             transform.position += (Vector3)moveDirection * speed * Time.deltaTime;
+            //AudioManager.instance.PlaySfx("lazerSmall");
         }
 
     }
