@@ -109,6 +109,7 @@
     <Compile Include="Assets\SPUM\Sample\Script\PlayerObj.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\RPGTalkCharacter.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\LaserManager.cs" />
     <Compile Include="Assets\Scripts\ClassButton.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkDubSounds.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumAnimationClip.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorHover.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkCinematic\RPGTalkCinematicClip.cs" />
+    <Compile Include="Assets\Scripts\LaserController.cs" />
     <Compile Include="Assets\Scripts\BossEnemy.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkCanPassWarning.cs" />
     <Compile Include="Assets\Scripts\Relics\RelicRunData.cs" />
