@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class RoundManager : MonoBehaviour
 {
+    public GameObject spawnPoint;
     public Round[] rs;
     public List<Transform> spawns = new List<Transform>();
     public List<GameObject> enemys = new List<GameObject>();
@@ -23,6 +24,7 @@ public class RoundManager : MonoBehaviour
     {
         GameObject temp = null;
         int rand = Random.Range(0,8);
+        int randy = Random.Range(0, 8);
         int freq;
         int enem;
 
@@ -60,9 +62,12 @@ public class RoundManager : MonoBehaviour
         {
             freq = Random.Range(0, 99);
             enem = chooseEnemy(freq);
-            rand = Random.Range(0, 8);
+            rand = Random.Range(-12, 12);
+            randy = Random.Range(-7, 7);
 
-            temp = Instantiate(rs[currRound].enemyType[enem], spawns[rand].position, spawns[rand].rotation);
+            //temp = Instantiate(rs[currRound].enemyType[enem], spawns[rand].position, transform.rotation);
+            temp = Instantiate(spawnPoint,new Vector3(rand,randy,0), transform.rotation);
+            temp = temp.GetComponent<betterSpawn>().spawnEnmy(rs[currRound].enemyType[enem]);
             temp.GetComponent<BasicEnemyMovement>().enabled = true;
             enemys.Add(temp);
         }

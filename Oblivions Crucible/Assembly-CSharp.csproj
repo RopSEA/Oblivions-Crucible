@@ -162,6 +162,7 @@
     <Compile Include="Assets\Scripts\Relics\RelicCatalog.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkLocalization.cs" />
+    <Compile Include="Assets\Scripts\betterSpawn.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkSmartPointer.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpumPackage.cs" />
