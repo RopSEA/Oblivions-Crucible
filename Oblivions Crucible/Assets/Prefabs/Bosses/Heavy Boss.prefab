@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8460860638921276974}
   - component: {fileID: 7942306568619195297}
   - component: {fileID: 6527231914042042981}
+  - component: {fileID: -5181692183139766609}
   - component: {fileID: 9153372582539529184}
   m_Layer: 0
   m_Name: Heavy Boss
@@ -107,6 +108,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-5181692183139766609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433193150800381550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!114 &9153372582539529184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16935cdb842d7f4a8b7ce7ce7cb2bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.7
+  speed: 3000
   hp: 1500
   player: {fileID: 0}
   floatingText: {fileID: 4556969757122287335, guid: a5985fc3f0dc97044883b27a33b0a573, type: 3}
@@ -131,6 +160,7 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   bulletPre: {fileID: 6165446723958126561, guid: 5f260672c20078048b21301347c06685, type: 3}
   bulletPre2: {fileID: 5784010825578552567, guid: 72a2a70940f46ae469a2b31e2cd849ae, type: 3}
+  nextWaypoinDist: 1.5
 --- !u!1001 &2696251896139232002
 PrefabInstance:
   m_ObjectHideFlags: 0

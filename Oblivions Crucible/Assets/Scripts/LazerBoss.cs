@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
+using Pathfinding;
 
 public class LazerBoss : BasicEnemyMovement
 {
+
     public GameObject hpBar;
     public GameObject LazerV;
     public GameObject LazerH;
@@ -16,9 +18,18 @@ public class LazerBoss : BasicEnemyMovement
     public float wait;
 
 
+    // for Path Finding
+    public float nextWaypoinDist = 3f;
+    private Seeker seeker;
+    private Rigidbody2D rb;
+    private Path path;
+    private int currWay = 0;
+    private bool ReachedEND = false;
+
+
 
     private Vector3 h = new Vector3(-8.537104f, -2.552133f, -0.1259285f);
-    private Vector3 v = new Vector3(-9.435257f, -3.450285f, -0.1259285f);
+    private Vector3 v = new Vector3(-0.24f, -0.03f, -0.1259285f);
 
     public override void damage(int dam)
     {
@@ -205,6 +216,23 @@ public class LazerBoss : BasicEnemyMovement
         }
     }
 
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currWay = 0;
+        }
+    }
+
+    void UpdatePath()
+    {
+        if (seeker.IsDone())
+        {
+            seeker.StartPath(rb.position, player.transform.position, OnPathComplete);
+        }
+    }
+
 
     void Start()
     {
@@ -217,6 +245,9 @@ public class LazerBoss : BasicEnemyMovement
             hpMax = hp;
         }
 
+        seeker = GetComponent<Seeker>();
+        rb = GetComponent<Rigidbody2D>();
+
         FindPlayer();
 
 
@@ -228,6 +259,8 @@ public class LazerBoss : BasicEnemyMovement
             i.renderer.material = hit;
             i.renderer.material.SetFloat(hitEffectAmount, 1);
         }
+
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
 
     // Update is called once per frame
@@ -241,12 +274,40 @@ public class LazerBoss : BasicEnemyMovement
         }
 
 
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
 
         if (isAttack2 == true || isAttack1 == true)
         {
             return;
         }
         chooseAttack();
+    }
+
+    private void FixedUpdate()
+    {
+        if (path == null)
+            return;
+
+        if (currWay >= path.vectorPath.Count)
+        {
+            ReachedEND = true;
+            return;
+        }
+        else
+        {
+            ReachedEND = false;
+        }
+
+        Vector2 dir = ((Vector2)path.vectorPath[currWay] - rb.position).normalized;
+        Vector2 force = dir * speed * Time.deltaTime;
+
+        rb.AddForce(force);
+
+        float dist = Vector2.Distance(rb.position, path.vectorPath[currWay]);
+
+        if (dist < nextWaypoinDist)
+        {
+            currWay++;
+        }
     }
 }

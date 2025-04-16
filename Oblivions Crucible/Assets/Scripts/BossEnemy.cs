@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,15 @@ public class BossEnemy : BasicEnemyMovement
     public GameObject bulletPre2;
     private bool isAttack1 = false;
     private bool isAttack2 = false;
+
+
+    // for Path Finding
+    public float nextWaypoinDist = 3f;
+    private Seeker seeker;
+    private Rigidbody2D rb;
+    private Path path;
+    private int currWay = 0;
+    private bool ReachedEND = false;
 
     public override void damage(int dam)
     {
@@ -177,6 +187,23 @@ public class BossEnemy : BasicEnemyMovement
         }
     }
 
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currWay = 0;
+        }
+    }
+
+    void UpdatePath()
+    {
+        if (seeker.IsDone())
+        {
+            seeker.StartPath(rb.position, player.transform.position, OnPathComplete);
+        }
+    }
+
 
     void Start()
     {
@@ -190,6 +217,9 @@ public class BossEnemy : BasicEnemyMovement
 
         FindPlayer();
 
+        seeker = GetComponent<Seeker>();
+        rb = GetComponent<Rigidbody2D>();
+
         List<MatchingElement> sprites = sprite.matchingTables;
         List<Material> materials = new List<Material>();
         int hitEffectAmount = Shader.PropertyToID("_HitEffectAmount");
@@ -198,6 +228,8 @@ public class BossEnemy : BasicEnemyMovement
             i.renderer.material = hit;
             i.renderer.material.SetFloat(hitEffectAmount, 1);
         }
+
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
 
     // Update is called once per frame
@@ -218,5 +250,33 @@ public class BossEnemy : BasicEnemyMovement
             return;
         }
         chooseAttack();
+    }
+
+    private void FixedUpdate()
+    {
+        if (path == null)
+            return;
+
+        if (currWay >= path.vectorPath.Count)
+        {
+            ReachedEND = true;
+            return;
+        }
+        else
+        {
+            ReachedEND = false;
+        }
+
+        Vector2 dir = ((Vector2)path.vectorPath[currWay] - rb.position).normalized;
+        Vector2 force = dir * speed * Time.deltaTime;
+
+        rb.AddForce(force);
+
+        float dist = Vector2.Distance(rb.position, path.vectorPath[currWay]);
+
+        if (dist < nextWaypoinDist)
+        {
+            currWay++;
+        }
     }
 }
