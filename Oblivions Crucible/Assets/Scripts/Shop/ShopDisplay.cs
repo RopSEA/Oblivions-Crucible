@@ -53,9 +53,11 @@ public class ShopDisplay : MonoBehaviour
             itemNames[i].text = item.itemName;
             itemDescriptions[i].text = item.description;
 
-                    if (item.isSold)
+            if (item.isSold)
             {
                 itemDescriptions[i].text = item.description;
+
+                Sprite tempImage;
 
                 //Force refresh by clearing first
                 itemImages[i].sprite = item.soldImageOverride;
@@ -66,9 +68,10 @@ public class ShopDisplay : MonoBehaviour
                 buyButtons[i].interactable = false;
             }
 
-
             else
             {
+      
+      
                 itemImages[i].sprite = item.itemImage;
                 itemPrices[i].text = item.cost.ToString();
                 buyButtons[i].interactable = true;
@@ -85,6 +88,8 @@ public class ShopDisplay : MonoBehaviour
     }
 
 
+    
+
 
     public void ShowShop()
     {
@@ -99,11 +104,32 @@ public class ShopDisplay : MonoBehaviour
     public void HideShop()
     {
         Debug.Log(" HideShop() called!");
+
+
+        ShopItem[] displayedItems = ShopManager.instance.getDisplay();
+
+        for (int i = 0; i < displayedItems.Length; i++)
+        {
+            if (i >= itemImages.Length || i >= buyButtons.Length)
+            {
+                Debug.LogError($"ERROR: UI element index {i} is out of bounds!");
+                continue;
+            }
+
+            ShopItem item = displayedItems[i];
+            item.isSold = false;
+            item.itemImage = item.itemImageOverride;
+        }
+
+        ShopManager.instance.clearDisplayed();
+
+        UpdateShopUI(displayedItems);
+
         shopCanvasGroup.alpha = 0;
         shopCanvasGroup.interactable = false;
         shopCanvasGroup.blocksRaycasts = false;
         Shop = false;
-        
+
         Time.timeScale = 1f;
         //Notify TutorialManager that shop was closed
         OnShopClosed.Invoke();

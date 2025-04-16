@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -15,6 +16,7 @@ public class ShopItem
     public int cost;
 
     public bool isSold = false;
+    public Sprite itemImageOverride;
     public Sprite soldImageOverride;
 
     public ShopItem(string name, string desc, Sprite img, int str, int vit, int sta, int intel, int def, int price)
@@ -33,7 +35,9 @@ public class ShopItem
         // Load Sold + ItemName.png 
         Debug.Log($"Loading sold sprite for {name}: Sold{name.Replace(" ", "")}");
         soldImageOverride = Resources.Load<Sprite>($"Sold{name.Replace(" ", "")}");
-        
+        itemImageOverride = img;
+
+
 
     }
 }

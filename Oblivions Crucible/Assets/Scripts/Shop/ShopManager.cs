@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class ShopManager : MonoBehaviour
 {
@@ -29,6 +30,17 @@ public class ShopManager : MonoBehaviour
         ShopDisplay.instance.UpdateShopUI(displayedItems);
     }
 
+    public void clearDisplayed()
+    {
+        Array.Clear(displayedItems, 0, displayedItems.Length);
+        SelectRandomItems();
+    }
+
+    public ShopItem[] getDisplay()
+    {
+        return displayedItems;
+    }
+
     void LoadShopItems()
     {
         availableItems.Add(new ShopItem("Demon Shield", "A strong steel shield \n +5 Def", 
@@ -47,7 +59,7 @@ public class ShopManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {   
             if (tempList.Count == 0) break;
-            int randomIndex = Random.Range(0, tempList.Count);
+            int randomIndex = UnityEngine.Random.Range(0, tempList.Count);
             displayedItems[i] = tempList[randomIndex];
             tempList.RemoveAt(randomIndex);
         }
@@ -71,6 +83,7 @@ public class ShopManager : MonoBehaviour
             {
                 PlayerStats playerStats = MenuUIManager.instance.playerStats;
                 HealthSystem playerHp = GameObject.FindWithTag("Player").GetComponent<HealthSystem>();
+                Classes playerStat = GameObject.FindWithTag("Player").GetComponent<Classes>();
 
                 // Update Player Stats
                 playerStats.Strength += selectedItem.strengthBoost;
@@ -81,6 +94,10 @@ public class ShopManager : MonoBehaviour
 
 
                 playerHp.addHealth(selectedItem.vitalityBoost);
+                playerStat.addStren(selectedItem.strengthBoost);
+                playerStat.addStam(selectedItem.staminaBoost);
+                playerStat.addIntell(selectedItem.intelligenceBoost);
+                playerStat.addDef(selectedItem.defenseBoost);
 
                 playerStats.OwnedUpgrades.Add(selectedItem.itemName);
 

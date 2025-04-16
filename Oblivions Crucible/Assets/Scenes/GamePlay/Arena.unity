@@ -1295,13 +1295,8 @@ MonoBehaviour:
     enemyType:
     - {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
     enemyTypeFreq: 64000000
-  - r: 2
-    req: 1
-    enemyType:
-    - {fileID: 3421612560242941665, guid: 67067b48479b05f4c8374491d088bcad, type: 3}
-    enemyTypeFreq: 64000000
   - r: 0
-    req: 14
+    req: 7
     enemyType:
     - {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
     - {fileID: 2588370230164921825, guid: 8642e1a5876e3654cba74d366c6687cc, type: 3}
