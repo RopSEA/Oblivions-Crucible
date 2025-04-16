@@ -20,6 +20,7 @@ public class RoundManager : MonoBehaviour
     public GameObject hpBar;
     public GameObject BossIntro;
     private int temp;
+    [SerializeField] private int enemiesPerWave = 7;
 
     public void spawnEnemies()
     {
@@ -32,7 +33,7 @@ public class RoundManager : MonoBehaviour
         // Fix LATER:  better optimize
         if (enemys.Count > 0)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < enemiesPerWave; i++) // 7 
             {
                 if (enemys[i] != null)
                 {
@@ -40,7 +41,7 @@ public class RoundManager : MonoBehaviour
                 }
             }
 
-            currDef += 5;
+            currDef += enemiesPerWave; // 7 
             enemys.Clear();
 
             if (currDef >= rs[currRound].req)
@@ -59,7 +60,7 @@ public class RoundManager : MonoBehaviour
         }
 
         // Spawn Enemies
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < enemiesPerWave; i++) // 7
         {
             freq = Random.Range(0, 99);
             enem = chooseEnemy(freq);

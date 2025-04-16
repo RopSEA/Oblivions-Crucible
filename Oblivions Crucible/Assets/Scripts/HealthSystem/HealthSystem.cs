@@ -5,13 +5,15 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
-    private int currentHealth;
+    private float currentHealth; 
     private bool isInvulnerable = false;
 
-    public HealthBar healthBar; 
-    public delegate void OnDeathDelegate(); // Event to trigger on death
-    public event OnDeathDelegate OnDeath; // Subscribe other scripts to this
+    public HealthBar healthBar;
+    public delegate void OnDeathDelegate();
+    public event OnDeathDelegate OnDeath;
     public RoundManager r;
+
+    private Coroutine regenCoroutine;
 
     void Start()
     {
@@ -20,6 +22,9 @@ public class HealthSystem : MonoBehaviour
         {
             healthBar.SetMax(maxHealth);
         }
+
+        // Start constant regen: 0.7 HP per second
+        StartConstantRegen(0.7f, 1f);
     }
 
     public void addHealth(int hp)
@@ -33,17 +38,15 @@ public class HealthSystem : MonoBehaviour
 
         if (healthBar != null)
         {
-            healthBar.SetHealth(currentHealth);
+            healthBar.SetHealth(Mathf.CeilToInt(currentHealth));
         }
     }
 
     public void TakeDamage(int damage)
     {
-        if (isInvulnerable) return; // Ignore damage if invulnerable
+        if (isInvulnerable) return;
 
         StartCoroutine(tempInvul());
-
-        // Damage = basedamage * ((((Attk / Defense ) -1)/Factor) + 1)
 
         float def = gameObject.GetComponent<Classes>().defense;
         int dam = (int)Mathf.Ceil(damage * (10 / def));
@@ -55,11 +58,11 @@ public class HealthSystem : MonoBehaviour
 
         if (healthBar != null)
         {
-            healthBar.SetHealth(currentHealth); // Update UI
+            healthBar.SetHealth(Mathf.CeilToInt(currentHealth));
             AudioManager.instance.PlaySfx("hit");
         }
 
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -72,14 +75,64 @@ public class HealthSystem : MonoBehaviour
         isInvulnerable = false;
     }
 
-    public void Heal(int amount)
+    public void Heal(float amount)
     {
         currentHealth += amount;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
 
         if (healthBar != null)
         {
-            healthBar.SetHealth(currentHealth);
+            healthBar.SetHealth(Mathf.CeilToInt(currentHealth));
+        }
+    }
+
+    public void SlowlyHeal(float totalAmount, float duration)
+    {
+        StartCoroutine(SlowHealCoroutine(totalAmount, duration));
+    }
+
+    private IEnumerator SlowHealCoroutine(float totalAmount, float duration)
+    {
+        float amountHealed = 0f;
+        float interval = 0.1f;
+        int ticks = Mathf.CeilToInt(duration / interval);
+        float amountPerTick = totalAmount / ticks;
+
+        while (amountHealed < totalAmount && currentHealth < maxHealth)
+        {
+            float healThisTick = Mathf.Min(amountPerTick, totalAmount - amountHealed);
+            Heal(healThisTick);
+            amountHealed += healThisTick;
+            yield return new WaitForSeconds(interval);
+        }
+    }
+
+    public void StartConstantRegen(float amountPerTick, float interval)
+    {
+        if (regenCoroutine != null)
+            StopCoroutine(regenCoroutine);
+
+        regenCoroutine = StartCoroutine(ConstantRegenCoroutine(amountPerTick, interval));
+    }
+
+    public void StopRegen()
+    {
+        if (regenCoroutine != null)
+        {
+            StopCoroutine(regenCoroutine);
+            regenCoroutine = null;
+        }
+    }
+
+    private IEnumerator ConstantRegenCoroutine(float amountPerTick, float interval)
+    {
+        while (true)
+        {
+            if (currentHealth < maxHealth)
+            {
+                Heal(amountPerTick);
+            }
+            yield return new WaitForSeconds(interval);
         }
     }
 
@@ -90,7 +143,7 @@ public class HealthSystem : MonoBehaviour
 
         if (DataPersistenceManager.instance != null && DataPersistenceManager.instance.GameData != null)
         {
-            DataPersistenceManager.instance.GameData.deathCount++; 
+            DataPersistenceManager.instance.GameData.deathCount++;
             DataPersistenceManager.instance.SaveGame();
             Debug.Log("Deaths: " + DataPersistenceManager.instance.GameData.deathCount);
         }
@@ -98,8 +151,8 @@ public class HealthSystem : MonoBehaviour
         {
             Debug.LogError("DataPersistenceManager or gameData is null! Cannot increment death count.");
         }
+
         OnDeath?.Invoke();
-        
     }
 
     public void SetInvulnerable(bool value)
@@ -107,7 +160,7 @@ public class HealthSystem : MonoBehaviour
         isInvulnerable = value;
     }
 
-    public int GetCurrentHealth()
+    public float GetCurrentHealth()
     {
         return currentHealth;
     }
