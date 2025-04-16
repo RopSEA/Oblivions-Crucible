@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15e1893bca35e24a83e02cced023f33, type: 3}
+  m_Name: Defense
+  m_EditorClassIdentifier: 
+  relicName: Stoneguard Amulet
+  description: Forged from the rootstone of ancient bulwarks. It bears the weight
+    of battle without breaking
+  icon: {fileID: 21300000, guid: b5c7dc00a69010046a197a6da6326239, type: 2}
+  lockedIcon: {fileID: 21300000, guid: 4a2cb5e3f6d6bb74080b21de3ae9cfbc, type: 2}
+  unlockHint: To carry the weight of battle is to be shaped by it. Only the scarred
+    may wear the stone.(Take 1,000 total damage)
+  effects:
+  - effectType: 4
+    value: 3

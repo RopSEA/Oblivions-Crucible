@@ -7,7 +7,6 @@ public enum RelicEffectType
     DefenseBoost,
     HealthBonus,
     DamageMultiplier,
-    CooldownReduction,
     Lifesteal,
     ReviveOnce
     // Add more as needed
