@@ -1291,7 +1291,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 7842739194230856693, guid: 5105d79dfb42572498a3b9ee1bbd5a24, type: 3}
   rs:
   - r: 0
-    req: 5
+    req: 7
     enemyType:
     - {fileID: 135973165507096343, guid: ab2d24b35fe46954d821fac9575d6798, type: 3}
     enemyTypeFreq: 64000000
@@ -1371,6 +1371,7 @@ MonoBehaviour:
   shop: {fileID: 8285665682724373473}
   hpBar: {fileID: 1533616700}
   BossIntro: {fileID: 853255903}
+  enemiesPerWave: 8
 --- !u!114 &493008228
 MonoBehaviour:
   m_ObjectHideFlags: 0
