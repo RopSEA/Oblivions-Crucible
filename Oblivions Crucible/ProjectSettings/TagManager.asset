@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - BossBar
   - EnemyProj
+  - Hazard
   layers:
   - Default
   - TransparentFX
