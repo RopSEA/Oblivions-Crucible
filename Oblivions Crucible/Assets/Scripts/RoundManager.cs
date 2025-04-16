@@ -19,6 +19,7 @@ public class RoundManager : MonoBehaviour
     public ShopDisplay shop;
     public GameObject hpBar;
     public GameObject BossIntro;
+    public DynamicArena dynA ;
     private int temp;
     [SerializeField] private int enemiesPerWave = 7;
 
@@ -64,8 +65,8 @@ public class RoundManager : MonoBehaviour
         {
             freq = Random.Range(0, 99);
             enem = chooseEnemy(freq);
-            rand = Random.Range(-12, 12);
-            randy = Random.Range(-7, 7);
+            rand = Random.Range(-14, 23);
+            randy = Random.Range(-9, 9);
 
             //temp = Instantiate(rs[currRound].enemyType[enem], spawns[rand].position, transform.rotation);
             temp = Instantiate(spawnPoint,new Vector3(rand,randy,0), transform.rotation);
@@ -157,6 +158,7 @@ public class RoundManager : MonoBehaviour
             yield return null;
         }
 
+        dynA.dynmArena();
         updateRound();
         isShop = false;
     }
@@ -164,6 +166,7 @@ public class RoundManager : MonoBehaviour
     IEnumerator intermission(int Wait)
     {
 
+        dynA.delHaz();
 
         for (int i = Wait; i >= 0; i--)
         {
@@ -172,6 +175,11 @@ public class RoundManager : MonoBehaviour
         }
 
         waitText.text = "";
+
+        if (rs[currRound + 1].r != Round.roundKind.Shop)
+        {
+            dynA.dynmArena();
+        }
 
         if (currRound + 1 <= rs.Length && rs[currRound + 1].r == Round.roundKind.Boss)
         {

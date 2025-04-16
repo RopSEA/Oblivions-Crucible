@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5266385065756648538}
   - component: {fileID: 981928100246070123}
-  - component: {fileID: 6787536898533463169}
-  - component: {fileID: 5940548411368925640}
+  - component: {fileID: -5143172935663792528}
+  - component: {fileID: 8018622540701085336}
   m_Layer: 14
-  m_Name: HazardSpikes
+  m_Name: LazerPylon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 1766621515
   m_SortingLayer: -1
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 69c5a95cb41f3604a8441c4de27d6426, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13e903ae24f9ab3418b9872f5e6627fa, type: 3}
   m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6787536898533463169
+--- !u!61 &-5143172935663792528
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,10 +115,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.048870564, y: -0.01452589}
+  m_Offset: {x: 0.057175547, y: 0.06530249}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,9 +129,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.481765, y: 4.568017}
+  m_Size: {x: 0.88488907, y: 1.4526837}
   m_EdgeRadius: 0
---- !u!114 &5940548411368925640
+--- !u!114 &8018622540701085336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,6 +140,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6564031030444681995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc66131ac0d7cd4e9f7b88357695f0f, type: 3}
+  m_Script: {fileID: 11500000, guid: e3a1173524eb2994887f5a2a5d42a40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

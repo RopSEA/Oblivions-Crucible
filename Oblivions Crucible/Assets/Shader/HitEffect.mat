@@ -43,7 +43,7 @@ Material:
     m_Floats:
     - _HitEffectAmount: 1
     m_Colors:
-    - _HitEffectColor: {r: 0.9528302, g: 0.013483422, b: 0.013483422, a: 1}
+    - _HitEffectColor: {r: 0.7264151, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2870079658687681882
 MonoBehaviour:

@@ -18,6 +18,8 @@ public class BasicEnemyMovement : MonoBehaviour
     public Material hit;
     private GameObject enemy;
 
+    public IEnumerator cor;
+
     public virtual void damage(int dam)
     {
 

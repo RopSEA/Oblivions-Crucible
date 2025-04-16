@@ -243,7 +243,7 @@ public class BossEnemy : BasicEnemyMovement
         }
 
 
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+       // transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
 
         if (isAttack2 == true || isAttack1 == true)
         {

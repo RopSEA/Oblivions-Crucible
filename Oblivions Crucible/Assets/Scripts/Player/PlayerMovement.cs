@@ -7,10 +7,10 @@ public class PlayerMovement : MonoBehaviour
 {
 
     [SerializeField] 
-    private float BASE_SPEED = 5;
+    public float BASE_SPEED = 5;
     public StaminaBar stamina;
     private Rigidbody2D rb;
-    float currentSpeed;
+    public float currentSpeed;
     private Vector3 slideDir;
     public Vector3 dirs = new Vector3(0,1,0);
     private float slideSpeed;

@@ -30,9 +30,9 @@ public class DynamicArena : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            tileset[i] = new GameObject[6];
-            pretileset[i] = new GameObject[6];
-            for (int j = 0; j < 6; j++)
+            tileset[i] = new GameObject[7];
+            pretileset[i] = new GameObject[7];
+            for (int j = 0; j < 7; j++)
             {
                 tileset[i][j] = tiles[curr];
                 pretileset[i][j] = tiles[curr];
@@ -40,20 +40,38 @@ public class DynamicArena : MonoBehaviour
             }
         }
 
-        pattern();
+        dynmArena();
 
     }
 
 
-    public void pattern()
+    public void delHaz() 
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                if (patts[i][j] == 'S')
+                {
+                    Destroy(tileset[i][j]);
+                    tileset[i][j] = pretileset[i][j];
+                }
+            }
+        }
+
+        Pattern();
+    }
+
+
+    public void dynmArena()
     {
         GameObject temp;
         char[][] pattern = new char[4][];
         for (int i = 0; i < 4; i++)
         {
-            pattern[i] = new char[6];
+            pattern[i] = new char[7];
 
-            for (int j = 0; j < 6; j++)
+            for (int j = 0; j < 7; j++)
             {
                 pattern[i][j] = patts[i][j];
             }
@@ -63,22 +81,52 @@ public class DynamicArena : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            for (int j = 0; j < 6; j++)
+            for (int j = 0; j < 7; j++)
             {
                 if (pattern[i][j] == 'S')
                 {
                     temp = Instantiate(tileHazards[chooseHaz()], tileset[i][j].transform.position, tileset[i][j].transform.rotation);
-                    Destroy(tileset[i][j]);
                     tileset[i][j] = temp;
                 }
             }
         }
+
+        AstarPath.active.Scan();
+    }
+
+
+    void Pattern()
+    {
+        int rand = Random.Range(0, 2);
+
+        if (rand == 0)
+        {
+            patts[0] = "###S###";
+            patts[1] = "#S###S#";
+            patts[2] = "SS###SS";
+            patts[3] = "###S###";
+        }
+        if (rand == 1)
+        {
+            patts[0] = "S#####S";
+            patts[1] = "#SS#SS#";
+            patts[2] = "#####SS";
+            patts[3] = "#SS#SS#";
+        }
+        if (rand == 2)
+        {
+            patts[0] = "#S###S#";
+            patts[1] = "#S###S#";
+            patts[2] = "#######";
+            patts[3] = "SS###SS";
+        }
+
+        // ALERT CHANGE some sort of flash
     }
 
     public int chooseHaz()
     {
-        int temp = 0;
-
+        int temp = Random.Range(0, tileHazards.Length);
         return temp;
     }
 

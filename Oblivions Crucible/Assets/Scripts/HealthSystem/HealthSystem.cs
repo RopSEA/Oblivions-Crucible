@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class HealthSystem : MonoBehaviour
     public event OnDeathDelegate OnDeath;
     public RoundManager r;
 
+    public SPUM_MatchingList sprite;
+    public Material hit;
+
     private Coroutine regenCoroutine;
 
     void Start()
@@ -21,6 +26,14 @@ public class HealthSystem : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.SetMax(maxHealth);
+        }
+
+        List<MatchingElement> sprites = sprite.matchingTables;
+        int hitEffectAmount = Shader.PropertyToID("_HitEffectAmount");
+        foreach (MatchingElement i in sprites)
+        {
+            i.renderer.material = hit;
+            i.renderer.material.SetFloat(hitEffectAmount, 1);
         }
 
         // Start constant regen: 0.7 HP per second
@@ -70,8 +83,38 @@ public class HealthSystem : MonoBehaviour
 
     IEnumerator tempInvul()
     {
+        List<MatchingElement> sprites = sprite.matchingTables;
+        float dur = 0.5f;
+        float elapsedTime = 0f;
+        int hitEffectAmount = Shader.PropertyToID("_HitEffectAmount");
         isInvulnerable = true;
-        yield return new WaitForSeconds(1f);
+
+        while (elapsedTime < dur)
+        {
+             elapsedTime += Time.deltaTime;
+
+             float lerpedAmt = Mathf.Lerp(1f, 0f, (elapsedTime / dur));
+             foreach (MatchingElement i in sprites)
+             {
+               i.renderer.material.SetFloat(hitEffectAmount, lerpedAmt);
+             }
+             yield return null;
+        }
+
+        elapsedTime = 0f;
+
+        while (elapsedTime < dur)
+        {
+            elapsedTime += Time.deltaTime;
+
+            float lerpedAmt = Mathf.Lerp(0f, 1f, (elapsedTime / dur));
+            foreach (MatchingElement i in sprites)
+            {
+                 i.renderer.material.SetFloat(hitEffectAmount, lerpedAmt);
+            }
+             yield return null;
+
+        }
         isInvulnerable = false;
     }
 

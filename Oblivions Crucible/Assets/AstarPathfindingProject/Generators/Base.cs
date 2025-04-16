@@ -536,7 +536,7 @@ namespace Pathfinding {
 			upheight = up*height;
 			finalRadius = diameter*scale*0.5F;
 			finalRaycastRadius = thickRaycastDiameter*scale*0.5F;
-			contactFilter = new ContactFilter2D { layerMask = mask, useDepth = false, useLayerMask = true, useNormalAngle = false, useTriggers = false };
+			contactFilter = new ContactFilter2D { layerMask = mask, useDepth = false, useLayerMask = true, useNormalAngle = false, useTriggers = true };
 		}
 
 		/// <summary>
