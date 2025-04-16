@@ -151,6 +151,7 @@
     <Compile Include="Assets\Scripts\DataPersistence\DataPersistenceManager.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\TMP_Translator.cs" />
     <Compile Include="Assets\Scripts\Sword.cs" />
+    <Compile Include="Assets\Scripts\DynamicArena.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopManager.cs" />
     <Compile Include="Assets\Scripts\ScreenShake.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkTimeline.cs" />
