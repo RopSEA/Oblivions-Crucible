@@ -18,7 +18,9 @@ public class RoundManager : MonoBehaviour
     private bool isShop;
     public ShopDisplay shop;
     public GameObject hpBar;
+    public GameObject BossIntro;
     private int temp;
+    [SerializeField] private int enemiesPerWave = 7;
 
     public void spawnEnemies()
     {
@@ -31,7 +33,7 @@ public class RoundManager : MonoBehaviour
         // Fix LATER:  better optimize
         if (enemys.Count > 0)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < enemiesPerWave; i++) // 7 
             {
                 if (enemys[i] != null)
                 {
@@ -39,7 +41,7 @@ public class RoundManager : MonoBehaviour
                 }
             }
 
-            currDef += 5;
+            currDef += enemiesPerWave; // 7 
             enemys.Clear();
 
             if (currDef >= rs[currRound].req)
@@ -58,7 +60,7 @@ public class RoundManager : MonoBehaviour
         }
 
         // Spawn Enemies
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < enemiesPerWave; i++) // 7
         {
             freq = Random.Range(0, 99);
             enem = chooseEnemy(freq);
@@ -170,6 +172,13 @@ public class RoundManager : MonoBehaviour
         }
 
         waitText.text = "";
+
+        if (currRound + 1 <= rs.Length && rs[currRound + 1].r == Round.roundKind.Boss)
+        {
+            BossIntro.SetActive(true);
+            yield return new WaitForSeconds(1.7f);
+            BossIntro.SetActive(false);
+        }
         updateRound();
         yield return null;
     }

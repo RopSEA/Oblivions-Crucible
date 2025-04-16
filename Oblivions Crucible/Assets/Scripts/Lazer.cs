@@ -27,7 +27,7 @@ public class Lazer : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("HEY OVER HERE");
+            //Debug.Log("HEY OVER HERE");
             healthSystem.TakeDamage(15);
         }
     }

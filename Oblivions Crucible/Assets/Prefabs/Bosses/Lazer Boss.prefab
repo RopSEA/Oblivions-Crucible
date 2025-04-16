@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3047165454218854134}
   - component: {fileID: 5309431337146564841}
   - component: {fileID: 5690929271337812194}
+  - component: {fileID: 7595916594228540858}
   - component: {fileID: 4617724754491892882}
   m_Layer: 0
   m_Name: Lazer Boss
@@ -67,7 +68,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04410118, y: 1.3133317}
+  m_Offset: {x: -0.04410118, y: 0.51651955}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -78,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.919824, y: 2.6269314}
+  m_Size: {x: 1.919824, y: 1.0333071}
   m_EdgeRadius: 0
 --- !u!50 &5690929271337812194
 Rigidbody2D:
@@ -107,6 +108,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7595916594228540858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421612560242941665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!114 &4617724754491892882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65c882cacb44f74dab1c1ab71805bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.9
+  speed: 3500
   hp: 1500
   player: {fileID: 0}
   floatingText: {fileID: 4556969757122287335, guid: a5985fc3f0dc97044883b27a33b0a573, type: 3}
@@ -127,11 +156,13 @@ MonoBehaviour:
   coinPrefab: {fileID: 6681034753254552422, guid: c4f1220e276ab4a479e9aef5b42b17e3, type: 3}
   sprite: {fileID: 6448835006981161198}
   isTest: 0
+  hit: {fileID: -876546973899608171, guid: 23ee4b545baf5a94e82f6d7cd352808f, type: 3}
   hpBar: {fileID: 0}
   LazerV: {fileID: 7398416873397002919, guid: 34a47384161ba1a4e910b2cec87ac1d7, type: 3}
   LazerH: {fileID: 8874691240340174981, guid: d921c4e7ec6ba0a4f96414e8bb6e7414, type: 3}
   miniLazer: {fileID: 924361704642284490, guid: a66f8345b28bd4c4cb7f5ed292c9f2eb, type: 3}
   wait: 2
+  nextWaypoinDist: 1.5
 --- !u!1001 &6712952731731136792
 PrefabInstance:
   m_ObjectHideFlags: 0
