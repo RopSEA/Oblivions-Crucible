@@ -3,19 +3,51 @@
   "WorkspaceRootPath": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\spikes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spikes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\enemies\\basicenemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemies\\basicenemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|c:\\users\\remi\\documents\\github\\oblivions-crucible\\oblivions crucible\\assets\\scripts\\slime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\slime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|c:\\users\\remi\\documents\\github\\oblivions-crucible\\oblivions crucible\\assets\\scripts\\spikes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spikes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|c:\\users\\remi\\documents\\github\\oblivions-crucible\\oblivions crucible\\assets\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\playerclasshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerclasshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\healthsystem\\healthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\healthsystem\\healthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\rotatesheild.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rotatesheild.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|c:\\users\\remi\\documents\\github\\oblivions-crucible\\oblivions crucible\\assets\\scripts\\dynamicarena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\classes\\mageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\classes\\mageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\classes\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\classes\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\forwardbullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\forwardbullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\dynamicarena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dynamicarena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -25,14 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\roundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\roundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\healthsystem\\healthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\healthsystem\\healthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\enemies\\basicenemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemies\\basicenemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\lazerboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,20 +71,8 @@
       "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tutorial\\dummytarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\player\\menuuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\menuuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\playerclasshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerclasshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\forwardbullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\forwardbullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\shop\\shopdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,16 +87,8 @@
       "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\rpgtalk\\scripts\\rpgtalk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\classes\\mageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\classes\\mageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\classes\\tankclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\classes\\tankclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\classes\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\classes\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C860820-F7F1-4C6B-20EB-3AE3ADB487C8}|Assembly-CSharp.csproj|C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\assets\\scripts\\player\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,37 +102,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Player\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player.cs",
+              "ToolTip": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Player\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Player.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T09:12:28.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Slime.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Slime.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Slime.cs",
               "ToolTip": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Slime.cs",
               "RelativeToolTip": "Assets\\Scripts\\Slime.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T09:08:17.394Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Spikes.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Spikes.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Spikes.cs",
               "ToolTip": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Spikes.cs",
               "RelativeToolTip": "Assets\\Scripts\\Spikes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBsAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T09:08:15.395Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "DynamicArena.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\DynamicArena.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DynamicArena.cs",
@@ -136,12 +153,11 @@
               "RelativeToolTip": "Assets\\Scripts\\DynamicArena.cs",
               "ViewState": "AQIAAFAAAAAAAAAAAAAuwF0AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T03:13:58.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T03:13:58.569Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "RoundManager.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\RoundManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RoundManager.cs",
@@ -153,7 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "rangedEnemy.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\rangedEnemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\rangedEnemy.cs",
@@ -165,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "ShopDisplay.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Shop\\ShopDisplay.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Shop\\ShopDisplay.cs",
@@ -177,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "BossEnemy.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\BossEnemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BossEnemy.cs",
@@ -189,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "LazerBoss.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\LazerBoss.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LazerBoss.cs",
@@ -201,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "ClassSelectManager.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\ClassSelectManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ClassSelectManager.cs",
@@ -213,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "RPGTalk.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\RPGTALK\\Scripts\\RPGTalk.cs",
               "RelativeDocumentMoniker": "Assets\\RPGTALK\\Scripts\\RPGTalk.cs",
@@ -225,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "DummyTarget.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Tutorial\\DummyTarget.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Tutorial\\DummyTarget.cs",
@@ -237,44 +253,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
               "ToolTip": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovement.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAIwEsAAAA3AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T07:10:45.913Z"
+              "WhenOpened": "2025-04-12T07:10:45.913Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "RotateSheild.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\RotateSheild.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RotateSheild.cs",
               "ToolTip": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\RotateSheild.cs",
               "RelativeToolTip": "Assets\\Scripts\\RotateSheild.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowAwAAAAxAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBMAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T07:00:11.901Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 8,
               "Title": "MageClass.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Classes\\MageClass.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Classes\\MageClass.cs",
               "ToolTip": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Classes\\MageClass.cs",
               "RelativeToolTip": "Assets\\Scripts\\Classes\\MageClass.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAowEcAAAAaAAAA",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAIwEcAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T08:59:55.524Z"
+              "WhenOpened": "2025-04-10T08:59:55.524Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "TankClass.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Classes\\TankClass.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Classes\\TankClass.cs",
@@ -286,19 +304,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
               "Title": "ForwardBullet.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\ForwardBullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ForwardBullet.cs",
               "ToolTip": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\ForwardBullet.cs",
               "RelativeToolTip": "Assets\\Scripts\\ForwardBullet.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAQwEgAAAAeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEgAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T05:04:02.655Z"
+              "WhenOpened": "2025-04-09T05:04:02.655Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 9,
               "Title": "Classes.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Classes\\Classes.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Classes\\Classes.cs",
@@ -306,11 +325,12 @@
               "RelativeToolTip": "Assets\\Scripts\\Classes\\Classes.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T04:39:31.265Z"
+              "WhenOpened": "2025-04-09T04:39:31.265Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "PlayerStats.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Player\\PlayerStats.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerStats.cs",
@@ -322,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "MenuUIManager.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Player\\MenuUIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\MenuUIManager.cs",
@@ -334,39 +354,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 4,
               "Title": "PlayerClassHandler.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\PlayerClassHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerClassHandler.cs",
               "ToolTip": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\PlayerClassHandler.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerClassHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAmAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T18:29:02.783Z"
+              "WhenOpened": "2025-04-07T18:29:02.783Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "BasicEnemyMovement.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Enemies\\BasicEnemyMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemies\\BasicEnemyMovement.cs",
               "ToolTip": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\Enemies\\BasicEnemyMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Enemies\\BasicEnemyMovement.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAgwDgAAAAEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T02:52:46.928Z"
+              "WhenOpened": "2025-03-10T02:52:46.928Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "HealthSystem.cs",
               "DocumentMoniker": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\HealthSystem\\HealthSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\HealthSystem\\HealthSystem.cs",
               "ToolTip": "C:\\Users\\Remi\\Documents\\GitHub\\Oblivions-Crucible\\Oblivions Crucible\\Assets\\Scripts\\HealthSystem\\HealthSystem.cs",
               "RelativeToolTip": "Assets\\Scripts\\HealthSystem\\HealthSystem.cs",
-              "ViewState": "AQIAAGIAAAAAAAAAAAAiwHcAAAAAAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwCgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T06:06:11.323Z"
+              "WhenOpened": "2025-03-14T06:06:11.323Z",
+              "EditorCaption": ""
             }
           ]
         }

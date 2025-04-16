@@ -182,7 +182,11 @@ public class HealthSystem : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Died!");
-        r.Lose();
+        if (r != null)
+        {
+            r.Lose();
+        }
+        
 
         if (DataPersistenceManager.instance != null && DataPersistenceManager.instance.GameData != null)
         {

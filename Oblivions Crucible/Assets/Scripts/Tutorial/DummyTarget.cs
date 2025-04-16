@@ -1,4 +1,8 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class DummyTarget : MonoBehaviour
 {
@@ -9,6 +13,7 @@ public class DummyTarget : MonoBehaviour
     private bool isHit = false;
     private TutorialManager tutorialManager;
     public GameObject floatingText;
+    private SpriteRenderer renderer; 
 
     [Header("Tutorial Settings")]
     public static int requiredKillsToAdvance = 4;
@@ -20,6 +25,40 @@ public class DummyTarget : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         tutorialManager = FindObjectOfType<TutorialManager>();
+        renderer = GetComponent<SpriteRenderer>();
+        int hitEffectAmount = Shader.PropertyToID("_HitEffectAmount");
+        renderer.material.SetFloat(hitEffectAmount, 1);
+
+    }
+
+
+    IEnumerator redDamage()
+    {
+        float dur = 0.25f;
+        float elapsedTime = 0f;
+        int hitEffectAmount = Shader.PropertyToID("_HitEffectAmount");
+
+        while (elapsedTime < dur)
+        {
+            elapsedTime += Time.deltaTime;
+
+            float lerpedAmt = Mathf.Lerp(1f, 0f, (elapsedTime / dur));
+
+            renderer.material.SetFloat(hitEffectAmount, lerpedAmt);
+            yield return null;
+        }
+
+        elapsedTime = 0f;
+
+        while (elapsedTime < dur)
+        {
+            elapsedTime += Time.deltaTime;
+
+            float lerpedAmt = Mathf.Lerp(0f, 1f, (elapsedTime / dur));
+            renderer.material.SetFloat(hitEffectAmount, lerpedAmt);
+            yield return null;
+        }
+
     }
 
     public void damage(int amount)
@@ -31,7 +70,7 @@ public class DummyTarget : MonoBehaviour
 
         isHit = true;
         health -= amount;
-
+        StartCoroutine(redDamage());
         if (animator != null)
         {
             animator.SetTrigger("Hit");

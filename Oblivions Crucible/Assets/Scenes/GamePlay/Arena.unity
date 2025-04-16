@@ -1195,7 +1195,7 @@ RectTransform:
   m_GameObject: {fileID: 486687663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.58, y: 1.58, z: 1.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 415152907}
@@ -1622,6 +1622,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 979880450}
     - target: {fileID: 855113227777441561, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
+      propertyPath: icon1
+      value: 
+      objectReference: {fileID: 257558980257198008, guid: 9f57b99a6cfaf344b936c7c9ae81b717, type: 3}
+    - target: {fileID: 855113227777441561, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
+      propertyPath: icon2
+      value: 
+      objectReference: {fileID: 7365296001383975206, guid: 5473fb292a2dfb249ba83c2d63974a36, type: 3}
+    - target: {fileID: 855113227777441561, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
       propertyPath: attack
       value: 10
       objectReference: {fileID: 0}
@@ -1629,6 +1637,14 @@ PrefabInstance:
       propertyPath: defense
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 855113227777441561, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
+      propertyPath: iconHold
+      value: 
+      objectReference: {fileID: 806778573}
+    - target: {fileID: 855113227777441561, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
+      propertyPath: iconHold2
+      value: 
+      objectReference: {fileID: 486687665}
     - target: {fileID: 855113227777441561, guid: 0384d9589e74ee94898ea50a9f60e30b, type: 3}
       propertyPath: movementSpeed
       value: 1
@@ -3167,7 +3183,7 @@ RectTransform:
   m_GameObject: {fileID: 806778571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2080091578}
@@ -5208,6 +5224,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 979880450}
     - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: icon1
+      value: 
+      objectReference: {fileID: 7096650393653392788, guid: 04255340ef960d448a94d4536ced1425, type: 3}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: icon2
+      value: 
+      objectReference: {fileID: 2444594275228412232, guid: b24ba1b74ff84f742aff7e93ad7d1596, type: 3}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
       propertyPath: attack
       value: 10
       objectReference: {fileID: 0}
@@ -5215,6 +5239,14 @@ PrefabInstance:
       propertyPath: defense
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: iconHold
+      value: 
+      objectReference: {fileID: 806778573}
+    - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: iconHold2
+      value: 
+      objectReference: {fileID: 486687665}
     - target: {fileID: 8379139800985382952, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
       propertyPath: movementSpeed
       value: 1
@@ -7299,6 +7331,18 @@ PrefabInstance:
       propertyPath: Img2
       value: 
       objectReference: {fileID: 979880450}
+    - target: {fileID: 6360617435420821946, guid: c537c0057656ac9449cf2252e17e815a, type: 3}
+      propertyPath: icon1
+      value: 
+      objectReference: {fileID: 3474992127952483735, guid: a9afdf155c2d1604f9dbe6eed5820782, type: 3}
+    - target: {fileID: 6360617435420821946, guid: c537c0057656ac9449cf2252e17e815a, type: 3}
+      propertyPath: iconHold
+      value: 
+      objectReference: {fileID: 806778573}
+    - target: {fileID: 6360617435420821946, guid: c537c0057656ac9449cf2252e17e815a, type: 3}
+      propertyPath: iconHold2
+      value: 
+      objectReference: {fileID: 486687665}
     - target: {fileID: 7865037697545075353, guid: c537c0057656ac9449cf2252e17e815a, type: 3}
       propertyPath: r
       value: 
@@ -8435,6 +8479,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 979880450}
     - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: icon1
+      value: 
+      objectReference: {fileID: 2520975425638643067, guid: e586dc62966832e4991a58865b53794d, type: 3}
+    - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: icon2
+      value: 
+      objectReference: {fileID: 1355700986073816803, guid: 6d582d0bdb6c8a647bd39899148691ea, type: 3}
+    - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
       propertyPath: attack
       value: 10
       objectReference: {fileID: 0}
@@ -8443,6 +8495,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: iconHold
+      value: 
+      objectReference: {fileID: 806778573}
+    - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
       propertyPath: MageBlast
       value: 
       objectReference: {fileID: 537364293262138121, guid: 6007175733d3c144384f934e7e421003, type: 3}
@@ -8450,6 +8506,10 @@ PrefabInstance:
       propertyPath: RotSheild
       value: 
       objectReference: {fileID: 6244203060228286534, guid: 93ac37005a017af4390962bcedce6958, type: 3}
+    - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
+      propertyPath: iconHold2
+      value: 
+      objectReference: {fileID: 486687665}
     - target: {fileID: 2261005909595932654, guid: 845835f4bdad12947a8a014dccf759d3, type: 3}
       propertyPath: rotRadius
       value: 1.5

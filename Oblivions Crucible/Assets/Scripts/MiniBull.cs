@@ -83,7 +83,9 @@ public class MiniBull : MonoBehaviour
         if (isGo == true)
         {
             GameObject temp;
-            Instantiate(lazerB, transform.position, transform.rotation);
+            temp = Instantiate(lazerB, transform.position, transform.rotation);
+
+            Destroy(temp, 5f);
             Destroy(gameObject);
             isGo = false;
         }

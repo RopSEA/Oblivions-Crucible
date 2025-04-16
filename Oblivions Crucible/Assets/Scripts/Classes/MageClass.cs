@@ -11,6 +11,12 @@ public class MageClass : Classes
     public Image Img;
     public Image Img2;
 
+    public Image iconHold;
+    public Image iconHold2;
+
+    public Image icon1;
+    public Image icon2;
+
     private bool pri = false;
     private bool sec = false;
     private bool currSheild;
@@ -116,7 +122,8 @@ public class MageClass : Classes
 
     void Start()
     {
-        
+        iconHold.sprite = icon1.sprite;
+        iconHold2.sprite = icon2.sprite;
     }
 
     void Update()

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\RoundManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\NewGame.cs" />
     <Compile Include="Assets\Scripts\Classes\TankClass.cs" />
+    <Compile Include="Assets\Scripts\Relics\ToolTipManager.cs" />
     <Compile Include="Assets\Scripts\Classes\Classes.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_Prefabs.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\RPGTalkLanguage.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Scripts\MiniBull.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\IDataPersistence.cs" />
     <Compile Include="Assets\Scripts\Cursor\UICategory.cs" />
+    <Compile Include="Assets\Scripts\Relics\RelicMenuButton.cs" />
     <Compile Include="Assets\SPUM\Script\Data\PreviewMatchingElement.cs" />
     <Compile Include="Assets\Scripts\Relics\RelicEffect.cs" />
     <Compile Include="Assets\Scripts\Tutorial\MovementTracker.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Assets\SPUM\Script\Data\SpumAnimationClip.cs" />
     <Compile Include="Assets\Scripts\FloatingText.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkSimpleAnimation.cs" />
+    <Compile Include="Assets\Scripts\Relics\RelicSelectionUI.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkSaveInstance.cs" />
@@ -125,7 +128,6 @@
     <Compile Include="Assets\Scripts\SoundSettings.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_MatchingList.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\TextWithIcon.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\Relics\RelicSelectable.cs" />
     <Compile Include="Assets\Scripts\Classes\SpeedsterClass.cs" />
     <Compile Include="Assets\Scripts\PlayerClassHandler.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthBar.cs" />
@@ -137,6 +139,7 @@
     <Compile Include="Assets\Scripts\DataPersistence\Data\GameData.cs" />
     <Compile Include="Assets\Scripts\Classes\EngineerClass.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Relics\RelicSlotUI.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorHover.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkCinematic\RPGTalkCinematicClip.cs" />
     <Compile Include="Assets\Scripts\LaserController.cs" />
@@ -145,7 +148,6 @@
     <Compile Include="Assets\Scripts\Relics\RelicRunData.cs" />
     <Compile Include="Assets\Scripts\Sheild.cs" />
     <Compile Include="Assets\Scripts\rangedEnemy.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\Relics\RelicSelectionUI.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Player\StaminaBar.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
@@ -162,7 +164,7 @@
     <Compile Include="Assets\Scripts\ClassSelectManager.cs" />
     <Compile Include="Assets\Scripts\Boundary.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\Relics\RelicDraft.cs" />
+    <Compile Include="Assets\Scripts\Relics\RelicUIManager.cs" />
     <Compile Include="Assets\Scripts\Tutorial\TutorialEnemySpawner.cs" />
     <Compile Include="Assets\Scripts\camerapan.cs" />
     <Compile Include="Assets\Scripts\Relics\RelicCatalog.cs" />
