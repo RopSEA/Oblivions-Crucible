@@ -18,6 +18,7 @@ public class RoundManager : MonoBehaviour
     private bool isShop;
     public ShopDisplay shop;
     public GameObject hpBar;
+    public GameObject BossIntro;
     private int temp;
 
     public void spawnEnemies()
@@ -170,6 +171,13 @@ public class RoundManager : MonoBehaviour
         }
 
         waitText.text = "";
+
+        if (currRound + 1 <= rs.Length && rs[currRound + 1].r == Round.roundKind.Boss)
+        {
+            BossIntro.SetActive(true);
+            yield return new WaitForSeconds(1.7f);
+            BossIntro.SetActive(false);
+        }
         updateRound();
         yield return null;
     }

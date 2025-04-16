@@ -57,32 +57,36 @@ public class LazerBoss : BasicEnemyMovement
     IEnumerator redDamage()
     {
         List<MatchingElement> sprites = sprite.matchingTables;
-        List<Color> c = new List<Color>();
-        SpriteRenderer curr;
-        int j = 0;
+        float dur = 0.25f;
+        float elapsedTime = 0f;
+        int hitEffectAmount = Shader.PropertyToID("_HitEffectAmount");
 
-
-
-        foreach (MatchingElement i in sprites)
+        while (elapsedTime < dur)
         {
+            elapsedTime += Time.deltaTime;
 
-            curr = i.renderer;
-            c.Add(new Color());
-            c[j] = curr.color;
-            curr.color = Color.red;
-            j++;
+            float lerpedAmt = Mathf.Lerp(1f, 0f, (elapsedTime / dur));
+            foreach (MatchingElement i in sprites)
+            {
+                i.renderer.material.SetFloat(hitEffectAmount, lerpedAmt);
+            }
+            yield return null;
         }
 
-        j = 0;
-        yield return new WaitForSeconds(0.2f);
+        elapsedTime = 0f;
 
-        foreach (MatchingElement i in sprites)
+        while (elapsedTime < dur)
         {
-            curr = i.renderer;
-            curr.color = c[j];
-            j++;
+            elapsedTime += Time.deltaTime;
+
+            float lerpedAmt = Mathf.Lerp(0f, 1f, (elapsedTime / dur));
+            foreach (MatchingElement i in sprites)
+            {
+                i.renderer.material.SetFloat(hitEffectAmount, lerpedAmt);
+            }
+            yield return null;
+
         }
-        sprites[j - 1].renderer.color = Color.white;
 
     }
 
@@ -214,6 +218,16 @@ public class LazerBoss : BasicEnemyMovement
         }
 
         FindPlayer();
+
+
+        List<MatchingElement> sprites = sprite.matchingTables;
+        List<Material> materials = new List<Material>();
+        int hitEffectAmount = Shader.PropertyToID("_HitEffectAmount");
+        foreach (MatchingElement i in sprites)
+        {
+            i.renderer.material = hit;
+            i.renderer.material.SetFloat(hitEffectAmount, 1);
+        }
     }
 
     // Update is called once per frame

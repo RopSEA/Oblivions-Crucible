@@ -1518,6 +1518,7 @@ MonoBehaviour:
   coinPrefab: {fileID: 6681034753254552422, guid: c4f1220e276ab4a479e9aef5b42b17e3, type: 3}
   sprite: {fileID: 8557747800776322850}
   isTest: 0
+  hit: {fileID: -876546973899608171, guid: 23ee4b545baf5a94e82f6d7cd352808f, type: 3}
   bulletPrefab: {fileID: 493481635972467173, guid: 1425c926a3dee5b4abb2358d5b46e32d, type: 3}
   firePoint: {fileID: 5551163864138135003}
   dist: 0

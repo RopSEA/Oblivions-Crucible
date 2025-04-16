@@ -127,6 +127,7 @@ MonoBehaviour:
   coinPrefab: {fileID: 6681034753254552422, guid: c4f1220e276ab4a479e9aef5b42b17e3, type: 3}
   sprite: {fileID: 6448835006981161198}
   isTest: 0
+  hit: {fileID: -876546973899608171, guid: 23ee4b545baf5a94e82f6d7cd352808f, type: 3}
   hpBar: {fileID: 0}
   LazerV: {fileID: 7398416873397002919, guid: 34a47384161ba1a4e910b2cec87ac1d7, type: 3}
   LazerH: {fileID: 8874691240340174981, guid: d921c4e7ec6ba0a4f96414e8bb6e7414, type: 3}
