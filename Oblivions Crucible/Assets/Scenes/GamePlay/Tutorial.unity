@@ -2296,7 +2296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  coinPrefab: {fileID: 6681034753254552422, guid: c4f1220e276ab4a479e9aef5b42b17e3, type: 3}
+  coinPrefab: {fileID: 5703412304476496435, guid: e69270b9ace1eac47bf25c47dbb745fc, type: 3}
   floatingText: {fileID: 4556969757122287335, guid: a5985fc3f0dc97044883b27a33b0a573, type: 3}
 --- !u!95 &576400505
 Animator:
@@ -4018,7 +4018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  coinPrefab: {fileID: 6681034753254552422, guid: c4f1220e276ab4a479e9aef5b42b17e3, type: 3}
+  coinPrefab: {fileID: 5703412304476496435, guid: e69270b9ace1eac47bf25c47dbb745fc, type: 3}
   floatingText: {fileID: 4556969757122287335, guid: a5985fc3f0dc97044883b27a33b0a573, type: 3}
 --- !u!70 &883168029
 CapsuleCollider2D:
@@ -5176,7 +5176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  coinPrefab: {fileID: 6681034753254552422, guid: c4f1220e276ab4a479e9aef5b42b17e3, type: 3}
+  coinPrefab: {fileID: 5703412304476496435, guid: e69270b9ace1eac47bf25c47dbb745fc, type: 3}
   floatingText: {fileID: 4556969757122287335, guid: a5985fc3f0dc97044883b27a33b0a573, type: 3}
 --- !u!95 &1227741253
 Animator:
@@ -6325,7 +6325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  coinPrefab: {fileID: 6681034753254552422, guid: c4f1220e276ab4a479e9aef5b42b17e3, type: 3}
+  coinPrefab: {fileID: 5703412304476496435, guid: e69270b9ace1eac47bf25c47dbb745fc, type: 3}
   floatingText: {fileID: 4556969757122287335, guid: a5985fc3f0dc97044883b27a33b0a573, type: 3}
 --- !u!95 &1612648815
 Animator:

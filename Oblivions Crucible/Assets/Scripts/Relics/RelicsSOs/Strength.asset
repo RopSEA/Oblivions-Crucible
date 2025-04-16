@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15e1893bca35e24a83e02cced023f33, type: 3}
+  m_Name: Strength
+  m_EditorClassIdentifier: 
+  relicName: Amulet of the Warlord
+  description: The fury of fallen champions clings to this charm. Each strike carries
+    the weight of a hundred battles
+  icon: {fileID: 1201611483, guid: 94616a21dfa5b5948816997cfc69b56d, type: 3}
+  lockedIcon: {fileID: 21300000, guid: 271ba95f7ad8ab342a01825c682b1be3, type: 2}
+  unlockHint: The Crucible remembers every fallen foe. Let your name be etched among
+    the fiercest. (Kill 50 enemies total)
+  effects:
+  - effectType: 0
+    value: 3

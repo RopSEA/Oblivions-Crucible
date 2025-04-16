@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15e1893bca35e24a83e02cced023f33, type: 3}
+  m_Name: Vitality
+  m_EditorClassIdentifier: 
+  relicName: Heartroot Amulet
+  description: Forged from the crystallized sap of a life-giving tree. Each beat
+    strengthens the will to endure
+  icon: {fileID: 21300000, guid: 1b920c44d360b534cb147654388e53c4, type: 2}
+  lockedIcon: {fileID: 21300000, guid: 4dc8839a1d077af4e8b14955baddef6e, type: 2}
+  unlockHint: "Only those who endure the rhythm of battle may feel the root\u2019s
+    pulse.(Survive 5 rounds in a single run)"
+  effects:
+  - effectType: 1
+    value: 3
