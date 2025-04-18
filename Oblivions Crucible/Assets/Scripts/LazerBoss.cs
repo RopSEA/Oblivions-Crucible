@@ -11,11 +11,13 @@ public class LazerBoss : BasicEnemyMovement
     public GameObject LazerV;
     public GameObject LazerH;
     public GameObject miniLazer;
+    public GameObject despLazer;
     private bool isAttack1 = false;
     private bool isAttack2 = false;
     private int hpMax;
     private GameObject cam;
     public float wait;
+    public GameObject newHaz;
 
 
     // for Path Finding
@@ -28,8 +30,20 @@ public class LazerBoss : BasicEnemyMovement
 
 
 
+
+    private bool doneAttack = false;
+    private bool isAttack3 = false;
+
+
+
     private Vector3 h = new Vector3(-8.537104f, -2.552133f, -0.1259285f);
     private Vector3 v = new Vector3(-0.24f, -0.03f, -0.1259285f);
+
+
+    public void setDone()
+    {
+        doneAttack = true;
+    }
 
     public override void damage(int dam)
     {
@@ -57,10 +71,16 @@ public class LazerBoss : BasicEnemyMovement
 
         if (hp == 0)
         {
+            if (doneAttack == false)
+            {
+                DesperationAttack();
+                return;
+            }
+            DynamicArena.instance.addHazard(newHaz);
             hpBar.SetActive(false);
             Destroy(gameObject);
             GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
-            //DataPersistenceManager.instance.GameData.enemiesDefeated++;
+            DataPersistenceManager.instance.GameData.enemiesDefeated++;
         }
     }
 
@@ -130,7 +150,7 @@ public class LazerBoss : BasicEnemyMovement
     // first attack (LAZERZZZ)
     void attack1()
     {
-        if (isAttack2 == true || isAttack1 == true)
+        if (isAttack2 == true || isAttack1 == true || isAttack3 == true)
         {
             return;
         }
@@ -151,7 +171,7 @@ public class LazerBoss : BasicEnemyMovement
             temp = Instantiate(LazerH, h, transform.rotation);
             temp2 = Instantiate(LazerV, v, transform.rotation);
             yield return new WaitForSeconds(wait);
-             AudioManager.instance.PlaySfx("lazerBig");
+            AudioManager.instance.PlaySfx("lazerBig");
             cam.GetComponent<ScreenShake>().start = true;
 
             Destroy(temp, 1f);
@@ -184,7 +204,7 @@ public class LazerBoss : BasicEnemyMovement
     void attack2()
     {
         GameObject temp;
-        if (isAttack2 == true || isAttack1 == true)
+        if (isAttack2 == true || isAttack1 == true || isAttack3 == true)
         {
             return;
         }
@@ -192,6 +212,19 @@ public class LazerBoss : BasicEnemyMovement
         temp = Instantiate(miniLazer, transform.position, transform.rotation);
         AudioManager.instance.PlaySfx("lazerSmall");
         StartCoroutine(secCool());
+    }
+
+
+    void DesperationAttack()
+    {
+        GameObject temp;
+        if (isAttack3 == true)
+        {
+            return;
+        }
+        isAttack3 = true;
+        temp = Instantiate(despLazer, player.transform.position, player.transform.rotation);
+        temp.GetComponent<DesperationLazer>().SetLazer(this);
     }
 
     IEnumerator secCool()

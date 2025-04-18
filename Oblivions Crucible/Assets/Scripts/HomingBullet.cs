@@ -85,6 +85,14 @@ public class HomingBullet : MonoBehaviour
                 dummy.damage(damage);
             }
 
+
+            LazerPylon laz = other.GetComponent<LazerPylon>();
+            if (laz != null)
+            {
+                laz.damage(damage);
+            }
+
+
             Destroy(gameObject); 
         }
     }

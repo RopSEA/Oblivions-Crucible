@@ -74,6 +74,7 @@
     <Compile Include="Assets\SPUM\Script\Data\SPUM_Prefabs.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\RPGTalkLanguage.cs" />
     <Compile Include="Assets\Scripts\EnemyHomingBullet.cs" />
+    <Compile Include="Assets\Scripts\DesperationLazer.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopItem.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkFollowCharacter.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\FileDataHandler.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="Assets\Scripts\Classes\SpeedsterClass.cs" />
     <Compile Include="Assets\Scripts\PlayerClassHandler.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\WarningTile.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopDisplay.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Round.cs" />

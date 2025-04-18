@@ -4,23 +4,54 @@ using UnityEngine;
 
 public class LaserManager : MonoBehaviour
 {
+    public static LaserManager instance;
+
     public GameObject horizontalLaserPrefab;
     public GameObject verticalLaserPrefab;
     public float spawnInterval = 5f;
+    public int pylonCount = 0;
 
-    void Start()
+    private Vector3 h = new Vector3(-8.537104f, -2.552133f, -0.1259285f);
+    private Vector3 v = new Vector3(-0.24f, -0.03f, -0.1259285f);
+
+    public void addPylon()
     {
-        InvokeRepeating(nameof(SpawnAllLasers), 2f, spawnInterval);
+        if (pylonCount == 0)
+        {
+            InvokeRepeating(nameof(SpawnAllLasers), 2f, spawnInterval);
+        }
+        pylonCount++;
+    }
+    public void breakPylon()
+    {
+        pylonCount = pylonCount - 1;
+
+        if (pylonCount == 0)
+        {
+            CancelInvoke(nameof(SpawnAllLasers));
+        }
+    }
+
+
+    void Awake()
+    {
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        //InvokeRepeating(nameof(SpawnAllLasers), 2f, spawnInterval);
     }
 
     void SpawnAllLasers()
     {
-    Debug.Log("Spawning laser wave");
+        Debug.Log("Spawning laser wave");
 
-    // Spawn full horizontal laser system
-    Instantiate(horizontalLaserPrefab, Vector3.zero, Quaternion.identity);
-
-    // Spawn full vertical laser system
-    Instantiate(verticalLaserPrefab, Vector3.zero, Quaternion.identity);
+        Instantiate(horizontalLaserPrefab, h, Quaternion.identity);
+        Instantiate(verticalLaserPrefab, v, Quaternion.identity);
     }
 }
