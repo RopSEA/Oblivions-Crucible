@@ -19,7 +19,11 @@ public class RoundManager : MonoBehaviour
     public ShopDisplay shop;
     public GameObject hpBar;
     public GameObject BossIntro;
-    public DynamicArena dynA ;
+    public DynamicArena dynA;
+    public GameObject LosePrompt;
+    public GameObject WinPrompt;
+    public GameObject cursor;
+
     private int temp;
     [SerializeField] private int enemiesPerWave = 7;
 
@@ -193,19 +197,16 @@ public class RoundManager : MonoBehaviour
 
     void Victory()
     {
-        endText.text = "VICTORY!!";
-        endText.color = Color.green;
-        Time.timeScale = 0;
-        SceneManager.LoadScene("TitleScreen");
-
+        cursor.SetActive(true);
+        Time.timeScale = 0f;
+        WinPrompt.SetActive(true);
     }
 
     public void Lose()
     {
-        endText.text = "GAME OVER";
-        endText.color = Color.red;
-        Time.timeScale = 0;
-        SceneManager.LoadScene("TitleScreen");
+        cursor.SetActive(true);
+        Time.timeScale = 0f;
+        LosePrompt.SetActive(true);
     }
 
     public void QuitRun()

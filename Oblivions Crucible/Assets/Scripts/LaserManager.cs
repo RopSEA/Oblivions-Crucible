@@ -11,8 +11,10 @@ public class LaserManager : MonoBehaviour
     public float spawnInterval = 5f;
     public int pylonCount = 0;
 
+    private GameObject cam;
     private Vector3 h = new Vector3(-8.537104f, -2.552133f, -0.1259285f);
     private Vector3 v = new Vector3(-0.24f, -0.03f, -0.1259285f);
+
 
     public void addPylon()
     {
@@ -44,14 +46,22 @@ public class LaserManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        cam = GameObject.FindWithTag("MainCamera");
         //InvokeRepeating(nameof(SpawnAllLasers), 2f, spawnInterval);
     }
 
     void SpawnAllLasers()
     {
         Debug.Log("Spawning laser wave");
+        GameObject temp;
+        GameObject temp2;
 
-        Instantiate(horizontalLaserPrefab, h, Quaternion.identity);
-        Instantiate(verticalLaserPrefab, v, Quaternion.identity);
+        AudioManager.instance.PlaySfx("lazerBig");
+        cam.GetComponent<ScreenShake>().start = true;
+        temp = Instantiate(horizontalLaserPrefab, h, Quaternion.identity);
+        temp2 = Instantiate(verticalLaserPrefab, v, Quaternion.identity);
+
+        Destroy(temp, 3.2f);
+        Destroy(temp2, 3.2f);
     }
 }

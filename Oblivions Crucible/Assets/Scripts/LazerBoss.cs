@@ -222,8 +222,9 @@ public class LazerBoss : BasicEnemyMovement
         {
             return;
         }
+
         isAttack3 = true;
-        temp = Instantiate(despLazer, player.transform.position, player.transform.rotation);
+        temp = Instantiate(despLazer, player.transform.position, player.transform.rotation, player);
         temp.GetComponent<DesperationLazer>().SetLazer(this);
     }
 
@@ -260,6 +261,10 @@ public class LazerBoss : BasicEnemyMovement
 
     void UpdatePath()
     {
+        if (seeker.IsDone() && isAttack3 == true)
+        {
+            seeker.StartPath(rb.position, new Vector3(-0.28f, 7.85f, 0f), OnPathComplete);
+        }
         if (seeker.IsDone())
         {
             seeker.StartPath(rb.position, player.transform.position, OnPathComplete);

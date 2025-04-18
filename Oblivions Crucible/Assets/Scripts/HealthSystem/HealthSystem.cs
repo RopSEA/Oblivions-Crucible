@@ -200,6 +200,8 @@ public class HealthSystem : MonoBehaviour
         }
 
         OnDeath?.Invoke();
+
+        gameObject.SetActive(false);
     }
 
     public void SetInvulnerable(bool value)

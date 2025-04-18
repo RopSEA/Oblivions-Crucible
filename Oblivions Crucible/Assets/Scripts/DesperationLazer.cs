@@ -39,14 +39,21 @@ public class DesperationLazer : MonoBehaviour
 
         for (int i = 0; i < childs; i++ )
         {
+            lazers[i].transform.parent = null;
             lazers[i].SetActive(true);
             AudioManager.instance.PlaySfx("lazerBig");
             yield return new WaitForSeconds(.4f);
         }
 
+        AudioManager.instance.PlaySfx("lazerBig");
 
         yield return new WaitForSeconds(1f);
         temp.setDone();
+        for (int i = 0; i < childs; i++)
+        {
+            Destroy(lazers[i]);
+       
+        }
         Destroy(this);
     }
 

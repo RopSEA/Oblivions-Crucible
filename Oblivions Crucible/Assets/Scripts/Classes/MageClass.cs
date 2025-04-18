@@ -24,6 +24,7 @@ public class MageClass : Classes
     public Transform RotatePoint;
     public GameObject MageBlast;
     public GameObject RotSheild;
+    public int RotSpeed;
 
 
     // Stronger Mage Blast
@@ -77,7 +78,7 @@ public class MageClass : Classes
         float time = 0;
         while (time <= 100)
         {
-            RotatePoint.RotateAround(RotatePoint.position, Vector3.forward, 1);
+            RotatePoint.RotateAround(RotatePoint.position, Vector3.forward, RotSpeed);
             time += 0.1f;
             yield return new WaitForSeconds(0.001f);
         }
