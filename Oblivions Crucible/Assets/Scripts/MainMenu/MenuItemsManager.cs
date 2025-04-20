@@ -8,6 +8,7 @@ public class MenuItemManager : MonoBehaviour
     public List<GameObject> menuItems = new List<GameObject>(); // List of menu items
 
     private List<CanvasGroup> menuCanvasGroups = new List<CanvasGroup>();
+    public bool isNotTitle = false;
 
     void Start()
     {
@@ -56,13 +57,38 @@ public class MenuItemManager : MonoBehaviour
 
         for (int i = 0; i < menuItems.Count; i++)
         {
-            if (menuItems[i] != null)
+            if (menuItems[i] != null && isNotTitle == false)
             {
                 menuItems[i].SetActive(true); // Make item visible
                 StartCoroutine(FadeAndScaleIn(menuItems[i], menuCanvasGroups[i]));
             }
+            else
+            {
+                menuItems[i].SetActive(true); // Make item visible
+                StartCoroutine(FadeAndScaleInUI(menuItems[i], menuCanvasGroups[i]));
+            }
             yield return new WaitForSeconds(delayBetweenItems); // Small delay between each item
         }
+    }
+
+
+    IEnumerator FadeAndScaleInUI(GameObject obj, CanvasGroup canvasGroup)
+    {
+        float duration = 1.5f;
+        float elapsedTime = 0f;
+        Vector3 startScale = Vector3.zero;
+        Vector3 endScale = new Vector3(1, 1, 1); // Final scale
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(0, 1, elapsedTime / duration);
+            obj.transform.localScale = Vector3.Lerp(startScale, endScale, elapsedTime / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = 1f;
+        obj.transform.localScale = endScale;
     }
 
     IEnumerator FadeAndScaleIn(GameObject obj, CanvasGroup canvasGroup)

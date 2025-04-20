@@ -44,13 +44,25 @@ public class ShopManager : MonoBehaviour
     void LoadShopItems()
     {
         availableItems.Add(new ShopItem("Demon Shield", "A strong steel shield \n +5 Def", 
-            Resources.Load<Sprite>("DemonShield"), 0, 0, 0, 0, 5, 50));
+            Resources.Load<Sprite>("DemonShield"), Resources.Load<Sprite>("SoldDemonShield"), 0, 0, 0, 0, 5, 50));
 
-        availableItems.Add(new ShopItem("Mythril Sword", "A powerful blade \n +5 Str", 
-            Resources.Load<Sprite>("MythrilSword"), 5, 0, 0, 0, 0, 50));
+        availableItems.Add(new ShopItem("Mythril Sword", "A powerful blade \n+5 Str \n+5 int", 
+            Resources.Load<Sprite>("MythrilSword"), Resources.Load<Sprite>("SoldMythrilSword"), 5, 0, 0, 5, 0, 50));
 
         availableItems.Add(new ShopItem("Vitality Potion", "Increases health \n+5 Vit", 
-            Resources.Load<Sprite>("VitalityPotion"), 0, 5, 0, 0, 0, 30));
+            Resources.Load<Sprite>("VitalityPotion"), Resources.Load<Sprite>("SoldVitalityPotion"), 0, 5, 0, 0, 0, 30));
+       
+        availableItems.Add(new ShopItem("Mega Potion", "Increases health Intell and Strength \n+5 Vit \n+5 Str \n+5 Int",
+            Resources.Load<Sprite>("MegaPotion"), Resources.Load<Sprite>("SoldMegaPotion"), 5, 5, 0, 5, 0, 80));
+
+        availableItems.Add(new ShopItem("Stamina Potion", "Increases health \n+5 Sta",
+            Resources.Load<Sprite>("StamPotion"), Resources.Load<Sprite>("SoldStamPotion"), 0, 0, 0, 0, 5, 30));
+
+        availableItems.Add(new ShopItem("Demon Sword", "Powerful sword \n+10 Str \n+10 Int",
+            Resources.Load<Sprite>("DemSword"), Resources.Load<Sprite>("SoldDemSword"), 0, 10, 0, 10, 0, 100));
+
+        availableItems.Add(new ShopItem("Sheild Of Light", "Defends you \n+10 Def",
+            Resources.Load<Sprite>("MythrilShield"), Resources.Load<Sprite>("SoldMythrilShield"), 0, 0, 0, 0, 10, 85));
     }
 
     void SelectRandomItems()

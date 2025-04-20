@@ -17,6 +17,7 @@ public class LazerBoss : BasicEnemyMovement
     private int hpMax;
     private GameObject cam;
     public float wait;
+    public GameObject Expolosion;
     public GameObject newHaz;
 
 
@@ -62,7 +63,7 @@ public class LazerBoss : BasicEnemyMovement
 
         StartCoroutine(redDamage());
         ShowHitEffect();
-        AudioManager.instance.PlaySfx("hitE");
+        AudioManager.instance.PlaySfx("hitE", true);
 
         if (floatingText)
         {
@@ -78,15 +79,37 @@ public class LazerBoss : BasicEnemyMovement
             }
             DynamicArena.instance.addHazard(newHaz);
             hpBar.SetActive(false);
-            Destroy(gameObject);
-            GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
-            DataPersistenceManager.instance.GameData.enemiesDefeated++;
+            StartCoroutine(onDeath());
         }
+    }
+
+
+    IEnumerator onDeath()
+    {
+
+        for (int i = 0; i < 8; i++)
+        {
+            showExpo();
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        Destroy(gameObject);
+        GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        DataPersistenceManager.instance.GameData.enemiesDefeated++;
+    }
+
+
+    public void  showExpo()
+    {
+        var go = Instantiate(Expolosion, transform.position, Quaternion.identity, transform);
+        StartCoroutine(redDamage());
+        AudioManager.instance.PlaySfx("hitE", true);
     }
 
 
     IEnumerator redDamage()
     {
+
         List<MatchingElement> sprites = sprite.matchingTables;
         float dur = 0.25f;
         float elapsedTime = 0f;
@@ -171,7 +194,7 @@ public class LazerBoss : BasicEnemyMovement
             temp = Instantiate(LazerH, h, transform.rotation);
             temp2 = Instantiate(LazerV, v, transform.rotation);
             yield return new WaitForSeconds(wait);
-            AudioManager.instance.PlaySfx("lazerBig");
+            AudioManager.instance.PlaySfx("lazerBig", false);
             cam.GetComponent<ScreenShake>().start = true;
 
             Destroy(temp, 1f);
@@ -181,7 +204,7 @@ public class LazerBoss : BasicEnemyMovement
         {
             temp = Instantiate(LazerV, v, transform.rotation);
             yield return new WaitForSeconds(wait);
-            AudioManager.instance.PlaySfx("lazerBig");
+            AudioManager.instance.PlaySfx("lazerBig", false);
             cam.GetComponent<ScreenShake>().start = true;
             Destroy(temp, 1f);
         }
@@ -189,7 +212,7 @@ public class LazerBoss : BasicEnemyMovement
         {
             temp = Instantiate(LazerH , h, transform.rotation);
             yield return new WaitForSeconds(wait);
-            AudioManager.instance.PlaySfx("lazerBig");
+            AudioManager.instance.PlaySfx("lazerBig", false);
             cam.GetComponent<ScreenShake>().start = true;
             Destroy(temp, 1f);
         }
@@ -210,7 +233,7 @@ public class LazerBoss : BasicEnemyMovement
         }
         isAttack2 = true;
         temp = Instantiate(miniLazer, transform.position, transform.rotation);
-        AudioManager.instance.PlaySfx("lazerSmall");
+        AudioManager.instance.PlaySfx("lazerSmall", false);
         StartCoroutine(secCool());
     }
 

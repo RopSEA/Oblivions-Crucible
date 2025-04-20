@@ -37,7 +37,7 @@ public class HealthSystem : MonoBehaviour
         }
 
         // Start constant regen: 0.7 HP per second
-        StartConstantRegen(0.7f, 1f);
+        StartConstantRegen(1f, 1f);
     }
 
     public void addHealth(int hp)
@@ -72,7 +72,7 @@ public class HealthSystem : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.SetHealth(Mathf.CeilToInt(currentHealth));
-            AudioManager.instance.PlaySfx("hit");
+            AudioManager.instance.PlaySfx("hit", true);
         }
 
         if (currentHealth <= 0)

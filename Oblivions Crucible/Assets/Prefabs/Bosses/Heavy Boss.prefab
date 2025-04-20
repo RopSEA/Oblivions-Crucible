@@ -161,6 +161,7 @@ MonoBehaviour:
   bulletPre: {fileID: 6165446723958126561, guid: 5f260672c20078048b21301347c06685, type: 3}
   bulletPre2: {fileID: 5784010825578552567, guid: 72a2a70940f46ae469a2b31e2cd849ae, type: 3}
   nextWaypoinDist: 1.5
+  Expolosion: {fileID: 1705196081894264587, guid: 50598b2e0167e8f43b2c67c23af2eab7, type: 3}
 --- !u!1001 &2696251896139232002
 PrefabInstance:
   m_ObjectHideFlags: 0

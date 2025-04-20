@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Classes\Classes.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_Prefabs.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\RPGTalkLanguage.cs" />
+    <Compile Include="Assets\Scripts\GhostEff.cs" />
     <Compile Include="Assets\Scripts\EnemyHomingBullet.cs" />
     <Compile Include="Assets\Scripts\DesperationLazer.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopItem.cs" />

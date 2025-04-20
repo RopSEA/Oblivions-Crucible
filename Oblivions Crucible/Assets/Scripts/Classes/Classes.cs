@@ -25,7 +25,8 @@ public abstract class Classes : MonoBehaviour
     }
     public void addStam(int end)
     {
-       // movementSpeed += end;
+        movementSpeed += end;
+        gameObject.GetComponent<PlayerMovement>().upgradeStam(end);
     }
     public void addDef(int deff)
     {

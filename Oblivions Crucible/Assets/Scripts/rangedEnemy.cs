@@ -27,7 +27,7 @@ public class rangedEnemy : BasicEnemyMovement
 
         StartCoroutine(redDamage());
         ShowHitEffect();
-        AudioManager.instance.PlaySfx("hitE");
+        AudioManager.instance.PlaySfx("hitE", true);
 
         if (floatingText)
         {

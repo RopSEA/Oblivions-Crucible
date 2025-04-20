@@ -180,7 +180,7 @@ MonoBehaviour:
   coinPrefab: {fileID: 5703412304476496435, guid: e69270b9ace1eac47bf25c47dbb745fc, type: 3}
   sprite: {fileID: 917437071991543728}
   isTest: 0
-  hit: {fileID: 2100000, guid: bf13c40b6188b4945a5ef295e2613ee6, type: 2}
+  hit: {fileID: -876546973899608171, guid: 23ee4b545baf5a94e82f6d7cd352808f, type: 3}
 --- !u!1001 &7242021585456530097
 PrefabInstance:
   m_ObjectHideFlags: 0

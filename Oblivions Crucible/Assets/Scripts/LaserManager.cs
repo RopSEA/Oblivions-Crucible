@@ -56,7 +56,7 @@ public class LaserManager : MonoBehaviour
         GameObject temp;
         GameObject temp2;
 
-        AudioManager.instance.PlaySfx("lazerBig");
+        AudioManager.instance.PlaySfx("lazerBig", false);
         cam.GetComponent<ScreenShake>().start = true;
         temp = Instantiate(horizontalLaserPrefab, h, Quaternion.identity);
         temp2 = Instantiate(verticalLaserPrefab, v, Quaternion.identity);

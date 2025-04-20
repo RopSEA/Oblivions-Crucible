@@ -41,11 +41,11 @@ public class DesperationLazer : MonoBehaviour
         {
             lazers[i].transform.parent = null;
             lazers[i].SetActive(true);
-            AudioManager.instance.PlaySfx("lazerBig");
+            AudioManager.instance.PlaySfx("lazerBig", false);
             yield return new WaitForSeconds(.4f);
         }
 
-        AudioManager.instance.PlaySfx("lazerBig");
+        AudioManager.instance.PlaySfx("lazerBig", false);
 
         yield return new WaitForSeconds(1f);
         temp.setDone();

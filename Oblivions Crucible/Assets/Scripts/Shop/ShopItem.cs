@@ -19,11 +19,13 @@ public class ShopItem
     public Sprite itemImageOverride;
     public Sprite soldImageOverride;
 
-    public ShopItem(string name, string desc, Sprite img, int str, int vit, int sta, int intel, int def, int price)
+    public ShopItem(string name, string desc, Sprite img, Sprite soldImg ,  int str, int vit, int sta, int intel, int def, int price)
     {
         itemName = name;
         description = desc;
         itemImage = img;
+
+        soldImageOverride = soldImg;
 
         strengthBoost = str;
         vitalityBoost = vit;
@@ -34,7 +36,7 @@ public class ShopItem
 
         // Load Sold + ItemName.png 
         Debug.Log($"Loading sold sprite for {name}: Sold{name.Replace(" ", "")}");
-        soldImageOverride = Resources.Load<Sprite>($"Sold{name.Replace(" ", "")}");
+        //soldImageOverride = Resources.Load<Sprite>($"Sold{name.Replace(" ", "")}");
         itemImageOverride = img;
 
 

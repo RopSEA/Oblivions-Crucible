@@ -34,7 +34,7 @@ public class BasicEnemyMovement : MonoBehaviour
 
         StartCoroutine(redDamage());
         ShowHitEffect();
-        AudioManager.instance.PlaySfx("hitE");
+        AudioManager.instance.PlaySfx("hitE", true);
         // Show Number
         if (floatingText)
         {
