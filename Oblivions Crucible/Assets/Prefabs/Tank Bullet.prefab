@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8612981760136673035}
   - component: {fileID: 1721527627669182459}
   - component: {fileID: 5971610649907440704}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tank Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3802581551006261042}
   - component: {fileID: 764493325395245535}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MageBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
