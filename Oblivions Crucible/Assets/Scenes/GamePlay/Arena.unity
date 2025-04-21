@@ -4553,6 +4553,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4066760551217194061, guid: 0749bb37791ecfe48ac410565a7ea301, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 427.4806
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066760551217194061, guid: 0749bb37791ecfe48ac410565a7ea301, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -35.1772
+      objectReference: {fileID: 0}
     - target: {fileID: 4390489410686046783, guid: 0749bb37791ecfe48ac410565a7ea301, type: 3}
       propertyPath: m_Name
       value: MenuPanel
@@ -7492,6 +7500,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1626245612}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySfx
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: butt
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1141606022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8905,6 +8925,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1626245612}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySfx
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: butt
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1359777157
@@ -14864,7 +14896,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4038177285134062373}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1626245612}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySfx
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: butt
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3204090978436064214
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14916,7 +14960,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 878708404177845662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1626245612}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySfx
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: butt
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &3288125492956706243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15843,7 +15899,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1734871834820275710}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1626245612}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySfx
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: butt
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6287049879976484958
 GameObject:
   m_ObjectHideFlags: 0
@@ -16216,6 +16284,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1626245612}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySfx
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: butt
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8172849841174180186
 MonoBehaviour:
   m_ObjectHideFlags: 0
