@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d406be04aa0661e44a64f233dee5a932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToSwitchTo: SelectionCont
+  sceneToSwitchTo: StartGame
 --- !u!65 &1403164687
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1305,12 +1305,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b7fe1022bbfd7a46a463e2ccaaf19bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cea902079d5c17049b4711f17bf5d31d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8.4, y: 1.87}
+  m_Size: {x: 7.44, y: 1.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

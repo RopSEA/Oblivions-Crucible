@@ -18,10 +18,6 @@ public class RelicDraft : MonoBehaviour
             originalColor = spriteRenderer.color;
         }
 
-        if (relicSelectionUI != null)
-        {
-            relicSelectionUI.SetActive(false); // Start hidden
-        }
     }
 
     void OnMouseEnter()

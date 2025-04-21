@@ -420,7 +420,6 @@ GameObject:
   - component: {fileID: 373428064}
   - component: {fileID: 373428063}
   - component: {fileID: 373428062}
-  - component: {fileID: 373428061}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -428,22 +427,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &373428061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 373428060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9280f61a1e489c4287a7e1000ec3280, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetY: -4.32
-  duration: 1
-  titleManager: {fileID: 0}
-  uiCanvasGroups: []
 --- !u!114 &373428062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,7 +539,7 @@ Transform:
   m_GameObject: {fileID: 373428060}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -4.35, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
