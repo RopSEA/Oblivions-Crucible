@@ -45,6 +45,22 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+
+    public void PlaySfx(string name)
+    {
+        float pitch = 1f;
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+
+        if (s == null)
+        {
+            Debug.Log("Not Found");
+        }
+        else
+        {
+            sfxSource.PlayOneShot(s.clip);
+        }
+    }
+
     public void PlaySfx(string name, bool doPitch)
     {
         float pitch = 1f;

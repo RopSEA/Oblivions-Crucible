@@ -71,6 +71,7 @@ public class DummyTarget : MonoBehaviour
         isHit = true;
         health -= amount;
         StartCoroutine(redDamage());
+        AudioManager.instance.PlaySfx("hitE", false);
         if (animator != null)
         {
             animator.SetTrigger("Hit");

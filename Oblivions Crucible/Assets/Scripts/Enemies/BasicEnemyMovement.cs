@@ -22,6 +22,13 @@ public class BasicEnemyMovement : MonoBehaviour
 
     public IEnumerator cor;
 
+    public void OnDestroy()
+    {
+        if (enemyLeft.instance != null)
+        {
+            enemyLeft.instance.addDef();
+        }
+    }
     public virtual void damage(int dam)
     {
 

@@ -22,6 +22,7 @@ public class MainMenuOption : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(sceneToSwitchTo))
         {
+            AudioManager.instance.PlaySfx("butt", false);
             SwitchScene(sceneToSwitchTo);
             //New save data
             if (sceneToSwitchTo == "IntroCut"){

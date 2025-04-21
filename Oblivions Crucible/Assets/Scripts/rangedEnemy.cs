@@ -13,6 +13,14 @@ public class rangedEnemy : BasicEnemyMovement
     private float dist;
     private bool isShoot = false;
 
+    public void OnDestroy()
+    {
+        if (enemyLeft.instance != null)
+        {
+            enemyLeft.instance.addDef();
+        }
+    }
+
     public override void damage(int dam)
     {
 

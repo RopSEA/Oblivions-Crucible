@@ -11,7 +11,6 @@ public class TankEnemy : BasicEnemyMovement
 
     public float dist;
     public GameObject shake;
-
     public override void damage(int dam)
     {
 
@@ -174,6 +173,11 @@ public class TankEnemy : BasicEnemyMovement
 
     private void OnDestroy()
     {
+        if (enemyLeft.instance != null)
+        {
+            enemyLeft.instance.addDef();
+        }
+        
         if (shake.activeSelf == true)
         {
             player.gameObject.GetComponent<PlayerMovement>().ChangeState(PlayerMovement.State.Normal);
