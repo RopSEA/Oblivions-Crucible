@@ -45,7 +45,7 @@ public class SpeedsterClass : Classes
         PlayerMovement movement = gameObject.GetComponent<PlayerMovement>();
 
         float cool = priCooldown;
-        float dist = 150f;
+        float dist = 120f;
         Img.fillAmount = 1;
 
         health.SetInvulnerable(true); 

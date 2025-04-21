@@ -104,8 +104,8 @@ public class ShopManager : MonoBehaviour
                 playerStats.Intelligence += selectedItem.intelligenceBoost;
                 playerStats.Defense += selectedItem.defenseBoost;
 
-
                 playerHp.addHealth(selectedItem.vitalityBoost);
+                playerStat.addVit(selectedItem.vitalityBoost);
                 playerStat.addStren(selectedItem.strengthBoost);
                 playerStat.addStam(selectedItem.staminaBoost);
                 playerStat.addIntell(selectedItem.intelligenceBoost);

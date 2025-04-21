@@ -22,7 +22,7 @@ public class LazerPylon : MonoBehaviour
         }
 
         StartCoroutine(redDamage());
-        // AudioManager.instance.PlaySfx("hitE");
+        AudioManager.instance.PlaySfx("hitE", true);
 
         // Show Number
         if (floatingText)

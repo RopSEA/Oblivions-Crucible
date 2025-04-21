@@ -8,6 +8,8 @@ using static UnityEngine.EventSystems.EventTrigger;
 public class BasicEnemyMovement : MonoBehaviour
 {
     public float speed;
+    public int attack;
+    public int defense;
     public int hp;
     public Transform player;
     public GameObject floatingText;

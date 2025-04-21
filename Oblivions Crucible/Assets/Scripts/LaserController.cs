@@ -39,7 +39,7 @@ public class LaserController : MonoBehaviour
     {
         if (isActive && other.CompareTag("Player"))
         {
-            other.GetComponent<HealthSystem>()?.TakeDamage(25);
+            other.GetComponent<HealthSystem>().preCalcTakeDamage(25);
         }
     }
 }

@@ -15,7 +15,7 @@ public class Spikes : MonoBehaviour
     {
         while (isTouch == true)
         {
-            player.TakeDamage(dam);
+            player.preCalcTakeDamage(dam);
             yield return new WaitForSeconds(0.5f);
         }
     }

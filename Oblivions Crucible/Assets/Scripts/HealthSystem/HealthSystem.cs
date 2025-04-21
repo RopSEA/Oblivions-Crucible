@@ -23,6 +23,7 @@ public class HealthSystem : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+
         if (healthBar != null)
         {
             healthBar.SetMax(maxHealth);
@@ -55,15 +56,40 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+
+    public void preCalcTakeDamage(int damage)
     {
         if (isInvulnerable) return;
 
         StartCoroutine(tempInvul());
 
-        float def = gameObject.GetComponent<Classes>().defense;
-        int dam = (int)Mathf.Ceil(damage * (10 / def));
+        currentHealth -= damage;
+        if (currentHealth < 0) currentHealth = 0;
 
+        Debug.Log($"Player took {damage} damage! Health: {currentHealth}");
+
+        if (healthBar != null)
+        {
+            healthBar.SetHealth(Mathf.CeilToInt(currentHealth));
+            AudioManager.instance.PlaySfx("hit", true);
+        }
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void TakeDamage(float damage, GameObject enemy)
+    {
+        if (isInvulnerable) return;
+
+        if (enemy.GetComponent<BasicEnemyMovement>() == null) return;
+
+        StartCoroutine(tempInvul());
+        float attk = enemy.GetComponent<BasicEnemyMovement>().attack; Debug.Log(attk + " " + damage);
+        float def = gameObject.GetComponent<Classes>().defense;
+        int dam = (int)Mathf.Ceil(damage * ((attk + 100) /(100 + def)));
         currentHealth -= dam;
         if (currentHealth < 0) currentHealth = 0;
 

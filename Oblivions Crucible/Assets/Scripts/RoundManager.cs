@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class RoundManager : MonoBehaviour
 {
@@ -16,15 +17,22 @@ public class RoundManager : MonoBehaviour
     private int currRound;
     private int currDef;
     private bool isShop;
+    public bool isDoneWaiting = false;
     public ShopDisplay shop;
     public GameObject hpBar;
     public GameObject BossIntro;
     public DynamicArena dynA;
     public GameObject LosePrompt;
     public GameObject WinPrompt;
+    public GameObject realWinPrompt;
     public GameObject cursor;
+    public GameObject spawnLazer;
+    private GameObject player;
 
+
+    public int EveryOther = 10;
     private int temp;
+    public bool isTransitionState;
     [SerializeField] private int enemiesPerWave = 7;
 
     public void spawnEnemies()
@@ -74,8 +82,9 @@ public class RoundManager : MonoBehaviour
 
             //temp = Instantiate(rs[currRound].enemyType[enem], spawns[rand].position, transform.rotation);
             temp = Instantiate(spawnPoint,new Vector3(rand,randy,0), transform.rotation);
+            Debug.Log(enem);
             temp = temp.GetComponent<betterSpawn>().spawnEnmy(rs[currRound].enemyType[enem]);
-            temp.GetComponent<BasicEnemyMovement>().enabled = true;
+            //temp.GetComponent<BasicEnemyMovement>().enabled = true;
             enemys.Add(temp);
         }
     }
@@ -161,8 +170,7 @@ public class RoundManager : MonoBehaviour
         {
             yield return null;
         }
-
-        dynA.dynmArena();
+        DynamicArena.instance.dynmArena();
         updateRound();
         isShop = false;
     }
@@ -170,7 +178,7 @@ public class RoundManager : MonoBehaviour
     IEnumerator intermission(int Wait)
     {
 
-        dynA.delHaz();
+        DynamicArena.instance.delHaz();
 
         for (int i = Wait; i >= 0; i--)
         {
@@ -180,9 +188,15 @@ public class RoundManager : MonoBehaviour
 
         waitText.text = "";
 
-        if (rs[currRound + 1].r != Round.roundKind.Shop)
+        if (currRound + 1 >= rs.Length)
         {
-            dynA.dynmArena();
+            updateRound();
+            yield break;
+        }
+
+        if (rs[currRound + 1].r != Round.roundKind.Shop )
+        {
+            DynamicArena.instance.dynmArena();
         }
 
         if (currRound + 1 <= rs.Length && rs[currRound + 1].r == Round.roundKind.Boss)
@@ -192,12 +206,21 @@ public class RoundManager : MonoBehaviour
             BossIntro.SetActive(false);
         }
         updateRound();
-        yield return null;
+        yield break;
+    }
+
+    void realVictory()
+    {
+        cursor.SetActive(true);
+        isTransitionState = true;
+        Time.timeScale = 0f;
+        realWinPrompt.SetActive(true);
     }
 
     void Victory()
     {
         cursor.SetActive(true);
+        isTransitionState = true;
         Time.timeScale = 0f;
         WinPrompt.SetActive(true);
     }
@@ -205,6 +228,7 @@ public class RoundManager : MonoBehaviour
     public void Lose()
     {
         cursor.SetActive(true);
+        isTransitionState = true;
         Time.timeScale = 0f;
         LosePrompt.SetActive(true);
     }
@@ -215,10 +239,14 @@ public class RoundManager : MonoBehaviour
     }
 
 
-    void updateRound()
+    public void updateRound()
     {
-
-        if (currRound + 1 >= rs.Length)
+        if ((currRound + 1) >= rs.Length)
+        {
+            realVictory();
+            return;
+        }
+        else if ((currRound + 1) % EveryOther == 0 && isDoneWaiting == false)
         {
             Victory();
             return;
@@ -228,24 +256,76 @@ public class RoundManager : MonoBehaviour
         currRound++;
         roundText.text = "Round " + (currRound + 1);
         currDef = 0;
+        isDoneWaiting = false;
+    }
+
+
+    public IEnumerator startZone()
+    {
+        //Beam of light entrance
+
+        player.GetComponent<PlayerMovement>().ChangeState(PlayerMovement.State.Disable);
+        spawnLazer.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        spawnLazer.SetActive(false);
+        player.GetComponent<PlayerMovement>().ChangeState(PlayerMovement.State.Normal);
+
+        DynamicArena.instance.Pattern();
+        DynamicArena.instance.Warning();
+        for (int i = 5; i >= 0; i--)
+        {
+            waitText.text = "New zone Starts in: " + i;
+            yield return new WaitForSeconds(1f);
+        }
+        waitText.text = "";
+
+        DynamicArena.instance.dynmArena();
+        isTransitionState = false;
+        yield break;
+    }
+
+    public IEnumerator startZoneNew()
+    {
+        //Beam of light entrance
+        player.GetComponent<PlayerMovement>().ChangeState(PlayerMovement.State.Disable);
+        yield return new WaitForSeconds(1f);
+        spawnLazer.SetActive(false);
+        player.GetComponent<PlayerMovement>().ChangeState(PlayerMovement.State.Normal);
+
+
+        DynamicArena.instance.Pattern();
+        DynamicArena.instance.Warning();
+        for (int i = 5; i >= 0; i--)
+        {
+            waitText.text = "New zone Starts in: " + i;
+            yield return new WaitForSeconds(1f);
+        }
+        waitText.text = "";
+
+        DynamicArena.instance.dynmArena();
+        isTransitionState = false;
+        updateRound();
+        yield break;
     }
 
     // Start is called before the first frame update
     void Awake()
     {
-       
-       // DontDestroyOnLoad(this.gameObject);
-        
+
+        // DontDestroyOnLoad(this.gameObject);
+        player = GameObject.FindWithTag("Player");
         roundText.text = "Round " + (currRound + 1);
         waitText.text = "";
         currRound = 0;
         currDef = 0;
+        StartCoroutine(startZone());
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isTransitionState == true) return;
 
         determineRound(currRound);
     }

@@ -52,6 +52,9 @@ TagManager:
   - name: Arena
     uniqueID: 932719885
     locked: 0
+  - name: Sky
+    uniqueID: 2649936937
+    locked: 0
   - name: UI
     uniqueID: 2194897103
     locked: 0

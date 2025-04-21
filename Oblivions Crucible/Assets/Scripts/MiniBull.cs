@@ -70,7 +70,7 @@ public class MiniBull : MonoBehaviour
             HealthSystem health = other.GetComponent<HealthSystem>();
             if (health != null)
             {
-                health.TakeDamage(damage);
+                health.preCalcTakeDamage(damage);
             }
 
             Destroy(gameObject);

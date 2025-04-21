@@ -150,6 +150,8 @@ public class rangedEnemy : BasicEnemyMovement
         yield return new WaitForSeconds(0.5f);
         shoot();
         yield return new WaitForSeconds(0.5f);
+        shoot();
+        yield return new WaitForSeconds(0.5f);
 
         //Dash
 
@@ -167,7 +169,8 @@ public class rangedEnemy : BasicEnemyMovement
 
     void shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject temp = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        temp.GetComponent<EnemyHomingBullet>().updateOwner(gameObject);
     }
 
     void FindPlayer()

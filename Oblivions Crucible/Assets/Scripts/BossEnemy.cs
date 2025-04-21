@@ -100,6 +100,10 @@ public class BossEnemy : BasicEnemyMovement
             float lerpedAmt = Mathf.Lerp(1f, 0f, (elapsedTime / dur));
             foreach (MatchingElement i in sprites)
             {
+                if (i.renderer == null)
+                {
+                    continue;
+                }
                 i.renderer.material.SetFloat(hitEffectAmount, lerpedAmt);
             }
             yield return null;
@@ -114,6 +118,10 @@ public class BossEnemy : BasicEnemyMovement
             float lerpedAmt = Mathf.Lerp(0f, 1f, (elapsedTime / dur));
             foreach (MatchingElement i in sprites)
             {
+                if (i.renderer == null)
+                {
+                    continue;
+                }
                 i.renderer.material.SetFloat(hitEffectAmount, lerpedAmt);
             }
             yield return null;
@@ -261,6 +269,10 @@ public class BossEnemy : BasicEnemyMovement
         int hitEffectAmount = Shader.PropertyToID("_HitEffectAmount");
         foreach (MatchingElement i in sprites)
         {
+            if (i.renderer == null)
+            {
+                continue;
+            }
             i.renderer.material = hit;
             i.renderer.material.SetFloat(hitEffectAmount, 1);
         }

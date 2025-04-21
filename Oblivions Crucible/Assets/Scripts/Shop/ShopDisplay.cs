@@ -17,6 +17,7 @@ public class ShopDisplay : MonoBehaviour
     public Button exitButton;
     public bool debugShowShop = false;
     public bool Shop = false;
+    public GameObject cursor;
     //For tutorial Access
     public UnityEvent OnShopClosed = new UnityEvent();
     void Awake()
@@ -47,6 +48,10 @@ public class ShopDisplay : MonoBehaviour
                 continue;
             }
 
+            if (displayedItems[i] == null)
+            {
+                continue;
+            }
             ShopItem item = displayedItems[i];
 
             // Set shared UI text
@@ -94,6 +99,7 @@ public class ShopDisplay : MonoBehaviour
     public void ShowShop()
     {
         Debug.Log("ShowShop() called!");
+        cursor.SetActive(true);
         shopCanvasGroup.alpha = 1;
         shopCanvasGroup.interactable = true;
         shopCanvasGroup.blocksRaycasts = true;
@@ -104,6 +110,7 @@ public class ShopDisplay : MonoBehaviour
     public void HideShop()
     {
         Debug.Log(" HideShop() called!");
+        cursor.SetActive(false);
 
 
         ShopItem[] displayedItems = ShopManager.instance.getDisplay();
@@ -113,6 +120,10 @@ public class ShopDisplay : MonoBehaviour
             if (i >= itemImages.Length || i >= buyButtons.Length)
             {
                 Debug.LogError($"ERROR: UI element index {i} is out of bounds!");
+                continue;
+            }
+            if (displayedItems[i] == null)
+            {
                 continue;
             }
 

@@ -19,6 +19,7 @@ public class MenuUIManager : MonoBehaviour
     public Sprite[] numberSprites; 
 
     private bool isMenuOpen = false;
+    private GameObject playerz;
     public GameObject cursor;
 
 
@@ -41,7 +42,10 @@ public class MenuUIManager : MonoBehaviour
     void Start()
     {
         tutorial = FindObjectOfType<TutorialManager>();
+       // FindPlayer();
         SetMenuVisibility(false, false);
+        FindPlayer();
+        setNewPlayerStats();
     }
 
     void Update()
@@ -65,6 +69,30 @@ public class MenuUIManager : MonoBehaviour
         }
     }
 
+    void FindPlayer()
+    {
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            playerz = playerObj;
+        }
+        else
+        {
+            Debug.LogWarning("No player found!");
+        }
+    }
+
+    public void setNewPlayerStats()
+    {
+        Classes player = playerz.GetComponent<Classes>();
+        playerStats.Strength = player.attack;
+        playerStats.Vitality = player.vit;
+        playerStats.Stamina = player.movementSpeed;
+        playerStats.Intelligence = player.intelligence;
+        playerStats.Defense = player.defense;
+
+        UpdateMenuStats();
+    }
 
     public void retry()
     {

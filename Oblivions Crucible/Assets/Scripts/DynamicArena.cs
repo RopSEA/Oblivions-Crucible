@@ -19,6 +19,14 @@ public class DynamicArena : MonoBehaviour
 
     public bool debug = false;
 
+
+
+
+    private void OnDestroy()
+    {
+        delHaz2();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +40,10 @@ public class DynamicArena : MonoBehaviour
         {
             instance = this;
         }
-        else
+        else if (instance != null)
         {
-            Destroy(gameObject);
+            Destroy(instance);
+            instance = this;
         }
 
 
@@ -53,16 +62,13 @@ public class DynamicArena : MonoBehaviour
         {
             tileset[i] = new GameObject[7];
             pretileset[i] = new GameObject[7];
-            for (int j = 0; j < 7; j++)
+            for (int j = 0; j < 7; j++) 
             {
                 tileset[i][j] = tiles[curr];
                 pretileset[i][j] = tiles[curr];
                 curr++;
             }
         }
-
-        dynmArena();
-
     }
 
 
@@ -82,6 +88,21 @@ public class DynamicArena : MonoBehaviour
 
         Pattern();
         Warning();
+    }
+
+    public void delHaz2()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                if (patts[i][j] == 'S')
+                {
+                    Destroy(tileset[i][j]);
+                    tileset[i][j] = pretileset[i][j];
+                }
+            }
+        }
     }
 
 
@@ -117,7 +138,7 @@ public class DynamicArena : MonoBehaviour
     }
 
 
-    void Pattern()
+    public void Pattern()
     {
         int rand = Random.Range(0, 2);
 
@@ -146,7 +167,7 @@ public class DynamicArena : MonoBehaviour
         // ALERT CHANGE some sort of flash
     }
 
-    void Warning()
+    public void Warning()
     {
         for (int i = 0; i < 4; i++)
         {

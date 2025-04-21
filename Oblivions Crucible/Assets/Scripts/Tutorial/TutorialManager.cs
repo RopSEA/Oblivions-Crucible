@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -121,6 +122,9 @@ public class TutorialManager : MonoBehaviour
                     GoToFinalFight();
                 }
                 break;
+            case 8:
+
+                break;
         }
     }
 
@@ -162,7 +166,7 @@ public class TutorialManager : MonoBehaviour
         rpgTalk.NewTalk("stats_menu", "shop_intro");
     }
 
-        void GoToShop()
+    void GoToShop()
     {
         tutorialStep = 6;
         rpgTalk.NewTalk("shop_intro", "final_duel");
@@ -204,6 +208,7 @@ public class TutorialManager : MonoBehaviour
     public void EndTutorial()
     {
         rpgTalk.NewTalk("final_farewell", "end");
+        SceneManager.LoadScene("Selection");
     }
 
     void OnDialogFinished()

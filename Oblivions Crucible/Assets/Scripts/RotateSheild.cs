@@ -10,8 +10,10 @@ public class RotateSheild : MonoBehaviour
     public int calcDamage(GameObject enemy)
     {
         // Base Dam 25
+        int attk = player.GetComponent<Classes>().attack;
+        int def = enemy.GetComponent<BasicEnemyMovement>().defense;
         float r = Random.RandomRange(0.5f, 1.5f);
-        int dam = (damage - 10) + (int)Mathf.Ceil(player.GetComponent<Classes>().attack * r);
+        int dam = (int)Mathf.Ceil((25 * r) * ((attk + 100) / (100 + def)));
         return dam;
     }
 

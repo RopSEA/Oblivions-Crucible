@@ -7,6 +7,7 @@ public class Lazer : MonoBehaviour
     GameObject LazerB;
     private HealthSystem healthSystem;
     private GameObject player;
+    private GameObject enemy;
 
 
     void FindPlayer()
@@ -28,7 +29,15 @@ public class Lazer : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Debug.Log("HEY OVER HERE");
-            healthSystem.TakeDamage(15);
+            if (enemy != null)
+            {
+                healthSystem.TakeDamage(15, enemy);
+            }
+            else
+            {
+                healthSystem.preCalcTakeDamage(15);
+            }
+            
         }
     }
     // Start is called before the first frame update

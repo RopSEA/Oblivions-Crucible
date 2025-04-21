@@ -19,10 +19,16 @@ public class PlayerMovement : MonoBehaviour
     public GhostEff ghost;
 
     private State state;
-    private enum State
+    public enum State
     {
         Normal,
-        Roll
+        Roll,
+        Disable
+    }
+
+    public void ChangeState(State newState)
+    {
+        state  = newState;
     }
 
     TutorialManager tutorial;
@@ -36,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         currentSpeed = BASE_SPEED;
         lastDodge = Time.time;
         state = State.Normal;
+
+        upgradeStam(90 + gameObject.GetComponent<Classes>().movementSpeed);
     }
 
     // Update is called once per frame
@@ -50,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
             case State.Roll:
                 dodgeSlide();
+                break;
+            case State.Disable:
                 break;
         }
        
