@@ -13,7 +13,7 @@ public class RelicCatalog : MonoBehaviour
         else Destroy(gameObject);
 
         // Load all relics from Resources/Relics
-        RelicSO[] loadedRelics = Resources.LoadAll<RelicSO>("Relics");
+        RelicSO[] loadedRelics = Resources.LoadAll<RelicSO>("RelicsSOs");
         allRelics = new List<RelicSO>(loadedRelics);
     }
 
