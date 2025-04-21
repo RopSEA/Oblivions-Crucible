@@ -53,7 +53,6 @@ public class RoundManager : MonoBehaviour
                     return;
                 }
             }
-
             currDef += enemiesPerWave; // 7 
             enemys.Clear();
 
@@ -140,7 +139,6 @@ public class RoundManager : MonoBehaviour
             {
                 return;
             }
-
             currDef = 1;
             enemys.Clear();
             hpBar.SetActive(false);
@@ -163,6 +161,19 @@ public class RoundManager : MonoBehaviour
     }
 
     IEnumerator shopRound()
+    {
+        shop.ShowShop();
+
+        while (shop.Shop == true)
+        {
+            yield return null;
+        }
+        DynamicArena.instance.dynmArena();
+        updateRound();
+        isShop = false;
+    }
+
+    IEnumerator shopBoss()
     {
         shop.ShowShop();
 
@@ -201,6 +212,14 @@ public class RoundManager : MonoBehaviour
 
         if (currRound + 1 <= rs.Length && rs[currRound + 1].r == Round.roundKind.Boss)
         {
+            shop.ShowShop();
+
+            while (shop.Shop == true)
+            {
+                yield return null;
+            }
+            isShop = false;
+
             BossIntro.SetActive(true);
             yield return new WaitForSeconds(1.7f);
             BossIntro.SetActive(false);
@@ -257,6 +276,8 @@ public class RoundManager : MonoBehaviour
         roundText.text = "Round " + (currRound + 1);
         currDef = 0;
         isDoneWaiting = false;
+        gameObject.GetComponent<enemyLeft>().setText(rs[currRound].req);
+        DataPersistenceManager.instance.GameData.roundsBeat++;
     }
 
 
@@ -274,13 +295,14 @@ public class RoundManager : MonoBehaviour
         DynamicArena.instance.Warning();
         for (int i = 5; i >= 0; i--)
         {
-            waitText.text = "New zone Starts in: " + i;
+            waitText.text = "Round will start in: " + i;
             yield return new WaitForSeconds(1f);
         }
         waitText.text = "";
 
         DynamicArena.instance.dynmArena();
         isTransitionState = false;
+        gameObject.GetComponent<enemyLeft>().setText(rs[0].req);
         yield break;
     }
 
@@ -297,7 +319,7 @@ public class RoundManager : MonoBehaviour
         DynamicArena.instance.Warning();
         for (int i = 5; i >= 0; i--)
         {
-            waitText.text = "New zone Starts in: " + i;
+            waitText.text = "New zone Round Starts in: " + i;
             yield return new WaitForSeconds(1f);
         }
         waitText.text = "";

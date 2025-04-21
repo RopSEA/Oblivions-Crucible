@@ -601,7 +601,11 @@ public class RPGTalk : MonoBehaviour {
         textUI.Enabled(true);
         if (dialoger) {
             if (dialogerObj) {
-                dialogerUI.Enabled(true);
+                if (dialogerUI != null)
+                {
+                    dialogerUI.Enabled(true);
+                }
+                
             }
 
         }

@@ -79,7 +79,7 @@ public class SaberBoss : BasicEnemyMovement
 
         Destroy(gameObject);
         GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
-        DataPersistenceManager.instance.GameData.enemiesDefeated++;
+        DataPersistenceManager.instance.GameData.bossesBeat++;
     }
 
 

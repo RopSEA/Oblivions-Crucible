@@ -11,6 +11,11 @@ public class SkyEnemy : BasicEnemyMovement
     private GameObject enemy;
     private float dist;
     private bool isShoot = false;
+
+    public void OnDestroy()
+    {
+        enemyLeft.instance.addDef();
+    }
     public override void damage(int dam)
     {
 

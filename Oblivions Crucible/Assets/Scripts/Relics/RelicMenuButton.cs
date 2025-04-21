@@ -1,8 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RelicDraft : MonoBehaviour
 {
-    public GameObject relicSelectionUI; // Drag your UI Panel here
+    public GameObject relicSelectionUI;
+    public GameObject oldUi;// Drag your UI Panel here
 
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
@@ -40,14 +42,17 @@ public class RelicDraft : MonoBehaviour
 
     void OnMouseDown()
     {
+        AudioManager.instance.PlaySfx("butt", false);
         if (relicSelectionUI != null)
         {
             if (relicSelectionUI.activeSelf == true)
             {
                 relicSelectionUI.SetActive(false);
+                oldUi.SetActive(true);
             }
             else
             {
+                oldUi.SetActive(false);
                 relicSelectionUI.SetActive(true);
                 Debug.Log("Opened Relic Selection UI");
             }

@@ -68,6 +68,7 @@
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkArea.cs" />
     <Compile Include="Assets\Scripts\RoundManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\NewGame.cs" />
+    <Compile Include="Assets\Scripts\enemyLeft.cs" />
     <Compile Include="Assets\Scripts\Classes\TankClass.cs" />
     <Compile Include="Assets\Scripts\Relics\ToolTipManager.cs" />
     <Compile Include="Assets\Scripts\Classes\Classes.cs" />

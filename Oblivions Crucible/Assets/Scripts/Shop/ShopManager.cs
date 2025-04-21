@@ -59,7 +59,7 @@ public class ShopManager : MonoBehaviour
             Resources.Load<Sprite>("StamPotion"), Resources.Load<Sprite>("SoldStamPotion"), 0, 0, 0, 0, 5, 30));
 
         availableItems.Add(new ShopItem("Demon Sword", "Powerful sword \n+10 Str \n+10 Int",
-            Resources.Load<Sprite>("DemSword"), Resources.Load<Sprite>("SoldDemSword"), 0, 10, 0, 10, 0, 100));
+            Resources.Load<Sprite>("DemSword"), Resources.Load<Sprite>("SoldDemSword"), 10, 0, 0, 10, 0, 100));
 
         availableItems.Add(new ShopItem("Sheild Of Light", "Defends you \n+10 Def",
             Resources.Load<Sprite>("MythrilShield"), Resources.Load<Sprite>("SoldMythrilShield"), 0, 0, 0, 0, 10, 85));
