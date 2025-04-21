@@ -1818,6 +1818,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c1c550ea83d9e34b934788251f80dcb, type: 2}
   - {fileID: 11400000, guid: f9cb595a16d89e34e9bbb400dec69053, type: 2}
   debugShowAll: 0
+  debugHalfUnlocked: 1
 --- !u!4 &1278103872
 Transform:
   m_ObjectHideFlags: 0

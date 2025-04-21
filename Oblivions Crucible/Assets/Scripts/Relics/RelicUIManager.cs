@@ -9,6 +9,7 @@ public class RelicUIManager : MonoBehaviour
 
     [Header("Debug")]
     public bool debugShowAll = false;
+    public bool debugHalfUnlocked = false;
 
     void Start()
     {
@@ -17,6 +18,15 @@ public class RelicUIManager : MonoBehaviour
         if (debugShowAll)
         {
             Debug.LogWarning("Debug Mode Enabled: All relics will be shown as unlocked.");
+        }
+        else if (debugHalfUnlocked)
+        {
+            Debug.LogWarning("Debug Mode Enabled: Half of the relics will be shown as unlocked.");
+            int halfCount = allRelics.Count / 2;
+            for (int i = 0; i < halfCount; i++)
+            {
+                unlockedRelicNames.Add(allRelics[i].relicName);
+            }
         }
         else if (DataPersistenceManager.instance != null && DataPersistenceManager.instance.HasGameData())
         {
