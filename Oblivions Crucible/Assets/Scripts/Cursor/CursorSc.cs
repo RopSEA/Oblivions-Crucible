@@ -22,9 +22,9 @@ public class CursorSc : MonoBehaviour
         
         image = GetComponent<Image>();
         if (image == null)
-    {
-        Debug.LogError("CursorSc: Image component is missing! Make sure this script is attached to a UI Image.");
-    }
+        {
+            Debug.LogError("CursorSc: Image component is missing! Make sure this script is attached to a UI Image.");
+        }
     }
 
     // Update is called once per frame

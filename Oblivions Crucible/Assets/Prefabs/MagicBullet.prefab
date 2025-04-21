@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7858399900813952306}
   - component: {fileID: 7634043328490480426}
   - component: {fileID: 4801870051753325741}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MagicBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.962, y: 0.419, z: 0.07524397}
-  m_LocalScale: {x: 2.99, y: 2.99, z: 2.99}
+  m_LocalScale: {x: 1.68, y: 1.68, z: 1.68}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,10 +76,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.92931306, g: 0.9622642, b: 0, a: 1}
+  m_Sprite: {fileID: 1669462325, guid: 77cc1ade614adc9489b4c226054b76d5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.24, y: 0.16}
   m_AdaptiveModeThreshold: 0.5

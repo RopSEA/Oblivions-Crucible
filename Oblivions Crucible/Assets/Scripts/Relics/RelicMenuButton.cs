@@ -42,8 +42,16 @@ public class RelicDraft : MonoBehaviour
     {
         if (relicSelectionUI != null)
         {
-            relicSelectionUI.SetActive(true);
-            Debug.Log("Opened Relic Selection UI");
+            if (relicSelectionUI.activeSelf == true)
+            {
+                relicSelectionUI.SetActive(false);
+            }
+            else
+            {
+                relicSelectionUI.SetActive(true);
+                Debug.Log("Opened Relic Selection UI");
+            }
+            
         }
     }
 }

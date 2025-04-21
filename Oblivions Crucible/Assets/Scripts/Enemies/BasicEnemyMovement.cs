@@ -8,6 +8,8 @@ using static UnityEngine.EventSystems.EventTrigger;
 public class BasicEnemyMovement : MonoBehaviour
 {
     public float speed;
+    public int attack;
+    public int defense;
     public int hp;
     public Transform player;
     public GameObject floatingText;
@@ -34,7 +36,7 @@ public class BasicEnemyMovement : MonoBehaviour
 
         StartCoroutine(redDamage());
         ShowHitEffect();
-        AudioManager.instance.PlaySfx("hitE");
+        AudioManager.instance.PlaySfx("hitE", true);
         // Show Number
         if (floatingText)
         {

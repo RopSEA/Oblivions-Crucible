@@ -73,7 +73,9 @@
     <Compile Include="Assets\Scripts\Classes\Classes.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SPUM_Prefabs.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\RPGTalkLanguage.cs" />
+    <Compile Include="Assets\Scripts\GhostEff.cs" />
     <Compile Include="Assets\Scripts\EnemyHomingBullet.cs" />
+    <Compile Include="Assets\Scripts\DesperationLazer.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopItem.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkFollowCharacter.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\FileDataHandler.cs" />
@@ -110,9 +112,12 @@
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkCinematic\RPGTalkCinematicTrack.cs" />
     <Compile Include="Assets\Scripts\MainMenu\TitleScreenManager.cs" />
     <Compile Include="Assets\SPUM\Script\Data\SpritePos.cs" />
+    <Compile Include="Assets\Scripts\SkyEnemy.cs" />
     <Compile Include="Assets\Scripts\Relics\RelicUtility.cs" />
+    <Compile Include="Assets\Scripts\TankEnemy.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerObj.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\RPGTalkCharacter.cs" />
+    <Compile Include="Assets\Scripts\Saber.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\LaserManager.cs" />
     <Compile Include="Assets\Scripts\ClassButton.cs" />
@@ -131,8 +136,10 @@
     <Compile Include="Assets\Scripts\Classes\SpeedsterClass.cs" />
     <Compile Include="Assets\Scripts\PlayerClassHandler.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\WarningTile.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopDisplay.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\changeZone.cs" />
     <Compile Include="Assets\Scripts\Round.cs" />
     <Compile Include="Assets\Scripts\Enemies\BasicEnemyMovement.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalk.cs" />
@@ -146,6 +153,7 @@
     <Compile Include="Assets\Scripts\BossEnemy.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkCanPassWarning.cs" />
     <Compile Include="Assets\Scripts\Relics\RelicRunData.cs" />
+    <Compile Include="Assets\Scripts\SaberBoss.cs" />
     <Compile Include="Assets\Scripts\Sheild.cs" />
     <Compile Include="Assets\Scripts\rangedEnemy.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\HealthSystem.cs" />
@@ -156,6 +164,7 @@
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\TMP_Translator.cs" />
     <Compile Include="Assets\Scripts\Sword.cs" />
     <Compile Include="Assets\Scripts\DynamicArena.cs" />
+    <Compile Include="Assets\Scripts\PointerArrow.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopManager.cs" />
     <Compile Include="Assets\Scripts\ScreenShake.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalkTimeline.cs" />

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuUIManager : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class MenuUIManager : MonoBehaviour
     public Sprite[] numberSprites; 
 
     private bool isMenuOpen = false;
+    private GameObject playerz;
+    public GameObject cursor;
+
 
     [Header("Player Stats Reference")]
     public PlayerStats playerStats; 
@@ -38,24 +42,71 @@ public class MenuUIManager : MonoBehaviour
     void Start()
     {
         tutorial = FindObjectOfType<TutorialManager>();
+       // FindPlayer();
         SetMenuVisibility(false, false);
+        FindPlayer();
+        setNewPlayerStats();
     }
 
     void Update()
     {
-    if (tutorial == null || tutorial.allowStats)
-    {
-        if (Input.GetKeyDown(toggleKey))
+        if (tutorial == null || tutorial.allowStats)
         {
-            isMenuOpen = !isMenuOpen;
-            SetMenuVisibility(isMenuOpen, true);
-
-            if (isMenuOpen)
+            if (Input.GetKeyDown(toggleKey))
             {
-                UpdateMenuStats();
+                if (isMenuOpen == false && Time.timeScale == 0)
+                {
+                    return;
+                }
+                isMenuOpen = !isMenuOpen;
+                SetMenuVisibility(isMenuOpen, true);
+
+                if (isMenuOpen)
+                {
+                    UpdateMenuStats();
+                }
             }
         }
     }
+
+    void FindPlayer()
+    {
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            playerz = playerObj;
+        }
+        else
+        {
+            Debug.LogWarning("No player found!");
+        }
+    }
+
+    public void setNewPlayerStats()
+    {
+        Classes player = playerz.GetComponent<Classes>();
+        playerStats.Strength = player.attack;
+        playerStats.Vitality = player.vit;
+        playerStats.Stamina = player.movementSpeed;
+        playerStats.Intelligence = player.intelligence;
+        playerStats.Defense = player.defense;
+
+        UpdateMenuStats();
+    }
+
+    public void retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Continue()
+    {
+        // New Map
+    }
+
+    public void newRun()
+    {
+        SceneManager.LoadScene("Selection");
     }
 
     public void unPause()
@@ -67,6 +118,15 @@ public class MenuUIManager : MonoBehaviour
     void SetMenuVisibility(bool visible, bool fade)
     {
         Time.timeScale = visible ? 0f : 1f;
+
+        if (visible == true)
+        {
+            cursor.SetActive(true);
+        }
+        else
+        {
+            cursor.SetActive(false);
+        }
 
         if (fade)
         {

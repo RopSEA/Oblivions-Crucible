@@ -11,11 +11,14 @@ public class LazerBoss : BasicEnemyMovement
     public GameObject LazerV;
     public GameObject LazerH;
     public GameObject miniLazer;
+    public GameObject despLazer;
     private bool isAttack1 = false;
     private bool isAttack2 = false;
     private int hpMax;
     private GameObject cam;
     public float wait;
+    public GameObject Expolosion;
+    public GameObject newHaz;
 
 
     // for Path Finding
@@ -28,8 +31,20 @@ public class LazerBoss : BasicEnemyMovement
 
 
 
+
+    private bool doneAttack = false;
+    private bool isAttack3 = false;
+
+
+
     private Vector3 h = new Vector3(-8.537104f, -2.552133f, -0.1259285f);
     private Vector3 v = new Vector3(-0.24f, -0.03f, -0.1259285f);
+
+
+    public void setDone()
+    {
+        doneAttack = true;
+    }
 
     public override void damage(int dam)
     {
@@ -48,7 +63,7 @@ public class LazerBoss : BasicEnemyMovement
 
         StartCoroutine(redDamage());
         ShowHitEffect();
-        AudioManager.instance.PlaySfx("hitE");
+        AudioManager.instance.PlaySfx("hitE", true);
 
         if (floatingText)
         {
@@ -57,16 +72,44 @@ public class LazerBoss : BasicEnemyMovement
 
         if (hp == 0)
         {
+            if (doneAttack == false)
+            {
+                DesperationAttack();
+                return;
+            }
+            DynamicArena.instance.addHazard(newHaz);
             hpBar.SetActive(false);
-            Destroy(gameObject);
-            GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
-            //DataPersistenceManager.instance.GameData.enemiesDefeated++;
+            StartCoroutine(onDeath());
         }
+    }
+
+
+    IEnumerator onDeath()
+    {
+
+        for (int i = 0; i < 8; i++)
+        {
+            showExpo();
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        Destroy(gameObject);
+        GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        DataPersistenceManager.instance.GameData.enemiesDefeated++;
+    }
+
+
+    public void  showExpo()
+    {
+        var go = Instantiate(Expolosion, transform.position, Quaternion.identity, transform);
+        StartCoroutine(redDamage());
+        AudioManager.instance.PlaySfx("hitE", true);
     }
 
 
     IEnumerator redDamage()
     {
+
         List<MatchingElement> sprites = sprite.matchingTables;
         float dur = 0.25f;
         float elapsedTime = 0f;
@@ -130,7 +173,7 @@ public class LazerBoss : BasicEnemyMovement
     // first attack (LAZERZZZ)
     void attack1()
     {
-        if (isAttack2 == true || isAttack1 == true)
+        if (isAttack2 == true || isAttack1 == true || isAttack3 == true)
         {
             return;
         }
@@ -151,7 +194,7 @@ public class LazerBoss : BasicEnemyMovement
             temp = Instantiate(LazerH, h, transform.rotation);
             temp2 = Instantiate(LazerV, v, transform.rotation);
             yield return new WaitForSeconds(wait);
-             AudioManager.instance.PlaySfx("lazerBig");
+            AudioManager.instance.PlaySfx("lazerBig", false);
             cam.GetComponent<ScreenShake>().start = true;
 
             Destroy(temp, 1f);
@@ -161,7 +204,7 @@ public class LazerBoss : BasicEnemyMovement
         {
             temp = Instantiate(LazerV, v, transform.rotation);
             yield return new WaitForSeconds(wait);
-            AudioManager.instance.PlaySfx("lazerBig");
+            AudioManager.instance.PlaySfx("lazerBig", false);
             cam.GetComponent<ScreenShake>().start = true;
             Destroy(temp, 1f);
         }
@@ -169,7 +212,7 @@ public class LazerBoss : BasicEnemyMovement
         {
             temp = Instantiate(LazerH , h, transform.rotation);
             yield return new WaitForSeconds(wait);
-            AudioManager.instance.PlaySfx("lazerBig");
+            AudioManager.instance.PlaySfx("lazerBig", false);
             cam.GetComponent<ScreenShake>().start = true;
             Destroy(temp, 1f);
         }
@@ -184,14 +227,28 @@ public class LazerBoss : BasicEnemyMovement
     void attack2()
     {
         GameObject temp;
-        if (isAttack2 == true || isAttack1 == true)
+        if (isAttack2 == true || isAttack1 == true || isAttack3 == true)
         {
             return;
         }
         isAttack2 = true;
         temp = Instantiate(miniLazer, transform.position, transform.rotation);
-        AudioManager.instance.PlaySfx("lazerSmall");
+        AudioManager.instance.PlaySfx("lazerSmall", false);
         StartCoroutine(secCool());
+    }
+
+
+    void DesperationAttack()
+    {
+        GameObject temp;
+        if (isAttack3 == true)
+        {
+            return;
+        }
+
+        isAttack3 = true;
+        temp = Instantiate(despLazer, player.transform.position, player.transform.rotation, player);
+        temp.GetComponent<DesperationLazer>().SetLazer(this);
     }
 
     IEnumerator secCool()
@@ -227,6 +284,10 @@ public class LazerBoss : BasicEnemyMovement
 
     void UpdatePath()
     {
+        if (seeker.IsDone() && isAttack3 == true)
+        {
+            seeker.StartPath(rb.position, new Vector3(-0.28f, 7.85f, 0f), OnPathComplete);
+        }
         if (seeker.IsDone())
         {
             seeker.StartPath(rb.position, player.transform.position, OnPathComplete);

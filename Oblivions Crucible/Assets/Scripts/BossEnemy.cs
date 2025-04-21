@@ -10,6 +10,7 @@ public class BossEnemy : BasicEnemyMovement
     public GameObject bulletPre2;
     private bool isAttack1 = false;
     private bool isAttack2 = false;
+    private bool isDed = false;
 
 
     // for Path Finding
@@ -19,6 +20,8 @@ public class BossEnemy : BasicEnemyMovement
     private Path path;
     private int currWay = 0;
     private bool ReachedEND = false;
+
+    public GameObject Expolosion;
 
     public override void damage(int dam)
     {
@@ -37,7 +40,7 @@ public class BossEnemy : BasicEnemyMovement
 
         StartCoroutine(redDamage());
         ShowHitEffect();
-        AudioManager.instance.PlaySfx("hitE");
+        AudioManager.instance.PlaySfx("hitE", true);
 
         if (floatingText)
         {
@@ -46,12 +49,41 @@ public class BossEnemy : BasicEnemyMovement
 
         if (hp == 0)
         {
-            hpBar.SetActive(false);
-            Destroy(gameObject);
-            GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+            
+            if (isDed == false)
+            {
+                hpBar.SetActive(false);
+                isAttack1 = true;
+                isDed = true;
+                StartCoroutine(onDeath());
+            }
+            
             //DataPersistenceManager.instance.GameData.enemiesDefeated++;
         }
     }
+
+    IEnumerator onDeath()
+    {
+
+        for (int i = 0; i < 8; i++)
+        {
+            showExpo();
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        Destroy(gameObject);
+        GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        DataPersistenceManager.instance.GameData.enemiesDefeated++;
+    }
+
+
+    public void showExpo()
+    {
+        var go = Instantiate(Expolosion, transform.position, Quaternion.identity, transform);
+        StartCoroutine(redDamage());
+        AudioManager.instance.PlaySfx("hitE", true);
+    }
+
 
 
     IEnumerator redDamage()
@@ -68,6 +100,10 @@ public class BossEnemy : BasicEnemyMovement
             float lerpedAmt = Mathf.Lerp(1f, 0f, (elapsedTime / dur));
             foreach (MatchingElement i in sprites)
             {
+                if (i.renderer == null)
+                {
+                    continue;
+                }
                 i.renderer.material.SetFloat(hitEffectAmount, lerpedAmt);
             }
             yield return null;
@@ -82,6 +118,10 @@ public class BossEnemy : BasicEnemyMovement
             float lerpedAmt = Mathf.Lerp(0f, 1f, (elapsedTime / dur));
             foreach (MatchingElement i in sprites)
             {
+                if (i.renderer == null)
+                {
+                    continue;
+                }
                 i.renderer.material.SetFloat(hitEffectAmount, lerpedAmt);
             }
             yield return null;
@@ -118,7 +158,7 @@ public class BossEnemy : BasicEnemyMovement
     // first attack
     void attack1()
     {
-        if (isAttack2 == true || isAttack1 == true)
+        if (isAttack2 == true || isAttack1 == true || isDed == true)
         {
             return;
         }
@@ -155,7 +195,7 @@ public class BossEnemy : BasicEnemyMovement
     void attack2() 
     {
         GameObject temp;
-        if (isAttack2 == true || isAttack1 == true)
+        if (isAttack2 == true || isAttack1 == true || isDed == true)
         {
             return;
         }
@@ -198,6 +238,10 @@ public class BossEnemy : BasicEnemyMovement
 
     void UpdatePath()
     {
+        if (seeker.IsDone() && isDed == true)
+        {
+            seeker.StartPath(rb.position, new Vector3(-0.28f, 7.85f, 0f), OnPathComplete);
+        }
         if (seeker.IsDone())
         {
             seeker.StartPath(rb.position, player.transform.position, OnPathComplete);
@@ -225,6 +269,10 @@ public class BossEnemy : BasicEnemyMovement
         int hitEffectAmount = Shader.PropertyToID("_HitEffectAmount");
         foreach (MatchingElement i in sprites)
         {
+            if (i.renderer == null)
+            {
+                continue;
+            }
             i.renderer.material = hit;
             i.renderer.material.SetFloat(hitEffectAmount, 1);
         }

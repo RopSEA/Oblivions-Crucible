@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class StaminaBar : MonoBehaviour
 {
-    public Slider staminaBar;
+    public UnityEngine.UI.Slider staminaBar;
 
-    private int maxStamina = 100;
+    public int maxStamina = 100;
     private int currentStamina;
 
     private WaitForSeconds regenTick = new WaitForSeconds(0.1f);
@@ -19,6 +20,12 @@ public class StaminaBar : MonoBehaviour
         currentStamina = maxStamina;
         staminaBar.maxValue = maxStamina;
         staminaBar.value = maxStamina;
+    }
+
+    public void SetMax(int stam)
+    {
+        staminaBar.maxValue += stam;
+        staminaBar.value = staminaBar.maxValue;
     }
 
     public int UseStamina(int amount)

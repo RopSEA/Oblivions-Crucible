@@ -1,22 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class DynamicArena : MonoBehaviour
 {
+    public static DynamicArena instance;
     public GameObject tileGroup;
+    public GameObject WarningT;
     public GameObject[][] pretileset;
     public GameObject[][] tileset;
 
-    public GameObject[] tileHazards;
+    public List<GameObject> tileHazards = new List<GameObject>();
 
     public string[] patts;
+
+    public bool debug = false;
+
+
+
+
+    private void OnDestroy()
+    {
+        delHaz2();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+
+        if (debug == true)
+        {
+            return;
+        }
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != null)
+        {
+            Destroy(instance);
+            instance = this;
+        }
+
+
         GameObject[] tiles = new GameObject[tileGroup.transform.childCount];
         int curr = 0;
         
@@ -32,16 +62,13 @@ public class DynamicArena : MonoBehaviour
         {
             tileset[i] = new GameObject[7];
             pretileset[i] = new GameObject[7];
-            for (int j = 0; j < 7; j++)
+            for (int j = 0; j < 7; j++) 
             {
                 tileset[i][j] = tiles[curr];
                 pretileset[i][j] = tiles[curr];
                 curr++;
             }
         }
-
-        dynmArena();
-
     }
 
 
@@ -60,6 +87,22 @@ public class DynamicArena : MonoBehaviour
         }
 
         Pattern();
+        Warning();
+    }
+
+    public void delHaz2()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                if (patts[i][j] == 'S')
+                {
+                    Destroy(tileset[i][j]);
+                    tileset[i][j] = pretileset[i][j];
+                }
+            }
+        }
     }
 
 
@@ -95,7 +138,7 @@ public class DynamicArena : MonoBehaviour
     }
 
 
-    void Pattern()
+    public void Pattern()
     {
         int rand = Random.Range(0, 2);
 
@@ -124,10 +167,30 @@ public class DynamicArena : MonoBehaviour
         // ALERT CHANGE some sort of flash
     }
 
+    public void Warning()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                if (patts[i][j] == 'S')
+                {
+                    Instantiate(WarningT, tileset[i][j].transform.position, tileset[i][j].transform.rotation);
+                }
+            }
+        }
+    }
+
     public int chooseHaz()
     {
-        int temp = Random.Range(0, tileHazards.Length);
+        int temp = Random.Range(0, tileHazards.Count);
         return temp;
+    }
+
+    public void addHazard(GameObject hazard)
+    {
+        // check if is hazard first
+        tileHazards.Add(hazard);
     }
 
     // Update is called once per frame

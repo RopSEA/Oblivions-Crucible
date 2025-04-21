@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen/StartGame.unity
     guid: 12b35f923b8925c49904ed5b815eea79
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen/Credits.unity
+    guid: ac2166cf931dfb9409247e529e106ea3
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen/SelectionCont.unity
+    guid: 105f7103e5f56034f8292ca36e77d977
+  - enabled: 1
+    path: Assets/Scenes/GamePlay/Tutorial.unity
+    guid: eb121803d7056104c959f4b126831c28
   m_configObjects: {}

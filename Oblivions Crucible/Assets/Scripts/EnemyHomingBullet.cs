@@ -8,6 +8,7 @@ public class EnemyHomingBullet : HomingBullet
 {
     private Transform target;
     private Vector3 moveDirection;
+    private GameObject enemy;
     public bool noHome;
 
 
@@ -76,11 +77,16 @@ public class EnemyHomingBullet : HomingBullet
             HealthSystem health = other.GetComponent<HealthSystem>();
             if (health != null)
             {
-                health.TakeDamage(damage);
+                health.TakeDamage(damage, enemy);
             }
 
             Destroy(gameObject);
         }
+    }
+
+    public void updateOwner(GameObject Enemy)
+    {
+        enemy = Enemy;
     }
 
     public void updateDir(int deg)

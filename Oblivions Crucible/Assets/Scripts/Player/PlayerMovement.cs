@@ -16,12 +16,19 @@ public class PlayerMovement : MonoBehaviour
     private float slideSpeed;
     public float cooldown;
     private float lastDodge;
+    public GhostEff ghost;
 
     private State state;
-    private enum State
+    public enum State
     {
         Normal,
-        Roll
+        Roll,
+        Disable
+    }
+
+    public void ChangeState(State newState)
+    {
+        state  = newState;
     }
 
     TutorialManager tutorial;
@@ -35,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         currentSpeed = BASE_SPEED;
         lastDodge = Time.time;
         state = State.Normal;
+
+        upgradeStam(90 + gameObject.GetComponent<Classes>().movementSpeed);
     }
 
     // Update is called once per frame
@@ -50,9 +59,16 @@ public class PlayerMovement : MonoBehaviour
             case State.Roll:
                 dodgeSlide();
                 break;
+            case State.Disable:
+                break;
         }
        
 
+    }
+
+    public void upgradeStam(int stam)
+    {
+        stamina.SetMax(stam);
     }
 
     public Vector3 getSlideDir()
@@ -72,26 +88,35 @@ public class PlayerMovement : MonoBehaviour
         {
 
             int can = stamina.UseStamina(20);
-
+            
             if (Time.time - lastDodge < cooldown || can == -1)
             {
                 return;
             }
 
-            AudioManager.instance.PlaySfx("roll");
+            AudioManager.instance.PlaySfx("roll", false);
             lastDodge = Time.time;
             state = State.Roll;
             slideSpeed = 35.5f;
+
+            if (ghost)
+            {
+                ghost.makeGhost = true;
+            }
         }
     }
 
     private void dodgeSlide()
     {
-
         transform.position += slideDir * slideSpeed * Time.deltaTime;
         slideSpeed -= slideSpeed * 10f * Time.deltaTime;
         if (slideSpeed < 5f)
         {
+            if (ghost)
+            {
+                ghost.makeGhost = false;
+            }
+            
             state = State.Normal;
         }
     }

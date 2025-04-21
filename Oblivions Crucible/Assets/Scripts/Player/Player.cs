@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.CompareTag("Enemy"))
         {
-            healthSystem.TakeDamage(25);
+            healthSystem.TakeDamage(25, collision.gameObject);
         }
 
         if (collision.collider.CompareTag("Coin"))

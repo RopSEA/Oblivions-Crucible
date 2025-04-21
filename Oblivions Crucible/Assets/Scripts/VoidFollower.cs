@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class VoidFollower : MonoBehaviour
@@ -12,6 +15,7 @@ public class VoidFollower : MonoBehaviour
     void Start()
     {
         currentOffset = Vector3.zero; // Start with no offset
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
