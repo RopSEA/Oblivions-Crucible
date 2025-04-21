@@ -2087,7 +2087,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a3a4226ece01bc48b6f7db8b6b8c0d7, type: 2}
   - {fileID: 11400000, guid: 0c1c550ea83d9e34b934788251f80dcb, type: 2}
   - {fileID: 11400000, guid: f9cb595a16d89e34e9bbb400dec69053, type: 2}
-  debugShowAll: 1
+  debugShowAll: 0
   debugHalfUnlocked: 0
 --- !u!4 &1278103872
 Transform:

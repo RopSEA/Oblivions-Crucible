@@ -1386,8 +1386,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1873340125}
   - component: {fileID: 1873340127}
-  - component: {fileID: 1873340126}
   - component: {fileID: 1873340128}
+  - component: {fileID: 1873340129}
   m_Layer: 0
   m_Name: Continue Game
   m_TagString: Untagged
@@ -1410,19 +1410,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1437596513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1873340126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873340124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d406be04aa0661e44a64f233dee5a932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToSwitchTo: SelectionCont
 --- !u!212 &1873340127
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1496,6 +1483,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 12.8, y: 1.4, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1873340129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873340124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a293cf4fa94fc34bb67d81b6b1d600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToSwitchTo: SelectionCont
+  disabledColor: {r: 0, g: 0, b: 0, a: 0.5}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
 --- !u!1 &2035916050
 GameObject:
   m_ObjectHideFlags: 0

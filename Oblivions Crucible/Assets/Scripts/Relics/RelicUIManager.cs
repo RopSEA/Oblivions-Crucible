@@ -15,6 +15,7 @@ public class RelicUIManager : MonoBehaviour
     {
         List<string> unlockedRelicNames = new List<string>();
 
+        CheckStatBasedUnlocks();
         if (debugShowAll)
         {
             Debug.LogWarning("Debug Mode Enabled: All relics will be shown as unlocked.");
@@ -47,6 +48,30 @@ public class RelicUIManager : MonoBehaviour
 
             GameObject slot = Instantiate(relicSlotPrefab, relicContainer);
             slot.GetComponent<RelicSlotUI>().Setup(relic, isUnlocked);
+        }
+    }
+
+        void CheckStatBasedUnlocks()
+    {
+        if (DataPersistenceManager.instance == null || !DataPersistenceManager.instance.HasGameData()) return;
+
+        GameData data = DataPersistenceManager.instance.GameData;
+        List<string> unlockedRelics = data.relicsAcquired;
+
+        // Unlock conditions
+        TryUnlock("Amulet of the Warlord", data.enemiesDefeated >= 50, unlockedRelics);
+        TryUnlock("Saint’s Embrace", data.deathCount >= 50, unlockedRelics);
+        TryUnlock("Stoneguard Amulet", data.deathCount >= 5, unlockedRelics);
+
+        DataPersistenceManager.instance.SaveGame();
+    }
+
+    void TryUnlock(string relicName, bool condition, List<string> unlockedRelics)
+    {
+        if (condition && !unlockedRelics.Contains(relicName))
+        {
+            unlockedRelics.Add(relicName);
+            Debug.Log($"Unlocked relic: {relicName} via stat condition!");
         }
     }
 }

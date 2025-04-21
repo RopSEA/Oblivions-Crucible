@@ -18,7 +18,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: b5c7dc00a69010046a197a6da6326239, type: 2}
   lockedIcon: {fileID: 21300000, guid: 4a2cb5e3f6d6bb74080b21de3ae9cfbc, type: 2}
   unlockHint: To carry the weight of battle is to be shaped by it. Only the scarred
-    may wear the stone.(Take 1,000 total damage)
+    may wear the stone.(Die 5 times)
   effects:
   - effectType: 4
     value: 3
