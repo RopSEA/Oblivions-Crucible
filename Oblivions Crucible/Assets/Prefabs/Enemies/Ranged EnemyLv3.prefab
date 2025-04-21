@@ -2239,7 +2239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.7
-  attack: 20
+  attack: 25
   defense: 20
   hp: 75
   player: {fileID: 0}

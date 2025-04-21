@@ -156,6 +156,10 @@ public class SpeedsterClass : Classes
 
     void Start()
     {
+        if (RelicRunData.instance != null)
+        {
+            RelicRunData.instance.AddStats(this);
+        }
         tutorial = FindObjectOfType<TutorialManager>();
         state = State.Normal;
         gameObject.GetComponent<TrailRenderer>().emitting = false;

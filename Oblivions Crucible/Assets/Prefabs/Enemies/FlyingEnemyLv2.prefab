@@ -3372,7 +3372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.7
-  attack: 15
+  attack: 20
   defense: 15
   hp: 100
   player: {fileID: 0}

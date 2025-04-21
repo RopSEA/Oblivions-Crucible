@@ -11,6 +11,12 @@ public abstract class Classes : MonoBehaviour
     public int movementSpeed;
     public float fireRate;
 
+
+    public float DamageMultiplier;
+    public float Lifesteal;
+    public float ReviveOnce;
+
+
     public abstract void priSkill();
     public abstract void secSkill();
 
@@ -34,6 +40,12 @@ public abstract class Classes : MonoBehaviour
     public void addDef(int deff)
     {
         defense += deff;
+    }
+
+    public void addDmgMult(float DamageMult)
+    {
+        DamageMultiplier = DamageMult;
+        attack = attack * (int)DamageMultiplier;
     }
 
     void Start()

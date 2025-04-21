@@ -93,6 +93,10 @@ public class Sheild : MonoBehaviour
         int def = enemy.GetComponent<BasicEnemyMovement>().defense;
         float r = Random.RandomRange(0.5f, 1.5f);
         int dam = (int)Mathf.Ceil((25 * r) * ((attk + 100) / (100 + def)));
+        if (player.GetComponent<Classes>().Lifesteal > 0)
+        {
+            player.GetComponent<HealthSystem>().Heal(dam / 2);
+        }
         return dam;
     }
 }

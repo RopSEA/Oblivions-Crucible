@@ -101,6 +101,13 @@ public class HealthSystem : MonoBehaviour
             AudioManager.instance.PlaySfx("hit", true);
         }
 
+        if (currentHealth <= 0 && gameObject.GetComponent<Classes>().ReviveOnce > 0)
+        {
+            Heal(maxHealth);
+            AudioManager.instance.PlaySfx("butt");
+            gameObject.GetComponent<Classes>().ReviveOnce = 0;
+        }
+
         if (currentHealth <= 0)
         {
             Die();

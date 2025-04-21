@@ -102,8 +102,14 @@ public class HomingBullet : MonoBehaviour
         // Base Dam 25
         int attk = player.GetComponent<Classes>().attack;
         int def = enemy.GetComponent<BasicEnemyMovement>().defense;
+
         float r = Random.RandomRange(0.5f, 1.5f);
         int dam = (int)Mathf.Ceil((damage * r) * ((attk + 100) / (100 + def)));
+
+        if (player.GetComponent<Classes>().Lifesteal > 0)
+        {
+            player.GetComponent<HealthSystem>().Heal(dam / 2);
+        }
         return dam;
     }
 }

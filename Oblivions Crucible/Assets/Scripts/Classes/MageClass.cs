@@ -123,6 +123,10 @@ public class MageClass : Classes
 
     void Start()
     {
+        if (RelicRunData.instance != null)
+        {
+            RelicRunData.instance.AddStats(this);
+        }
         iconHold.sprite = icon1.sprite;
         iconHold2.sprite = icon2.sprite;
     }

@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Shop\ShopPriceDisplay.cs" />
     <Compile Include="Assets\RPGTALK\Demo\Scripts\DemoScript.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Snippets\RPGTalkSkipCutscene.cs" />
+    <Compile Include="Assets\Scripts\Classes\ClassUIManager.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\Helpers\TextWithIconSimpleText.cs" />
     <Compile Include="Assets\Scripts\Tutorial\EnemyDeathNotifier.cs" />
     <Compile Include="Assets\Scripts\MiniBull.cs" />
@@ -141,10 +142,12 @@
     <Compile Include="Assets\Scripts\Shop\ShopDisplay.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\changeZone.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\ContinueButton.cs" />
     <Compile Include="Assets\Scripts\Round.cs" />
     <Compile Include="Assets\Scripts\Enemies\BasicEnemyMovement.cs" />
     <Compile Include="Assets\RPGTALK\Scripts\RPGTalk.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\Data\GameData.cs" />
+    <Compile Include="Assets\Scripts\Classes\ClassUIOpener.cs" />
     <Compile Include="Assets\Scripts\Classes\EngineerClass.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Relics\RelicSlotUI.cs" />
