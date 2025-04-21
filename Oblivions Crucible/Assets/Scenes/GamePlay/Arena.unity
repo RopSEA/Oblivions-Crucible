@@ -6515,12 +6515,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893807823592179086, guid: 0333b62b195107b4e9b8222133575c9a, type: 3}
       propertyPath: tileHazards.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5893807823592179086, guid: 0333b62b195107b4e9b8222133575c9a, type: 3}
+      propertyPath: tileHazards.Array.data[0]
+      value: 
+      objectReference: {fileID: 6949682027083182526, guid: f4bf6a410ba4e3e42baebad42dc04e67, type: 3}
     - target: {fileID: 5893807823592179086, guid: 0333b62b195107b4e9b8222133575c9a, type: 3}
       propertyPath: tileHazards.Array.data[3]
       value: 
       objectReference: {fileID: 6564031030444681995, guid: 3f6f15579fed4c74b9ff201de81b4734, type: 3}
+    - target: {fileID: 5893807823592179086, guid: 0333b62b195107b4e9b8222133575c9a, type: 3}
+      propertyPath: tileHazards.Array.data[4]
+      value: 
+      objectReference: {fileID: 8674855282588694109, guid: c26e56856991d6644a51c3d4aea39a18, type: 3}
     - target: {fileID: 6065479745592883706, guid: 0333b62b195107b4e9b8222133575c9a, type: 3}
       propertyPath: m_Color.b
       value: 0.2784314
@@ -8997,6 +9005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enginneer
       objectReference: {fileID: 0}
+    - target: {fileID: 5587817374825164116, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6256655540919496318, guid: 5cf6399af8f60eb45aacea1069e347ca, type: 3}
       propertyPath: coin
       value: 
@@ -10052,12 +10064,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893807823592179086, guid: 0333b62b195107b4e9b8222133575c9a, type: 3}
       propertyPath: tileHazards.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5893807823592179086, guid: 0333b62b195107b4e9b8222133575c9a, type: 3}
       propertyPath: tileHazards.Array.data[3]
       value: 
       objectReference: {fileID: 6564031030444681995, guid: 3f6f15579fed4c74b9ff201de81b4734, type: 3}
+    - target: {fileID: 5893807823592179086, guid: 0333b62b195107b4e9b8222133575c9a, type: 3}
+      propertyPath: tileHazards.Array.data[4]
+      value: 
+      objectReference: {fileID: 6949682027083182526, guid: f4bf6a410ba4e3e42baebad42dc04e67, type: 3}
     - target: {fileID: 6065479745592883706, guid: 0333b62b195107b4e9b8222133575c9a, type: 3}
       propertyPath: m_Color.g
       value: 0.84705883

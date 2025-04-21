@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3500
+  attack: 0
+  defense: 0
   hp: 3500
   player: {fileID: 0}
   floatingText: {fileID: 4556969757122287335, guid: a5985fc3f0dc97044883b27a33b0a573, type: 3}
@@ -164,7 +166,7 @@ MonoBehaviour:
   despLazer: {fileID: 3705418804038020182, guid: cf01ec5f86b7f3641bbb086c44e88091, type: 3}
   wait: 2
   Expolosion: {fileID: 1705196081894264587, guid: 50598b2e0167e8f43b2c67c23af2eab7, type: 3}
-  newHaz: {fileID: 6564031030444681995, guid: 3f6f15579fed4c74b9ff201de81b4734, type: 3}
+  newHaz: {fileID: 0}
   nextWaypoinDist: 1.5
 --- !u!1001 &6712952731731136792
 PrefabInstance:

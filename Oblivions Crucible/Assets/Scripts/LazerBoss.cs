@@ -77,7 +77,7 @@ public class LazerBoss : BasicEnemyMovement
                 DesperationAttack();
                 return;
             }
-            DynamicArena.instance.addHazard(newHaz);
+            //DynamicArena.instance.addHazard(newHaz);
             hpBar.SetActive(false);
             StartCoroutine(onDeath());
         }
