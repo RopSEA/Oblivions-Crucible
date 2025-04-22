@@ -18,7 +18,7 @@ public class RotateSheild : MonoBehaviour
         {
             player.GetComponent<HealthSystem>().Heal(dam / 2);
         }
-        return dam;
+        return Mathf.Max(5, dam); ;
     }
 
     void OnTriggerEnter2D(Collider2D other)

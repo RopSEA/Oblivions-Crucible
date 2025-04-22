@@ -86,6 +86,6 @@ public class ForwardBullet : MonoBehaviour
         // Base Dam 50
         float r = Random.RandomRange(0.5f, 1.5f);
         int dam = 40 + (int)Mathf.Ceil(player.GetComponent<Classes>().attack * r);
-        return dam;
+        return  Mathf.Max(5, dam); ;
     }
 }

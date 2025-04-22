@@ -1,11 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RelicRunData
+public class RelicRunData : MonoBehaviour
 {
-    public static RelicRunData instance = new RelicRunData();
+    public static RelicRunData instance;
 
     public List<RelicSO> selectedRelics = new List<RelicSO>();
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void InitializeRun(List<string> relicNames)
     {

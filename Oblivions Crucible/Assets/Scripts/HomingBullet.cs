@@ -110,6 +110,6 @@ public class HomingBullet : MonoBehaviour
         {
             player.GetComponent<HealthSystem>().Heal(dam / 2);
         }
-        return dam;
+        return Mathf.Max(5, dam);
     }
 }
