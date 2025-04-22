@@ -207,6 +207,12 @@ public class TutorialManager : MonoBehaviour
 
     public void EndTutorial()
     {
+         if (DataPersistenceManager.instance != null && DataPersistenceManager.instance.HasGameData())
+        {
+            DataPersistenceManager.instance.GameData.tutorialDone = true;
+            DataPersistenceManager.instance.SaveGame();
+            Debug.Log("Tutorial completed and saved.");
+        }
         rpgTalk.NewTalk("final_farewell", "end");
         SceneManager.LoadScene("Selection");
     }

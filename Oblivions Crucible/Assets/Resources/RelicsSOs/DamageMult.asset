@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: DamageMult
   m_EditorClassIdentifier: 
   relicName: Moonfang Amulet
-  description: Forged in honor of the lunar predator. Its howl echoes through every
+  description: 'Forged in honor of the lunar predator. Its howl echoes through every
     strike.
+
+    1.15 Damage Multiplier'
   icon: {fileID: 21300000, guid: 0963cf2b6fefe0149872dabff200de54, type: 2}
   lockedIcon: {fileID: 21300000, guid: 269c9c4c5992a4140b8a52f39d8d3664, type: 2}
   unlockHint: Only those who have never tasted death are entrusted to feed upon it.(Reach
     Round 10 without taking any damage)
   effects:
   - effectType: 6
-    value: 0.15
+    value: 2

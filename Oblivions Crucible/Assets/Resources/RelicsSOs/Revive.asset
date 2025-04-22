@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Revive
   m_EditorClassIdentifier: 
   relicName: "Saint\u2019s Embrace"
-  description: When death reaches for you, her light pulls you back. A final gift
+  description: 'When death reaches for you, her light pulls you back. A final gift
     from beyond the veil.
+
+    1 Revive'
   icon: {fileID: 21300000, guid: 8dfc603a7cb852947a1b1fb400d09e73, type: 2}
   lockedIcon: {fileID: 21300000, guid: 9ff824608f62673438e3d196c1e38337, type: 2}
   unlockHint: Only the endlessly fallen are granted the light to rise once more.(Die
     50 Times)
   effects:
-  - effectType: 9
+  - effectType: 8
     value: 1

@@ -29,6 +29,8 @@ public class RoundManager : MonoBehaviour
     public GameObject spawnLazer;
     private GameObject player;
 
+    private int roundsSurvivedThisRun = 0;
+    private bool tookDamageThisRun = false;
 
     public int EveryOther = 10;
     private int temp;
@@ -270,6 +272,7 @@ public class RoundManager : MonoBehaviour
             Victory();
             return;
         }
+
         Debug.Log("FINISHED ROUND");
 
         currRound++;
@@ -277,8 +280,42 @@ public class RoundManager : MonoBehaviour
         currDef = 0;
         isDoneWaiting = false;
         gameObject.GetComponent<enemyLeft>().setText(rs[currRound].req);
-        DataPersistenceManager.instance.GameData.roundsBeat++;
+
+        GameData data = DataPersistenceManager.instance.GameData;
+        data.roundsBeat++;
+
+        // Track rounds survived in this run
+        roundsSurvivedThisRun++;
+
+        // Check for relic unlocks
+        CheckStatBasedRelicUnlocks(data);
+
+        // Save game after any unlocks
+        DataPersistenceManager.instance.SaveGame();
     }
+    private void CheckStatBasedRelicUnlocks(GameData data)
+    {
+        List<string> relics = data.relicsAcquired;
+
+        TryUnlock("Heartroot Amulet", roundsSurvivedThisRun >= 5, relics);
+        TryUnlock("Moonfang Amulet", currRound + 1 >= 10 && !tookDamageThisRun, relics);
+        TryUnlock("Amulet of Vital Bloom", currRound + 1 >= 7 && !tookDamageThisRun, relics);
+    }
+
+    private void TryUnlock(string relicName, bool condition, List<string> unlocked)
+    {
+        if (condition && !unlocked.Contains(relicName))
+        {
+            unlocked.Add(relicName);
+            Debug.Log($"Unlocked relic: {relicName}!");
+        }
+    }
+
+    public void FlagDamageTaken()
+    {
+        tookDamageThisRun = true;
+    }
+
 
 
     public IEnumerator startZone()

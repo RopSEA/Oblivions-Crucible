@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Health
   m_EditorClassIdentifier: 
   relicName: Amulet of Vital Bloom
-  description: Its warmth never fades. Said to blossom from the heart of a dying
+  description: 'Its warmth never fades. Said to blossom from the heart of a dying
     sun, gifting strength anew
+
+    1.25x Health'
   icon: {fileID: 21300000, guid: 9307040408a545548a16cbdbddec2611, type: 2}
   lockedIcon: {fileID: 21300000, guid: 505ffd642dadd4740a2c885c7fc49234, type: 2}
   unlockHint: Only in perfect serenity amid chaos does the Vital Bloom unfold.(Reach
     Round 7 without taking any damage)
   effects:
   - effectType: 5
-    value: 0.25
+    value: 20

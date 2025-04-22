@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Stamina
   m_EditorClassIdentifier: 
   relicName: Windstep Amulet
-  description: Infused with the spirit of the ever-moving wind. The wearer never
+  description: 'Infused with the spirit of the ever-moving wind. The wearer never
     tires, never falters.
+
+    +3 Sta'
   icon: {fileID: 21300000, guid: 0f14a05899185a641a819e3517018125, type: 2}
   lockedIcon: {fileID: 21300000, guid: 9b4bc1dc25c9ca446b5a0018591b50d3, type: 2}
   unlockHint: To dance with the wind is to evade death again and again.(Survive 3

@@ -92,6 +92,7 @@ public class HealthSystem : MonoBehaviour
         int dam = (int)Mathf.Ceil(damage * ((attk + 100) /(100 + def)));
         currentHealth -= dam;
         if (currentHealth < 0) currentHealth = 0;
+        FindObjectOfType<RoundManager>()?.FlagDamageTaken();
 
         Debug.Log($"Player took {dam} damage! Health: {currentHealth}");
 

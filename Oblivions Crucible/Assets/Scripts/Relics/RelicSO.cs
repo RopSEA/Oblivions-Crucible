@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class RelicSO : ScriptableObject
 {
     public string relicName;
+    [TextArea(2, 5)]
     public string description;
     public Sprite icon;
     public Sprite lockedIcon;

@@ -11,11 +11,10 @@ public class RelicUIManager : MonoBehaviour
     public bool debugShowAll = false;
     public bool debugHalfUnlocked = false;
 
-    void Start()
+        void Start()
     {
         List<string> unlockedRelicNames = new List<string>();
 
-        CheckStatBasedUnlocks();
         if (debugShowAll)
         {
             Debug.LogWarning("Debug Mode Enabled: All relics will be shown as unlocked.");
@@ -31,8 +30,13 @@ public class RelicUIManager : MonoBehaviour
         }
         else if (DataPersistenceManager.instance != null && DataPersistenceManager.instance.HasGameData())
         {
+            // FIRST: Check for new stat-based unlocks
+            CheckStatBasedUnlocks();
+
+            // THEN: Grab the updated list from the save file
             GameData saveData = DataPersistenceManager.instance.GameData;
             unlockedRelicNames = saveData.relicsAcquired;
+
             Debug.Log("Save file loaded. Unlocked relics: " + string.Join(", ", unlockedRelicNames));
         }
         else
@@ -59,9 +63,10 @@ public class RelicUIManager : MonoBehaviour
         List<string> unlockedRelics = data.relicsAcquired;
 
         // Unlock conditions
-        TryUnlock("Amulet of the Warlord", data.enemiesDefeated >= 50, unlockedRelics);
+        TryUnlock("Amulet of the Warlord", data.enemiesDefeated >= 200, unlockedRelics);
         TryUnlock("Saint’s Embrace", data.deathCount >= 50, unlockedRelics);
         TryUnlock("Stoneguard Amulet", data.deathCount >= 5, unlockedRelics);
+        TryUnlock("Eye of Pi", data.bossesBeat >= 4, unlockedRelics);
 
         DataPersistenceManager.instance.SaveGame();
     }

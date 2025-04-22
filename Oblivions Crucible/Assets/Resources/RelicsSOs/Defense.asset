@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Defense
   m_EditorClassIdentifier: 
   relicName: Stoneguard Amulet
-  description: Forged from the rootstone of ancient bulwarks. It bears the weight
+  description: 'Forged from the rootstone of ancient bulwarks. It bears the weight
     of battle without breaking
+
+    +3 Def'
   icon: {fileID: 21300000, guid: b5c7dc00a69010046a197a6da6326239, type: 2}
   lockedIcon: {fileID: 21300000, guid: 4a2cb5e3f6d6bb74080b21de3ae9cfbc, type: 2}
   unlockHint: To carry the weight of battle is to be shaped by it. Only the scarred

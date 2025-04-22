@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Lifesteal
   m_EditorClassIdentifier: 
   relicName: 'Sanguine Seal '
-  description: It pulses with each wound you inflict. Blood feeds blood
+  description: 'It pulses with each wound you inflict. Blood feeds blood
+
+    10%
+    Lifesteal'
   icon: {fileID: 21300000, guid: 1fb9705ee6e777e4986110e913ed0355, type: 2}
   lockedIcon: {fileID: 21300000, guid: 21c40020097e74749a4d1d1a08cd5237, type: 2}
   unlockHint: Only those who have never tasted death are entrusted to feed upon it.(Reach
     Round 10 Without Taking Damage
   effects:
-  - effectType: 8
-    value: 0.1
+  - effectType: 7
+    value: 1
