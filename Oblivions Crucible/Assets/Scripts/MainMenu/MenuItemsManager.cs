@@ -55,6 +55,12 @@ public class MenuItemManager : MonoBehaviour
     {
         float delayBetweenItems = 0.2f; // Delay between menu items appearing
 
+        if (isNotTitle == true)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+
+
         for (int i = 0; i < menuItems.Count; i++)
         {
             if (menuItems[i] != null && isNotTitle == false)
