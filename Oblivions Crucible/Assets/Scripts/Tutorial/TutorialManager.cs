@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -208,12 +209,18 @@ public class TutorialManager : MonoBehaviour
     public void EndTutorial()
     {
          if (DataPersistenceManager.instance != null && DataPersistenceManager.instance.HasGameData())
-        {
+         {
             DataPersistenceManager.instance.GameData.tutorialDone = true;
             DataPersistenceManager.instance.SaveGame();
             Debug.Log("Tutorial completed and saved.");
-        }
+         }
         rpgTalk.NewTalk("final_farewell", "end");
+        StartCoroutine(end());
+    }
+
+    IEnumerator end()
+    {
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("Selection");
     }
 

@@ -7080,7 +7080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedsterPrefab: {fileID: 521995828}
   engineerPrefab: {fileID: 0}
-  playerInstance: {fileID: 521995828}
+  playerInstance: {fileID: 1003462271}
   playerInstance2: {fileID: 0}
   playerInstance3: {fileID: 0}
   playerInstance4: {fileID: 0}

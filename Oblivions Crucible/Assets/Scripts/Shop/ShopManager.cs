@@ -63,6 +63,21 @@ public class ShopManager : MonoBehaviour
 
         availableItems.Add(new ShopItem("Sheild Of Light", "Defends you \n+10 Def",
             Resources.Load<Sprite>("MythrilShield"), Resources.Load<Sprite>("SoldMythrilShield"), 0, 0, 0, 0, 10, 85));
+
+
+
+
+        availableItems.Add(new ShopItem("Ultima magic Sword", "Ultimate Strength! \n+20 Str \n+20 Int",
+           Resources.Load<Sprite>("UltSword"), Resources.Load<Sprite>("SoldUltSword"), 20, 0, 0, 20, 0, 200));
+
+        availableItems.Add(new ShopItem("Ultima Sheild", "sub - Ultimate Defense! \n+20 Def",
+           Resources.Load<Sprite>("UltShield"), Resources.Load<Sprite>("SoldUltShield"), 0, 0, 0, 0, 20, 160));
+
+        availableItems.Add(new ShopItem("Ultima Armor", "Ultimate Defense! \n+5 vit \n+25 Def",
+           Resources.Load<Sprite>("UltArmor"), Resources.Load<Sprite>("SoldUltArmor"), 0, 5, 0, 0, 25, 220));
+
+        availableItems.Add(new ShopItem("Gold Crown", "Defends you \n+20 to all stats!",
+           Resources.Load<Sprite>("GoldCrown"), Resources.Load<Sprite>("SoldGoldCrown"), 20, 20, 20, 20, 20, 500));
     }
 
     void SelectRandomItems()

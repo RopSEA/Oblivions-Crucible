@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerClassHandler : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerClassHandler : MonoBehaviour
 
     private void Awake()
     {
+        if (SceneManager.GetActiveScene().name == "Tutorial") return;
+
         string selectedClass = ClassSelectionManager.Instance.selectedClass;
         if (selectedClass != "" && selectedClass != "Engineer")
         {

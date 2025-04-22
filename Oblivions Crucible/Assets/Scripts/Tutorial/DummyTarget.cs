@@ -112,7 +112,7 @@ public class DummyTarget : MonoBehaviour
 
         totalDummiesKilled++;
 
-        if (totalDummiesKilled == requiredKillsToAdvance && tutorialManager != null)
+        if (totalDummiesKilled % requiredKillsToAdvance == 0 && tutorialManager != null)
         {
             tutorialManager.OnDummyDestroyed();
         }
